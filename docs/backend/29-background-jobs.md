@@ -1,17 +1,17 @@
-# 29. Background Jobs
+# 29. المهام في الخلفية (Background Jobs)
 
-## Queue Management
-- **Driver**: Redis or Database (Redis preferred for ERP performance).
-- **Tool**: Laravel Horizon (highly recommended for monitoring).
+## إدارة الطوابير (Queue Management)
+- **المحرك**: Redis (يفضل للأداء العالي).
+- **الأداة**: Laravel Horizon (لمراقبة الطوابير).
 
-## Candidate Tasks
-1. **Reporting**: Generating massive Excel files from 10,000+ movements.
-2. **Notifications**: Sending emails or push notifications for order approvals.
-3. **Synchronization**: Syncing stock levels to cached tables.
-4. **Cleanups**: Deleting old export files or rotating logs.
-5. **Media Processing**: Resizing equipment photos or site snapshots.
+## المهام المرشحة
+1. **التقارير**: توليد ملفات Excel ضخمة من أكثر من 10,000 حركة.
+2. **التنبيهات**: إرسال رسائل بريد إلكتروني أو إشعارات للموافقة على الطلبات.
+3. **المزامنة**: مزامنة مستويات المخزون مع جداول الكاش.
+4. **التنظيف**: حذف ملفات التصدير القديمة أو تدوير السجلات.
+5. **معالجة الوسائط**: تغيير حجم صور المعدات أو لقطات الموقع.
 
-## Queue Priorities
-- `high`: Critical alerts, Approval notifications.
-- `default`: Regular events, smaller exports.
-- `low`: Heavy analytics exports, data cleanup.
+## أولويات الطوابير
+- `high`: التنبيهات الحرجة، إشعارات الموافقة.
+- `default`: الأحداث العادية، عمليات التصدير الصغيرة.
+- `low`: ملفات التقارير الثقيلة، عمليات تنظيف البيانات.

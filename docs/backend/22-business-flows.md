@@ -1,27 +1,27 @@
-# 22. Business Flows
+# 22. تدفقات العمل (Business Flows)
 
-## Purchase-to-Stock Flow
+## تدفق الشراء إلى المخزون
 
 ```mermaid
 sequenceDiagram
-    participant Requester
-    participant Manager
-    participant Procurement
-    participant Warehouse
+    participant صاحب_الطلب
+    participant المدير
+    participant المشتريات
+    participant المستودع
     
-    Requester->>Procurement: Create Purchase Request (PR)
-    Procurement->>Manager: Submit for Approval
-    Manager-->>Procurement: Approved
-    Procurement->>Procurement: Generate Purchase Order (PO)
-    Procurement->>Warehouse: Notify Expected Delivery
-    Warehouse->>Warehouse: Goods Receipt (GR) on delivery
-    Warehouse->>Warehouse: Create Stock Movement (Type: Receipt)
-    Warehouse->>Warehouse: Update Inventory Ledger
+    صاحب_الطلب->>المشتريات: إنشاء طلب شراء (PR)
+    المشتريات->>المدير: إرسال للموافقة
+    المدير-->>المشتريات: تمت الموافقة
+    المشتريات->>المشتريات: إنشاء أمر شراء (PO)
+    المشتريات->>المستودع: إخطار بوصول متوقع
+    المستودع->>المستودع: استلام البضائع عند التوصيل
+    المستودع->>المستودع: إنشاء حركة مخزون (نوع: استلام)
+    المستودع->>المستودع: تحديث دفتر المخزون
 ```
 
-## Inventory-to-Project Flow
-1. **Request**: Project Site Supervisor requests 100 bags of cement.
-2. **Verification**: Warehouse Keeper checks stock availability.
-3. **Dispatch**: Warehouse issues stock.
-4. **Tracking**: System creates `StockMovement` (Type: Issue, Destination: Project ID).
-5. **Ledger**: Current stock is reduced.
+## تدفق المخزون إلى المشروع
+1. **الطلب**: يطلب مشرف الموقع 100 كيس أسمنت.
+2. **التحقق**: يتحقق أمين المستودع من توفر المخزون.
+3. **الصرف**: يقوم المستودع بصرف الكمية.
+4. **التتبع**: ينشئ النظام حركة مخزون (النوع: صرف، الوجهة: معرف المشروع).
+5. **الدفتر**: يتم خصم الكمية من الرصيد الحالي.

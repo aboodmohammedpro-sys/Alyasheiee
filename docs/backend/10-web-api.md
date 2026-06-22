@@ -1,16 +1,16 @@
-# 10. Web API Strategy
+# 10. استراتيجية API الويب (Web API Strategy)
 
-## Web-Specific Needs
-1. **Complex Dashboards**: Aggregated endpoints for project stats.
-2. **Bulk Actions**: Support for bulk approvals or inventory adjustments.
-3. **Exporting**: Integration with background jobs for Excel/PDF reports.
-4. **Deep Filtering**: High-level managers need complex date range and status filters.
+## احتياجات الويب الخاصة
+1. **لوحات تحكم معقدة**: نقاط نهاية مجمعة لإحصائيات المشاريع.
+2. **العمليات الجماعية**: دعم الموافقات الجماعية أو تعديلات المخزون الكبيرة.
+3. **التصدير**: التكامل مع وظائف الخلفية (Background Jobs) لتقارير Excel/PDF.
+4. **فلترة عميقة**: يحتاج مديرو المستويات العليا إلى فلاتر معقدة لنطاقات التواريخ والحالات.
 
-## Dedicated Endpoints
-- `/api/v1/web/reports/inventory-aging`
-- `/api/v1/web/projects/bulk-update`
-- `/api/v1/web/admin/users-activity`
+## نقاط نهاية مخصصة
+- `/api/v1/web/reports/inventory-aging` (تقادم المخزون)
+- `/api/v1/web/projects/bulk-update` (تحديث جماعي)
+- `/api/v1/web/admin/users-activity` (نشاط المستخدمين)
 
-## Technical Requirements
-- Use **API Resources** to expose full relational data (include breadcrumbs, counts, etc.).
-- Intensive use of `eager loading` (with() / load()) to prevent N+1 issues in large tables.
+## المتطلبات التقنية
+- استخدام **API Resources** لعرض البيانات العلائقية الكاملة.
+- الاستخدام المكثف لـ `eager loading` (تحميل مسبق) لمنع مشاكل N+1 في الجداول الكبيرة.

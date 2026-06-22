@@ -1,19 +1,19 @@
-# 13. Authentication Strategy
+# 13. استراتيجية المصادقة (Authentication Strategy)
 
-## Core mechanism
-- **Package**: Laravel Sanctum.
-- **Provider**: Standard `users` table.
+## الآلية الجوهرية
+- **الحزمة**: Laravel Sanctum.
+- **المزود**: جدول `users` القياسي.
 
-## Features
-1. **Token Lifetime**: 24 hours (configurable in `config/sanctum.php`).
-2. **Device Tracking**: Every token creation must specify a device name (e.g., "iPhone 13 - Site Supervisor App").
-3. **Revocation**:
-    - `POST /logout`: Revoke current token.
-    - `POST /logout-all`: Revoke all active sessions for the user.
-4. **Secure Storage**: Tokens should be hashed in the DB (Sanctum default).
+## المميزات
+1. **عمر التوكن**: 24 ساعة (قابل للإعداد في `config/sanctum.php`).
+2. **تتبع الأجهزة**: يجب أن يحدد كل إنشاء توكن اسماً للجهاز (مثل "iPhone 13 - تطبيق المشرف").
+3. **إلغاء الصلاحية**:
+    - `POST /logout`: إلغاء التوكن الحالي.
+    - `POST /logout-all`: إلغاء جميع الجلسات النشطة للمستخدم.
+4. **تخزين آمن**: يتم تشفير التوكنات في قاعدة البيانات (افتراضي في Sanctum).
 
-## Implementation Flow
-- User logs in via Email/Password.
-- Server validates and returns a Plain-text token.
-- Mobile/Web client stores token in Secure Storage / HttpOnly Cookie.
-- All subsequent requests include `Authorization: Bearer <token>`.
+## تدفق التنفيذ
+- يقوم المستخدم بتسجيل الدخول عبر البريد الإلكتروني وكلمة المرور.
+- يقوم الخادم بالتحقق وإرجاع توكن نصي.
+- يقوم عميل الجوال/الويب بتخزين التوكن في مساحة تخزين آمنة أو كوكيز.
+- تتضمن جميع الطلبات اللاحقة ترويسة `Authorization: Bearer <token>`.

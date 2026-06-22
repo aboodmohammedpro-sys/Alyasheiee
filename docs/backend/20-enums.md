@@ -1,39 +1,39 @@
-# 20. Enums Strategy
+# 20. استراتيجية Enums
 
-## Why Enums?
-Avoid "Magic Strings". Enums provide validity at the code level.
+## لماذا Enums؟
+لتجنب "النصوص السحرية" (Magic Strings). توفر الـ Enums صلاحية على مستوى الكود.
 
-## Core Enumerations
+## التعدادات الأساسية (Core Enumerations)
 
-### ProjectStatus
-- `PLANNING`
-- `ACTIVE`
-- `ON_HOLD`
-- `COMPLETED`
-- `CANCELLED`
+### حالة المشروع (ProjectStatus)
+- `PLANNING` (تخطيط)
+- `ACTIVE` (نشط)
+- `ON_HOLD` (متوقف مؤقتاً)
+- `COMPLETED` (مكتمل)
+- `CANCELLED` (ملغي)
 
-### ResourceAssignmentStatus
-- `ACTIVE`
-- `ENDED`
-- `RECALLED`
+### حالة تعيين الموارد (ResourceAssignmentStatus)
+- `ACTIVE` (نشط)
+- `ENDED` (منتهي)
+- `RECALLED` (مستدعى)
 
-### EquipmentStatus
-- `AVAILABLE`
-- `WORKING`
-- `MAINTENANCE`
-- `STOPPED`
+### حالة المعدات (EquipmentStatus)
+- `AVAILABLE` (متوفرة)
+- `WORKING` (تعمل)
+- `MAINTENANCE` (صيانة)
+- `STOPPED` (متوقفة)
 
-### ProcurementStatus
-- `DRAFT`
-- `PENDING_APPROVAL`
-- `APPROVED`
-- `SHIPPED`
-- `RECEIVED`
-- `REJECTED`
+### حالة المشتريات (ProcurementStatus)
+- `DRAFT` (مسودة)
+- `PENDING_APPROVAL` (بانتظار الموافقة)
+- `APPROVED` (معتمد)
+- `SHIPPED` (تم الشحن)
+- `RECEIVED` (تم الاستلام)
+- `REJECTED` (مرفوض)
 
-### StockMovementType
-- `RECEIPT` (In from Vendor)
-- `ISSUE` (Out to Site)
-- `RETURN` (Site back to WH)
-- `TRANSFER` (WH to WH)
-- `ADJUSTMENT` (Inventory corrections)
+### أنواع حركة المخزون (StockMovementType)
+- `RECEIPT` (استلام من مورد)
+- `ISSUE` (صرف للموقع)
+- `RETURN` (إرجاع من الموقع للمستودع)
+- `TRANSFER` (تحويل بين المستودعات)
+- `ADJUSTMENT` (تعديلات جردية)

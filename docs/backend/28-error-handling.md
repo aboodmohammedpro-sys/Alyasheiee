@@ -1,18 +1,18 @@
-# 28. Error Handling
+# 28. معالجة الأخطاء (Error Handling)
 
-## Centralized Handling
-- **Location**: `app/Exceptions/Handler.php` (or Bootstrap approach in Laravel 11/12).
+## المعالجة المركزية
+- **الموقع**: `app/Exceptions/Handler.php`.
 
-## Error Hierarchy
-1. **ValidationException**: Return 422 with field details.
-2. **AuthenticationException**: Return 401.
-3. **AuthorizationException**: Return 403.
-4. **DomainException**: (Custom base for business logic) Return 400 with a clear error code (e.g., `INSUFFICIENT_STOCK`).
-5. **ModelNotFoundException**: Return 404.
-6. **Generic Exception**: Return 500 (Hide details in production, log to Sentry/Flare).
+## التسلسل الهرمي للأخطاء
+1. **ValidationException**: إرجاع كود 422 مع تفاصيل الحقول.
+2. **AuthenticationException**: إرجاع كود 401.
+3. **AuthorizationException**: إرجاع كود 403.
+4. **DomainException**: (قاعدة مخصصة لمنطق العمل) إرجاع كود 400 مع كود خطأ واضح (مثال: `INSUFFICIENT_STOCK`).
+5. **ModelNotFoundException**: إرجاع كود 404.
+6. **استثناء عام**: إرجاع كود 500 (إخفاء التفاصيل في الإنتاج، وتسجيلها في Sentry).
 
-## Response Transformation
-Ensure all errors follow the format defined in `12-response-format.md`.
+## تحويل الاستجابة
+تأكد من أن جميع الأخطاء تتبع التنسيق المحدد في وثيقة `12-response-format.md`.
 ```json
 {
   "success": false,

@@ -1,21 +1,21 @@
-# 00. System Vision
+# 00. رؤية النظام (System Vision)
 
-## Project Overview
-The **Alyasheiee Construction ERP** is an enterprise-grade resource planning system specifically engineered for heavy construction and large-scale infrastructure projects. Unlike generic ERPs, this system is built to handle the chaotic and dynamic nature of construction sites, where resource mobility, complex procurement flows, and real-time inventory tracking are critical.
+## نظرة عامة على المشروع
+نظام **Alyasheiee Construction ERP** هو نظام تخطيط موارد للمؤسسات من الدرجة الاحترافية، مصمم خصيصاً للمقاولات الضخمة ومشاريع البنية التحتية الثقيلة. بخلاف أنظمة ERP العامة، تم بناء هذا النظام للتعامل مع الطبيعة الديناميكية والمتقلبة لمواقع البناء، حيث تعتبر حركة الموارد، تدفقات المشتريات المعقدة، وتتبع المخزون في الوقت الفعلي أمراً حيوياً.
 
-## Core Philosophical Values
-1. **Mobility First**: Resources (Equipment and Employees) are never static. They "belong" to the company but are "assigned" to projects.
-2. **Strict Accountability**: Every nail and every liter of fuel must be accounted for via Stock Movements. No direct balance editing.
-3. **Decoupled Growth**: The system is designed as a **Modular Monolith**. Each domain (Project, Warehouse, HR) can evolve independently.
-4. **Data Integrity**: Auditing is non-negotiable. Every change is logged with its previous and new states.
-5. **Scale Ready**: Designed for Laravel 12 and PostgreSQL, utilizing advanced indexing and service-layer patterns to handle hundreds of projects and thousands of movements.
+## القيم الفلسفية الجوهرية
+1. **الأولوية للحركة (Mobility First)**: الموارد (المعدات والموظفين) ليست ثابتة أبداً. هي "تنتمي" للشركة ولكن يتم "تعيينها" للمشاريع.
+2. **المساءلة الصارمة**: يجب احتساب كل مسمار وكل لتر وقود من خلال حركات المخزون (Stock Movements). لا يوجد تعديل مباشر للأرصدة.
+3. **النمو المنفصل (Decoupled Growth)**: تم تصميم النظام بهيكلية **Modular Monolith**. كل مجال (المشاريع، المستودعات، الموارد البشرية) يمكن أن يتطور بشكل مستقل.
+4. **نزاهة البيانات**: التدقيق (Auditing) غير قابل للتفاوض. يتم تسجيل كل تغيير مع حالته السابقة والجديدة.
+5. **جاهزية التوسع**: مصمم باستخدام Laravel 12 و PostgreSQL، مع الاستفادة من الفهرسة المتقدمة وأنماط طبقة الخدمة للتعامل مع مئات المشاريع وآلاف الحركات.
 
-## Target Modules (Current Phase)
-- **Project Management**: Control centers for sites and phases.
-- **Resource Allocation**: Teams, Employees, and Equipment assignment tracking.
-- **Logistics & Supply Chain**: Suppliers, Procurement (PR/PO), and Multi-warehouse Management.
-- **Inventory Control**: Strict Stock Movement logic.
-- **Analytics**: Deep reporting for decision-makers.
+## الوحدات المستهدفة (المرحلة الحالية)
+- **إدارة المشاريع**: مراكز التحكم للمواقع والمراحل.
+- **تخصيص الموارد**: تتبع تعيينات الفرق والموظفين والمعدات.
+- **الخدمات اللوجستية وسلاسل الإمداد**: الموردين، المشتريات (طلب شراء/أمر شراء)، وإدارة المستودعات المتعددة.
+- **التحكم في المخزون**: منطق حركة المخزون الصارم.
+- **التحليلات**: تقارير عميقة لصناع القرار.
 
-## Future Outlook
-The architecture is prepared for seamless integration of Fuel Management, Heavy Maintenance, Concrete Plants, and Financial modules without breaking existing logic.
+## النظرة المستقبلية
+الهيكلية جاهزة للتكامل السلس مع وحدات إدارة الوقود، الصيانة الثقيلة، محطات الخرسانة، والوحدات المالية دون كسر المنطق الحالي.

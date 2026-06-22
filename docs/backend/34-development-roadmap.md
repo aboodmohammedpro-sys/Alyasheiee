@@ -1,21 +1,21 @@
-# 34. Development Roadmap
+# 34. خارطة طريق التطوير (Development Roadmap)
 
-## Phase 1: Core Foundation (Current)
-- Setup Modular Architecture.
-- Basic Auth & Permissions.
-- Project Tracking & Resource Assignment.
-- Procurement Flow (PR to PO).
-- Inventory Management (Single Warehouse).
+## المرحلة 1: الأساس الجوهري (الحالية)
+- إعداد المعمارية الموديولية.
+- الصلاحيات والمصادقة الأساسية.
+- تتبع المشاريع وتعيين الموارد.
+- تدفق المشتريات (من طلب الشراء إلى أمر الشراء).
+- إدارة المخزون (مستودع واحد).
 
-## Phase 2: Logistics & Field
-- Multi-Warehouse Support.
-- Mobile API for site supervisors.
-- Barcode/QR Scanning integration.
-- Advanced Reports (Excel/PDF).
-- Activity Log Dashboard.
+## المرحلة 2: الخدمات اللوجستية والميدان
+- دعم المستودعات المتعددة.
+- واجهة برمجة تطبيقات الجوال للمشرفين في الموقع.
+- التكامل مع مسح الباركود/QR.
+- التقارير المتقدمة (Excel/PDF).
+- لوحة تحكم سجلات النشاط.
 
-## Phase 3: Vertical Extensions (Future Modules)
-- Fuel Management (Deep integration with Equipment).
-- Heavy Maintenance (Work Orders).
-- Finance & Accounting (Journal Entries).
-- Camp & Personnel Management (Payroll).
+## المرحلة 3: التوسعات الرأسية (موديولات مستقبلية)
+- إدارة الوقود (تكامل عميق مع المعدات).
+- الصيانة الثقيلة (أوامر العمل).
+- المالية والمحاسبة.
+- إدارة المخيمات والأفراد (الرواتب).

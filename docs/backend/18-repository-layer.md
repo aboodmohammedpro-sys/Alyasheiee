@@ -1,16 +1,16 @@
-# 18. Repository Layer
+# 18. طبقة المستودعات (Repository Layer)
 
-## Purpose
-The Repository pattern abstracts the data persistence layer. This ensures that the Service doesn't care if data comes from Eloquent, a cache, or an external API.
+## الغرض
+نمط الـ Repository يفصل طبقة الوصول للبيانات عن منطق العمل. هذا يضمن أن الخدمة لا تهتم إذا كانت البيانات تأتي من Eloquent، ذاكرة تخزين مؤقت، أو API خارجي.
 
-## Mandatory Methods per Repository
+## الطرق الإلزامية لكل Repository
 - `findById(string $uuid): ?Model`
 - `allActive(): Collection`
 - `create(array $data): Model`
 - `update(string $uuid, array $data): Model`
 - `delete(string $uuid): bool`
 
-## Repository Best Practices
-- **No Business Logic**: Repositories should only do `where`, `join`, and `order`.
-- **Query Scopes**: Repositories are the ideal place to apply logic like `whereModule(x)->active()`.
-- **Pagination**: Handle API pagination parameters here.
+## أفضل الممارسات
+- **لا لمنطق العمل**: يجب أن تقوم الـ Repositories فقط بعمليات `where`, `join`, و `order`.
+- **Query Scopes**: الـ Repositories هي المكان المثالي لتطبيق منطق مثل `whereModule(x)->active()`.
+- **التصفح**: التعامل مع معاملات تصفح API هنا.

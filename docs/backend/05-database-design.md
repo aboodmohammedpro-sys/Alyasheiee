@@ -1,50 +1,44 @@
-# 05. Database Design
+# 05. تصميم قاعدة البيانات (Database Design)
 
-## Naming Conventions
-- **Tables**: Plural snake_case (e.g., `projects`).
-- **Columns**: snake_case.
-- **Foreign Keys**: `entity_id` (e.g., `project_id`).
-- **UUID**: Every table MUST use UUID as the primary key for external IDs. Internal IDs can be BigInt for performance.
+## اتفاقيات التسمية
+- **الجداول**: بصيغة الجمع snake_case (مثل `projects`).
+- **الأعمدة**: snake_case.
+- **المفاتيح الخارجية**: `entity_id` (مثل `project_id`).
+- **UUID**: يجب أن يستخدم كل جدول UUID كمعرف أساسي للروابط الخارجية. المعرفات الداخلية يمكن أن تكون BigInt للأداء.
 
-## Core Tables (Structural Fields)
+## الجداول الأساسية (الحقول الهيكلية)
 
-### Projects
+### المشاريع (Projects)
 - `id` (UUID)
-- `code` (Unique, e.g., PRJ-2024-001)
-- `name`
-- `client_name`
-- `location`
-- `start_date`, `expected_end_date`
-- `estimated_budget` (Decimal 15,2)
-- `progress_percentage` (SmallInt 0-100)
-- `status` (Enum/String: planning, active, on_hold, completed, cancelled)
-- `description`
-- `created_by`, `updated_by`, `deleted_by` (Foreign UUIDs)
-- Timestamps & Soft Deletes
+- `code` (فريد، مثل PRJ-2024-001)
+- `name` (الاسم)
+- `client_name` (اسم العميل)
+- `location` (الموقع)
+- `start_date`, `expected_end_date` (تاريخ البدء والانتهاء المتوقع)
+- `estimated_budget` (الميزانية التقديرية - Decimal 15,2)
+- `progress_percentage` (نسبة الإنجاز - SmallInt 0-100)
+- `status` (الحالة: التخطيط، نشط، متوقف مؤقتاً، مكتمل، ملغي)
+- `description` (الوصف)
+- `created_by`, `updated_by`, `deleted_by` (تتبع المستخدمين)
+- الطوابع الزمنية والحذف الناعم (Soft Deletes)
 
-### Resource Assignments (Polymorphic)
+### تعيينات الموارد (Resource Assignments)
 - `id` (UUID)
 - `project_id`
-- `assignable_id` (UUID - Employee or Equipment ID)
-- `assignable_type` (String - App\Modules\...\Employee or Equipment)
-- `start_date`, `end_date` (Nullable if ongoing)
-- `status` (Enum: active, ended)
-- `notes`
+- `assignable_id` (UUID - معرف الموظف أو المعدة)
+- `assignable_type` (نوع المورد - Employee أو Equipment)
+- `start_date`, `end_date` (تاريخ البدء والانتهاء)
+- `status` (Enum: نشط، منتهي)
 
-### Procurement
-- `purchase_requests`: code, requester_id, department_id, status, total_amount.
-- `purchase_orders`: code, purchase_request_id, supplier_id, status, total_amount, delivery_date.
-- `items`: purchase_request_id / purchase_order_id, item_name, quantity, unit_price, total_price.
+### المشتريات (Procurement)
+- `purchase_requests`: الكود، صاحب الطلب، القسم، الحالة، المبلغ الإجمالي.
+- `purchase_orders`: الكود، مرجع طلب الشراء، المورد، الحالة، المبلغ الإجمالي، تاريخ التوصيل.
+- `items`: اسم الصنف، الكمية، سعر الوحدة، الإجمالي.
 
-### Warehouse & Stock
-- `warehouses`: name, location, type (diesel, spare_parts, etc.).
-- `stock_movements`:
-    - `id`
-    - `warehouse_id`
-    - `item_id`
-    - `type` (receipt, issue, transfer, return, adjustment)
-    - `quantity` (signed decimal)
-    - `destination_id` (Polymorphic: Project, Equipment, etc.)
-    - `destination_type`
-    - `reference_no` (e.g., PO-123)
-    - `user_id` (The one who performed the move)
+### المستودعات والمخزون (Warehouse & Stock)
+- `warehouses`: الاسم، الموقع، النوع (ديزل، قطع غيار، إلخ).
+- `stock_movements` (حركات المخزون):
+    - `type`: (استلام، صرف، تحويل، إرجاع، تعديل)
+    - `quantity`: الكمية (سالبة أو موجبة)
+    - `destination_id`: (متعدد الأشكال: مشروع، معدة، إلخ)
+    - `reference_no`: رقم المرجع (مثل رقم أمر الشراء)

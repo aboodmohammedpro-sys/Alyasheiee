@@ -1,40 +1,40 @@
-# 04. Folder Structure
+# 04. هيكل المجلدات (Folder Structure)
 
-## Project Layout
+## مخطط المشروع
 
 ```text
 alyasheiee/
 ├── app/
-│   ├── Modules/                # The Core of the system
-│   │   ├── ProjectManagement/
-│   │   ├── ResourceAllocation/
-│   │   ├── Procurement/
-│   │   ├── Warehouse/
-│   │   └── Shared/              # Shared logic (Media, Tags, etc.)
-│   ├── Core/                    # Framework extensions
+│   ├── Modules/                # قلب النظام (المكونات البرمجية)
+│   │   ├── ProjectManagement/  # إدارة المشاريع
+│   │   ├── ResourceAllocation/ # تخصيص الموارد
+│   │   ├── Procurement/        # المشتريات
+│   │   ├── Warehouse/          # المستودعات
+│   │   └── Shared/              # المنطق المشترك (الوسائط، الوسوم، إلخ)
+│   ├── Core/                    # امتدادات فريمورك لارافيل
 │   │   ├── Traits/
 │   │   ├── Contracts/
 │   │   └── AbstractClasses/
 │   └── Providers/
-├── config/
+├── config/                      # الإعدادات
 ├── database/
-│   ├── migrations/             # Standard Laravel migrations (centralized for deployment simplicity)
+│   ├── migrations/             # التهجير (مركزي لسهولة النشر)
 │   ├── seeders/
 │   └── factories/
 ├── docs/
-│   └── backend/                # Current Documentation
-├── public/
-├── resources/
-├── routes/
-│   ├── api_v1.php              # Global API entry
+│   └── backend/                # التوثيق الحالي (بالعربية)
+├── public/                      # الملفات العامة
+├── resources/                   # المصادر
+├── routes/                      # المسارات
+│   ├── api_v1.php              # مدخل API الإصدار الأول
 │   └── web.php
-└── tests/
+└── tests/                       # الاختبارات
     ├── Unit/
     └── Feature/
 ```
 
-## Module Internal Details
-- **Services**: MUST implement an interface if they are meant to be called from other modules.
-- **DTOs**: Used strictly for input to Services (Service parameters should ideally be DTOs).
-- **Enums**: All statuses, types, and categories must be Enums (PHP 8.1+ features).
-- **Repositories**: Standardize data fetching (e.g., specific scopes for "Active" projects).
+## تفاصيل داخلية للموديول
+- **الخدمات (Services)**: يجب أن تنفذ Interface إذا كان سيتم استدعاؤها من موديولات أخرى.
+- **DTOs**: تستخدم حصرياً لمدخلات الخدمات.
+- **Enums**: يجب أن تكون جميع الحالات والأنواع والفئات من نوع Enum (ميزات PHP 8.1+).
+- **Repositories**: توحيد جلب البيانات (مثل Scopes محددة للمشاريع "النشطة").

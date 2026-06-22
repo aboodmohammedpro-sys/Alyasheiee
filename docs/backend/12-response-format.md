@@ -1,8 +1,8 @@
-# 12. Response Format
+# 12. تنسيق الاستجابة (Response Format)
 
-## Standard JSON Structure
+## هيكل JSON الموحد
 
-### Success Response
+### استجابة النجاح (Success)
 ```json
 {
     "success": true,
@@ -14,7 +14,7 @@
 }
 ```
 
-### Collection Response (Paginated)
+### استجابة المجموعات (Paginated)
 ```json
 {
     "success": true,
@@ -27,35 +27,31 @@
     },
     "meta": {
         "current_page": 1,
-        "from": 1,
-        "last_page": 5,
-        "per_page": 15,
-        "to": 15,
         "total": 75
     }
 }
 ```
 
-### Error Response
+### استجابة الخطأ (Error)
 ```json
 {
     "success": false,
     "error": {
         "code": "VALIDATION_FAILED",
-        "message": "The given data was invalid.",
+        "message": "البيانات المقدمة غير صالحة.",
         "details": {
-            "field_name": ["This field is required."]
+            "field_name": ["هذا الحقل مطلوب."]
         }
     }
 }
 ```
 
-## HTTP Codes
-- **200 OK**: Request successful.
-- **201 Created**: Resource created successfully.
-- **400 Bad Request**: Logic error or business rule violation.
-- **401 Unauthorized**: Missing/Invalid token.
-- **403 Forbidden**: Token valid but lack of permissions.
-- **404 Not Found**: Resource doesn't exist.
-- **422 Unprocessable Entity**: Validation errors.
-- **500 Internal Server Error**: Unexpected crash.
+## أكواد HTTP
+- **200 OK**: نجاح الطلب.
+- **201 Created**: تم إنشاء المورد بنجاح.
+- **400 Bad Request**: خطأ منطقي أو انتهاك لقاعدة عمل.
+- **401 Unauthorized**: توكن مفقود أو غير صالحة.
+- **403 Forbidden**: التوكن صالحة ولكن لا تملك الصلاحية.
+- **404 Not Found**: المورد غير موجود.
+- **422 Unprocessable Entity**: أخطاء في التحقق من البيانات (Validation).
+- **500 Internal Server Error**: خطأ غير متوقع في الخادم.

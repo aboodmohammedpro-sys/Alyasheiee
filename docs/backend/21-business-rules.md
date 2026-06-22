@@ -1,20 +1,20 @@
-# 21. Business Rules
+# 21. قواعد العمل (Business Rules)
 
-## 1. Project Constraints
-- New projects default to `PLANNING`.
-- Movement to `ACTIVE` requires at least one assigned Supervisor.
-- Budget modifications must be tracked in audit logs.
+## 1. قيود المشاريع
+- المشاريع الجديدة تبدأ افتراضياً بحالة `PLANNING`.
+- الانتقال إلى حالة `ACTIVE` يتطلب وجود مشرف واحد على الأقل معين للمشروع.
+- أي تعديل في الميزانية يجب تتبعه في سجلات التدقيق (Audit Logs).
 
-## 2. Resource Assignment Rules
-- An Employee cannot be assigned to two projects simultaneously on overlapping dates.
-- Equipment assigned to a project must have its status updated to `WORKING`.
-- Assignments must have a recorded `Created By` user ID.
+## 2. قواعد تعيين الموارد
+- لا يمكن تعيين موظف لمشروعين في نفس الوقت بتواريخ متداخلة.
+- المعدة المعينة لمشروع يجب تحديث حالتها تلقائياً إلى `WORKING`.
+- يجب أن تحتوي التعيينات على معرف المستخدم الذي قام بالعملية.
 
-## 3. Inventory Rules
-- Every balance change MUST have a `reference_no` (PO No, PR No, or manual Adjustment Ticket).
-- Transfers require "Source WH" and "Target WH".
-- "Issue" to Equipment requires the Equipment type to consume that item (e.g., Diesel Issue only to machinery, not to Food Warehouse).
+## 3. قواعد المخزون
+- كل تغيير في الرصيد يجب أن يحتوي على `reference_no` (رقم أمر شراء، رقم طلب شراء، أو تذكرة تعديل).
+- التحويلات تتطلب "مستودع مصدر" و "مستودع هدف".
+- عمليات "الصرف" للمعدات تتطلب أن يكون الصنف قابلاً للاستهلاك من قبل تلك المعدة (مثال: صرف الديزل للمعدات فقط، وليس لمستودع الأغذية).
 
-## 4. Procurement Approval Rules
-- POs with value > $X require CEO level approval (Financial Tier logic).
-- Items cannot be received at a Warehouse if they are not in an `APPROVED` PO.
+## 4. قواعد موافقة المشتريات
+- أوامر الشراء التي تتجاوز قيمتها مبلغ معين تتطلب موافقة من مستوى الإدارة العليا.
+- لا يمكن استلام الأصناف في المستودع إذا لم تكن موجودة في أمر شراء معتمد.

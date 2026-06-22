@@ -1,16 +1,16 @@
-# 09. Mobile API Strategy
+# 09. استراتيجية API الجوال (Mobile API Strategy)
 
-## Mobile-Specific Needs
-1. **Low Latency**: Minimize nested includes. Use `flat` resources where possible.
-2. **Offline Support**: Include `updated_at` timestamps for delta-syncing.
-3. **Optimized Payloads**: Mobile apps often only need IDs and Names for picklists.
-4. **Push Notifications**: Integrated with FCM (Firebase Cloud Messaging).
+## احتياجات الجوال الخاصة
+1. **زمن استجابة منخفض**: تقليل التداخلات (Includes). استخدام موارد "مسطحة" قدر الإمكان.
+2. **دعم العمل دون اتصال**: تضمين طوابع زمنية `updated_at` للمزامنة الجزئية.
+3. **أحجام بيانات محسنة**: تطبيقات الجوال غالباً تحتاج فقط المعرفات والأسماء لقوائم الاختيار.
+4. **التنبيهات (Push Notifications)**: متكاملة مع FCM (Firebase Cloud Messaging).
 
-## Endpoints Focused on Field Workers
-- `/api/v1/mobile/assignments`: View current assignments for the logged-in user.
-- `/api/v1/mobile/stock-movement`: Quick receipt/issue (Barcode-ready).
-- `/api/v1/mobile/projects` (Summary): Quick progress updates.
+## نقاط النهاية الموجهة للعاملين في الموقع
+- `/api/v1/mobile/assignments`: عرض التعيينات الحالية للمستخدم المسجل دخوله.
+- `/api/v1/mobile/stock-movement`: استلام/صرف سريع (جاهز للباركود).
+- `/api/v1/mobile/projects` (ملخص): تحديثات سريعة للتقدم.
 
-## Technical Requirements
-- **Sanctum Device Name**: Track device type (e.g., "Android - Galaxy S22").
-- **Asset Resizing**: Generate thumbnails for project attachments.
+## المتطلبات التقنية
+- **اسم جهاز Sanctum**: تتبع نوع الجهاز (مثل "Android - Galaxy S22").
+- **تغيير حجم الصور**: إنشاء صور مصغرة لمرفقات المشروع لتقليل استهلاك البيانات.

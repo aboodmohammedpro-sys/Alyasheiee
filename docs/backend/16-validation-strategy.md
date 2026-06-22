@@ -1,23 +1,23 @@
-# 16. Validation Strategy
+# 16. استراتيجية التحقق (Validation Strategy)
 
-## Two-Tier Validation
+## تحقق ذو مستويين
 
-### 1. Request Validation (Syntactic)
-- **Tool**: Laravel `FormRequests`.
-- **Location**: `app/Modules/{Module}/Requests/`.
-- **Purpose**: Validate data types, existence of foreign keys, and string lengths.
-- **Example**: `quantity` is numeric and > 0.
+### 1. التحقق من الطلب (Syntactic)
+- **الأداة**: `FormRequests` في لارافيل.
+- **الموقع**: `app/Modules/{Module}/Requests/`.
+- **الغرض**: التحقق من أنواع البيانات، وجود المفاتيح الخارجية، وأطوال النصوص.
+- **مثال**: حقل `quantity` رقمي وأكبر من 0.
 
-### 2. Service Validation (Semantic/Business)
-- **Tool**: Domain Exceptions / Custom logic.
-- **Location**: Inside `app/Modules/{Module}/Services/`.
-- **Purpose**: Complex cross-check logic.
-- **Example**: "Can we issue 50L of Diesel?"
-    - Check current stock in Warehouse A.
-    - Check if Project B is active.
-    - Check if Equipment C is working.
-- **Throw**: `StockInsufficientException`.
+### 2. التحقق في الخدمة (Semantic/Business)
+- **الأداة**: استثناءات النطاق (Domain Exceptions).
+- **الموقع**: داخل `app/Modules/{Module}/Services/`.
+- **الغرض**: منطق التحقق المتقاطع والمعقد.
+- **مثال**: "هل يمكننا صرف 50 لتر ديزل؟"
+    - تحقق من المخزون الحالي في المستودع أ.
+    - تحقق مما إذا كان المشروع ب نشطاً.
+    - تحقق مما إذا كانت المعدة ج تعمل.
+- **النتيجة**: رمي استثناء `StockInsufficientException` (نقص المخزون).
 
-## Validation Rules Best Practices
-- Never use direct strings in validation; use Enums for `status` (e.g., `Rule::enum(ProjectStatus::class)`).
-- Use `exists:table,id` carefully in multi-tenant environments (verify ownership).
+## أفضل الممارسات
+- عدم استخدام النصوص المباشرة في التحقق؛ استخدم Enums للحالات.
+- استخدام `exists:table,id` بحذر لضمان ملكية السجل.

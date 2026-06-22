@@ -1,18 +1,18 @@
-# 24. Performance Strategy
+# 24. استراتيجية الأداء (Performance Strategy)
 
-## Optimization Pillars
+## ركائز التحسين
 
-### 1. Database Level
-- **B-Tree Indexes**: On all Foreign Keys and frequently filtered columns (`status`, `code`, `dates`).
-- **Composite Indexes**: Specifically for `StockMovements` (`warehouse_id`, `item_id`, `created_at`).
-- **Partial Indexes**: On active assignments only to speed up resource lookups.
+### 1. مستوى قاعدة البيانات
+- **فهارس B-Tree**: على جميع المفاتيح الخارجية والأعمدة التي يتم تصفيتها بكثرة (`status`, `code`, `dates`).
+- **الفهارس المركبة**: خاصة لحركات المخزون (`warehouse_id`, `item_id`, `created_at`).
+- **الفهارس الجزئية**: على التعيينات النشطة فقط لتسريع البحث عن الموارد المتاحة.
 
-### 2. Code Level
-- **Eager Loading**: Enforce `with()` in Repositories to prevent N+1 queries.
-- **Lazy Collections**: Use for processing large CSV exports or massive stock audits to save RAM.
-- **Chunking**: Use `DB::table()->chunk()` for background updates.
+### 2. مستوى الكود
+- **التحميل المسبق (Eager Loading)**: فرض استخدام `with()` في الـ Repositories لمنع استعلامات N+1.
+- **Lazy Collections**: استخدامها لمعالجة تصدير ملفات CSV الكبيرة أو تدقيق المخزون الضخم لتوفير الذاكرة الرام.
+- **التجزئة (Chunking)**: استخدام `DB::table()->chunk()` للتحديثات في الخلفية.
 
-### 3. Frontend Integration
-- **API Filtering**: Only send the fields requested by the client.
-- **Pagination**: Default limit of 15, max 100.
-- **Debouncing**: Search inputs on web/mobile to prevent rapid-fire API calls.
+### 3. تكامل الواجهة الأمامية
+- **فلترة API**: إرسال الحقول المطلوبة فقط من قبل العميل.
+- **التصفح (Pagination)**: حد افتراضي 15، والحد الأقصى 100 سجل لكل صفحة.
+- **Debouncing**: تأخير إرسال مدخلات البحث لمنع الطلبات المتكررة السريعة.

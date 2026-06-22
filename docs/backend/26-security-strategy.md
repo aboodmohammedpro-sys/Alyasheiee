@@ -1,21 +1,21 @@
-# 26. Security Strategy
+# 26. استراتيجية الأمن (Security Strategy)
 
-## Multi-Layer Security
+## أمن متعدد الطبقات
 
-### 1. Infrastructure
-- **Rate Limiting**: Applied via Laravel Middleware to all API routes (e.g., 60 requests/min).
-- **SSL**: Force HTTPS.
+### 1. البنية التحتية
+- **تحديد معدل الطلبات (Rate Limiting)**: مطبق عبر برمجيات وسيطة (Middleware) لجميع مسارات API (مثال: 60 طلب/دقيقة).
+- **SSL**: فرض استخدام HTTPS دائماً.
 
-### 2. Application
-- **UUIDs**: Prevent ID enumeration attacks (hiding total count of entries).
-- **Mass Assignment**: Use `$fillable` or `$guarded` strictly.
-- **Path Traversal**: Validate and sanitize all file uploads. Store files outside of `public/` using Symlinks.
+### 2. التطبيق
+- **UUIDs**: منع هجمات تخمين المعرفات (ID Enumeration).
+- **التعيين الجماعي (Mass Assignment)**: استخدام `$fillable` أو `$guarded` بصرامة.
+- **رفع الملفات**: التحقق من جميع الملفات المرفوعة وتخزينها خارج المجلد العام `public/` باستخدام روابط رمزية (Symlinks).
 
-### 3. Data
-- **Soft Deletes**: Prevent accidental data loss.
-- **Audit Logs**: Record who changed what.
-- **Hashing**: Passwords must use `argon2id` (Laravel default).
+### 3. البيانات
+- **الحذف الناعم (Soft Deletes)**: منع الفقدان العرضي للبيانات.
+- **سجلات التدقيق (Audit Logs)**: تسجيل من قام بتغيير ماذا ومتى.
+- **التشفير**: يجب أن تستخدم كلمات المرور خوارزمية `argon2id`.
 
-### 4. Input Validation
-- **Sanitization**: Strip tags from text inputs logic.
-- **Strong Types**: Use Type Hinting throughout the Service layer.
+### 4. التحقق من المدخلات
+- **التطهير (Sanitization)**: إزالة الوسوم من المدخلات النصية.
+- **أنواع قوية**: استخدام Type Hinting في جميع أنحاء طبقة الخدمة.

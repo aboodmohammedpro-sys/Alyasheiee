@@ -1,41 +1,41 @@
-# 01. Domain Analysis
+# 01. تحليل النطاق (Domain Analysis)
 
-## 1. Project Management Domain
-- **Aggregate Root**: `Project`
-- **Entities**: `ProjectPhase`, `ProjectAttachment`
-- **Business Rules**: 
-  - A project cannot be "Completed" if it has active phases.
-  - Progress percentage is a weighted average of phase progress.
-  - History of status changes must be preserved.
+## 1. نطاق إدارة المشاريع
+- **جذر التجميع (Aggregate Root)**: `Project`
+- **الكيانات (Entities)**: `ProjectPhase`, `ProjectAttachment`
+- **قواعد العمل**:
+  - لا يمكن اعتبار المشروع "مكتملاً" إذا كان لديه مراحل نشطة.
+  - نسبة الإنجاز هي متوسط مرجح لتقدم المراحل.
+  - يجب الحفاظ على سجل تاريخي لتغييرات الحالة.
 
-## 2. Resources Domain (Teams, Employees, Equipment)
-- **Aggregate Roots**: `Employee`, `Equipment`, `Team`
-- **Entities**: `ProjectAssignment` (Polymorphic/Pivot with history)
-- **Business Rules**:
-  - Resources are assigned to projects for a specific time range.
-  - Equipment availability depends on its current status (Available, Working, Maintenance).
-  - Teams are predefined sets of roles (PM, Supervisor, etc.) that can be cloned and assigned.
+## 2. نطاق الموارد (الفرق، الموظفين، المعدات)
+- **جذور التجميع**: `Employee`, `Equipment`, `Team`
+- **الكيانات**: `ProjectAssignment` (علاقة متعددة الأشكال مع سجل تاريخي)
+- **قواعد العمل**:
+  - يتم تعيين الموارد للمشاريع لفترة زمنية محددة.
+  - تعتمد توافرية المعدات على حالتها الحالية (متوفرة، تعمل، صيانة).
+  - الفرق هي مجموعات محددة مسبقاً من الأدوار (مدير مشروع، مشرف، إلخ) يمكن نسخها وتعيينها.
 
-## 3. Procurement Domain
-- **Aggregate Root**: `PurchaseRequest` (PR), `PurchaseOrder` (PO)
-- **Entities**: `PurchaseRequestItem`, `PurchaseOrderItem`, `Supplier`
-- **Business Rules**:
-  - PR requires multiple levels of approval (Defined in Policy/Workflow).
-  - PO can only be generated from an Approved PR.
-  - Quantities in PO cannot exceed PR approved quantities.
+## 3. نطاق المشتريات
+- **جذر التجميع**: `PurchaseRequest` (طلب شراء - PR), `PurchaseOrder` (أمر شراء - PO)
+- **الكيانات**: `PurchaseRequestItem`, `PurchaseOrderItem`, `Supplier`
+- **قواعد العمل**:
+  - يتطلب طلب الشراء مستويات متعددة من الموافقة.
+  - لا يمكن إنشاء أمر شراء إلا من طلب شراء معتمد.
+  - الكميات في أمر الشراء لا يمكن أن تتجاوز الكميات المعتمدة في طلب الشراء.
 
-## 4. Inventory & Warehouse Domain
-- **Aggregate Root**: `Warehouse`
-- **Entities**: `InventoryItem`, `StockMovement`, `ItemCategory`
-- **Value Objects**: `Quantity`, `UnitPrice`
-- **Business Rules**:
-  - Warehouses are independent and not locked to a specific project.
-  - Inventory balance is calculated via `StockMovements` summary (or cached snapshots).
-  - "Issue" movements must have a valid `Destination` (Project, Equipment, etc.).
-  - Stock levels cannot go below zero for physical items.
+## 4. نطاق المخازن والمخزون
+- **جذر التجميع**: `Warehouse`
+- **الكيانات**: `InventoryItem`, `StockMovement`, `ItemCategory`
+- **كائنات القيم (Value Objects)**: `Quantity`, `UnitPrice`
+- **قواعد العمل**:
+  - المستودعات مستقلة وليست مقفلة لمشروع معين.
+  - يتم حساب رصيد المخزون عبر ملخص حركات المخزون.
+  - حركات "الصرف" يجب أن تحتوي على "وجهة" صالحة (مشروع، معدة، إلخ).
+  - لا يمكن أن ينخفض رصيد المخزون عن الصفر للعناصر المادية.
 
-## 5. Relationships Overview
-- `Project` has many `Assignments` (Equipment/Employees).
-- `Warehouse` has many `StockMovements`.
-- `StockMovement` morphs to `Destination` (Project, Equipment, maintenance).
-- `Supplier` has many `PurchaseOrders`.
+## 5. نظرة عامة على العلاقات
+- المشروع لديه العديد من "التعيينات" (معدات/موظفين).
+- المستودع لديه العديد من حركات المخزون.
+- حركة المخزون ترتبط بوجهة (مشروع، معدة، صيانة).
+- المورد لديه العديد من أوامر الشراء.

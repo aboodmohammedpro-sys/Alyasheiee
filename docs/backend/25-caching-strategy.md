@@ -1,18 +1,18 @@
-# 25. Caching Strategy
+# 25. استراتيجية التخزين المؤقت (Caching Strategy)
 
-## Implementation Layers
+## طبقات التنفيذ
 
-### 1. Application Cache (Redis)
-- **Picklists**: Store Warehouse lists, Supplier lists, and Category trees. TTL: 1 hour.
-- **Auth**: User permissions and roles. Cleared on permission update via Spatie.
-- **Aggregates**: Dashboard stats (Total active projects, Stock alerts). Recalculated every 15 minutes.
+### 1. ذاكرة التخزين المؤقت للتطبيق (Redis)
+- **قوائم الاختيار (Picklists)**: تخزين قوائم المستودعات، الموردين، وشجرة الأصناف. مدة الصلاحية: ساعة واحدة.
+- **الصلاحيات**: صلاحيات وأدوار المستخدمين. يتم مسحها عند تحديث الصلاحيات.
+- **القيم المجمعة (Aggregates)**: إحصائيات لوحة التحكم (إجمالي المشاريع النشطة، تنبيهات المخزون). يتم إعادة حسابها كل 15 دقيقة.
 
-### 2. Query Results
-- Cache expensive queries like "Average fuel consumption per equipment" for 10 minutes.
+### 2. نتائج الاستعلامات
+- تخزين الاستعلامات المكلفة مؤقتاً مثل "متوسط استهلاك الوقود لكل معدة" لمدة 10 دقائق.
 
-### 3. Model Caching
-- Use `laravel-model-caching` for static tables like `EquipmentTypes` or `Departments`.
+### 3. تخزين النماذج (Model Caching)
+- استخدام `laravel-model-caching` للجداول شبه الثابتة مثل أنواع المعدات أو الأقسام.
 
-## Cache Invalidation
-- Use **Tags** for easy clearing.
-- Example: When a PO is received, clear the `warehouse_stock_{id}` tag.
+## إبطال ذاكرة التخزين المؤقت (Cache Invalidation)
+- استخدام **الوسوم (Tags)** لسهولة المسح.
+- مثال: عند استلام أمر شراء، يتم مسح وسم `warehouse_stock_{id}`.

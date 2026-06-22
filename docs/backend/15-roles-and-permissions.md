@@ -1,23 +1,22 @@
-# 15. Roles and Permissions Matrix
+# 15. مصفوفة الأدوار والصلاحيات (Roles and Permissions Matrix)
 
-## Default Roles
-1. **System Admin**: Full system access, config management.
-2. **Company Manager**: Global overview, high-level reports.
-3. **Project Manager**: Project site control, assignment oversight.
-4. **Procurement Officer**: Supplier management, PO creation.
-5. **Warehouse Keeper**: Stock movements, Goods Receipting.
-6. **Accountant**: Financial reports, pricing verification.
+## الأدوار الافتراضية
+1. **مدير النظام (System Admin)**: وصول كامل، إدارة الإعدادات.
+2. **مدير الشركة**: نظرة عامة شاملة، تقارير عالية المستوى.
+3. **مدير المشروع**: التحكم في موقع المشروع، الإشراف على التعيينات.
+4. **مسؤول المشتريات**: إدارة الموردين، إنشاء أوامر الشراء.
+5. **أمين المستودع**: حركات المخزون، استلام البضائع.
+6. **المحاسب**: التقارير المالية، التحقق من الأسعار.
 
-## Permission Map (Examples)
-| Module | Permission | Admin | PM | Procurement | WH Keeper |
+## خريطة الصلاحيات (أمثلة)
+| الموديول | الصلاحية | أدمن | مدير مشروع | مشتريات | أمين مخزن |
 |---|---|---|---|---|---|
-| Project | `view` | Yes | Own | Yes | Yes |
-| Project | `create` | Yes | No | No | No |
-| Assignment | `manage` | Yes | Yes | No | No |
-| Procurement | `request` | Yes | Yes | Yes | No |
-| Procurement | `approve`| Yes | No | Yes | No |
-| Inventory | `transfer`| Yes | No | No | Yes |
-| Inventory | `view-qty`| Yes | Yes | Yes | Yes |
+| المشاريع | `view` | نعم | ممتلكاته | نعم | نعم |
+| المشاريع | `create` | نعم | لا | لا | لا |
+| التعيينات | `manage` | نعم | نعم | لا | لا |
+| المشتريات | `request` | نعم | نعم | نعم | لا |
+| المشتريات | `approve`| نعم | لا | نعم | لا |
+| المخزون | `transfer`| نعم | لا | لا | نعم |
 
-## Policy Customizations
-- Policies should check both the **Permission String** and the **Ownership** (e.g., "Can I edit this PO? Yes, if I have `procurement.edit` AND its status is `draft`").
+## تخصيص السياسات
+يجب أن تتحقق السياسات من كل من **نص الصلاحية** و**الملكية** (مثال: "هل يمكنني تعديل أمر الشراء هذا؟ نعم، إذا كان لدي صلاحية `procurement.edit` وحالته `draft`").

@@ -1,10 +1,10 @@
-# 19. Data Transfer Objects (DTO)
+# 19. كائنات نقل البيانات (DTO)
 
-## Why DTOs?
-Passing associative arrays between Controllers and Services is error-prone. DTOs provide type safety and structured data.
+## لماذا DTOs؟
+تمرير المصفوفات الارتباطية (associative arrays) بين Controllers و Services عرضة للأخطاء. توفر الـ DTOs أماناً للأنواع وبيانات مهيكلة.
 
-## Implementation (Laravel 11/12 specific)
-We use PHP 8 readonly properties for DTOs.
+## التنفيذ (خاص بـ Laravel 11/12)
+نستخدم خصائص PHP 8 للقراءة فقط (readonly properties).
 
 ```php
 readonly class CreateProjectDTO {
@@ -25,7 +25,7 @@ readonly class CreateProjectDTO {
 }
 ```
 
-## Benefits
-- Clear contract between Controller and Service.
-- No more `$data['nmae']` typos.
-- IDE Autocomplete.
+## الفوائد
+- عقد واضح بين الـ Controller والـ Service.
+- لا توجد أخطاء إملائية في المفاتيح مثل `$data['nmae']`.
+- إكمال تلقائي في محررات الأكواد (IDE).

@@ -1,14 +1,14 @@
-# 32. Soft Delete Strategy
+# 32. استراتيجية الحذف الناعم (Soft Delete Strategy)
 
-## Implementation
-- Every domain model MUST use the `SoftDeletes` trait.
-- Column: `deleted_at`.
+## التنفيذ
+- يجب أن يستخدم كل نموذج نطاق (Domain Model) ميزة `SoftDeletes`.
+- العمود: `deleted_at`.
 
-## Audit Connection
-- When a resource is soft deleted, the `Audit Log` must record the user responsible.
-- Use `deleted_by` foreign key in the table schema for quick filtering of "Who deleted this project?".
+## الارتباط بالتدقيق
+- عند حذف مورد حذفاً ناعماً، يجب أن يسجل سجل التدقيق المستخدم المسؤول.
+- استخدام مفتاح خارجي `deleted_by` في هيكل الجدول للتصفية السريعة لـ "من قام بحذف هذا المشروع؟".
 
-## Rules
-- **Cascading Soft Deletes**: Carefully handle children. If a Project is deleted, its Phases should also be marked as deleted (managed via Observers).
-- **Uniqueness**: Be aware that soft-deleted items still exist. Use a unique index that includes `deleted_at` or handles `null` values correctly to allow re-creating a project with the same code after deletion.
-- **Cleanup**: Provide an "Admin Trash" view where items can be permanently deleted or restored.
+## القواعد
+- **حذف الأبناء المتسلسل**: التعامل بحذر مع الأبناء. إذا تم حذف مشروع، يجب أيضاً تمييز مراحله كمحذوفة (يتم إدارتها عبر Observers).
+- **الفرادة**: كن حذراً من أن العناصر المحذوفة ناعماً لا تزال موجودة. استخدم فهرس فريد يتضمن `deleted_at` للسماح بإعادة إنشاء مشروع بنفس الكود بعد الحذف.
+- **التنظيف**: توفير عرض "سلة المهملات" للمديرين حيث يمكن استعادة العناصر أو حذفها نهائياً.

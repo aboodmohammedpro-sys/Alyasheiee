@@ -1,20 +1,20 @@
-# 27. Audit Log Strategy
+# 27. استراتيجية سجلات التدقيق (Audit Log Strategy)
 
-## Tracking Everything
-- **Package**: `Spatie Activitylog`.
-- **Global Rule**: All major Models (Project, PO, StockMovement) must use the `LogsActivity` trait.
+## تتبع كل شيء
+- **الحزمة**: `Spatie Activitylog`.
+- **القاعدة العامة**: يجب أن تستخدم جميع النماذج الكبيرة (المشروع، أمر الشراء، حركة المخزون) ميزة `LogsActivity`.
 
-## Information to Record
-1. **User**: Who initiated the change.
-2. **Action**: `created`, `updated`, `deleted`, `restored`.
-3. **Payload**:
-    - `old`: Values before update.
-    - `attributes`: Values after update.
-4. **Metadata**:
-    - `ip_address`
-    - `user_agent`
-    - `request_id` (for tracing)
+## المعلومات المسجلة
+1. **المستخدم**: من قام بالعملية.
+2. **الإجراء**: إنشاء، تحديث، حذف، استعادة.
+3. **البيانات**:
+    - `old`: القيم قبل التحديث.
+    - `attributes`: القيم بعد التحديث.
+4. **البيانات الوصفية**:
+    - عنوان IP
+    - وكيل المستخدم (User Agent)
+    - معرف الطلب (للتتبع)
 
-## Retention Policy
-- Audit logs should never be hard deleted from the application. 
-- Archive logs older than 2 years to a secondary cold storage database if performance impacts main operations.
+## سياسة الاحتفاظ بالبيانات
+- يجب عدم حذف سجلات التدقيق نهائياً من التطبيق.
+- أرشفة السجلات الأقدم من سنتين في قاعدة بيانات ثانوية إذا تأثر أداء العمليات الرئيسية.

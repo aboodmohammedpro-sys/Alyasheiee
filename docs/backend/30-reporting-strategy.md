@@ -1,16 +1,16 @@
-# 30. Reporting Strategy
+# 30. استراتيجية التقارير (Reporting Strategy)
 
-## Technology Stack
-- **Engine**: `Laravel-Excel` (Maatwebsite).
-- **Format Support**: XLSX, CSV, PDF (via Snappy or DomPDF).
+## التقنيات المستخدمة
+- **المحرك**: `Laravel-Excel`.
+- **دعم التنسيقات**: XLSX, CSV, PDF.
 
-## Export Architecture
-1. User clicks "Export Inventory".
-2. Backend creates a `ReportExport` record.
-3. Job is dispatched with the `ReportExport` ID.
-4. User receives a notification ("Your report is ready").
-5. User downloads from a secure temporary URL.
+## معمارية التصدير
+1. ينقر المستخدم على "تصدير المخزون".
+2. ينشئ النظام سجل `ReportExport`.
+3. يتم إرسال مهمة (Job) برقم المعرف.
+4. يتلقى المستخدم إشعاراً ("تقريرك جاهز").
+5. يقوم المستخدم بالتحميل من رابط مؤقت آمن.
 
-## High Performance Reporting
-- Use **Chunking** and **FromQuery** to stream data directly from DB to file without filling RAM.
-- Utilize **Eloquent Snapshots** for historical reports (e.g., "Inventory level on Jan 1st").
+## تقارير عالية الأداء
+- استخدام **Chunking** و **FromQuery** لبث البيانات مباشرة من قاعدة البيانات إلى الملف دون ملء الذاكرة الرام.
+- استخدام **Eloquent Snapshots** للتقارير التاريخية (مثال: مستويات المخزون في أول يناير).

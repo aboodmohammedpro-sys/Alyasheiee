@@ -1,15 +1,15 @@
-# 33. Future Scalability
+# 33. التوسع المستقبلي (Future Scalability)
 
-## Roadmap for Scale
+## خارطة الطريق للتوسع
 
-### 1. Database Sharding
-In the future, if the number of movements grows into the tens of millions, we can shard current stock vs historical movements or shard by Region/Branch.
+### 1. تقسيم قاعدة البيانات (Sharding)
+في المستقبل، إذا نمت عدد الحركات إلى عشرات الملايين، يمكننا تقسيم المخزون الحالي مقابل الحركات التاريخية، أو التقسيم حسب المنطقة/الفرع.
 
-### 2. Service Extraction
-The current **Modular Monolith** architecture allows extracting the `Procurement` or `Warehouse` module into a standalone Microservice using Laravel side-by-side or Go. Shared models should be moved to a shared package.
+### 2. استخراج الخدمات (Service Extraction)
+تسمح معمارية الـ **Modular Monolith** الحالية باستخراج موديول المشتريات أو المستودعات إلى خدمة مصغرة مستقلة (Microservice) لاحقاً بسهولة.
 
-### 3. Materialized Views
-For complex reports (e.g., "Monthly Fuel Consumption by Project Type"), use PostgreSQL Materialized Views refreshed via background jobs to provide sub-second dashboard loads.
+### 3. الجداول المنطقية (Materialized Views)
+للتقارير المعقدة (مثل استهلاك الوقود الشهري حسب نوع المشروع)، استخدم Materialized Views في PostgreSQL يتم تحديثها عبر مهام الخلفية لتوفير سرعة استجابة فائقة للوحة التحكم.
 
-### 4. CDN & Asset Management
-Storage of high-resolution site photos should be moved to S3-compatible storage (DigitalOcean Spaces, AWS S3) to keep the local server load low.
+### 4. إدارة الأصول والسحابة
+تخزين صور المواقع عالية الدقة يجب نقله إلى تخزين متوافق مع S3 (مثل DigitalOcean Spaces أو AWS S3) للحفاظ على خفة حمل الخادم المحلي.

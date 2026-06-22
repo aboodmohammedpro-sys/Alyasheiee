@@ -1,0 +1,581 @@
+﻿On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .github/workflows/ci.yml
+	new file:   docs/backend/00-system-vision.md
+	new file:   docs/backend/01-domain-analysis.md
+	new file:   docs/backend/02-bounded-contexts.md
+	new file:   docs/backend/03-module-architecture.md
+	new file:   docs/backend/04-folder-structure.md
+	new file:   docs/backend/05-database-design.md
+	new file:   docs/backend/06-erd-design.md
+	new file:   docs/backend/07-relationships.md
+	new file:   docs/backend/08-api-design.md
+	new file:   docs/backend/09-mobile-api.md
+	new file:   docs/backend/10-web-api.md
+	new file:   docs/backend/11-shared-api.md
+	new file:   docs/backend/12-response-format.md
+	new file:   docs/backend/13-authentication.md
+	new file:   docs/backend/14-authorization.md
+	new file:   docs/backend/15-roles-and-permissions.md
+	new file:   docs/backend/16-validation-strategy.md
+	new file:   docs/backend/17-service-layer.md
+	new file:   docs/backend/18-repository-layer.md
+	new file:   docs/backend/19-dto-layer.md
+	new file:   docs/backend/20-enums.md
+	new file:   docs/backend/21-business-rules.md
+	new file:   docs/backend/22-business-flows.md
+	new file:   docs/backend/23-transaction-management.md
+	new file:   docs/backend/24-performance-strategy.md
+	new file:   docs/backend/25-caching-strategy.md
+	new file:   docs/backend/26-security-strategy.md
+	new file:   docs/backend/27-audit-log-strategy.md
+	new file:   docs/backend/28-error-handling.md
+	new file:   docs/backend/29-background-jobs.md
+	new file:   docs/backend/30-reporting-strategy.md
+	new file:   docs/backend/31-indexing-strategy.md
+	new file:   docs/backend/32-soft-delete-strategy.md
+	new file:   docs/backend/33-future-scalability.md
+	new file:   docs/backend/34-development-roadmap.md
+	new file:   docs/backend/35-important-notes.md
+	new file:   docs/backend/36-cicd-strategy.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_status.txt
+	git_status_utf8.txt
+
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git
+
+
+Mode            LastWriteTime
+----            -------------
+d-----    6/21/2026  12:20 AM
+d-----    6/21/2026  12:20 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/23/2026   1:54 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:22 AM
+-a----    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ho
+    oks
+
+
+Mode            LastWriteTime
+----            -------------
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+-a----    6/21/2026  12:20 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\in
+    fo
+
+
+Mode            LastWriteTime
+----            -------------
+-a----    6/21/2026  12:20 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects
+
+
+Mode            LastWriteTime
+----            -------------
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/21/2026  12:20 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/23/2026   2:03 AM
+d-----    6/21/2026  12:20 AM
+d-----    6/21/2026  12:20 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\0c
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\0e
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\13
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\1a
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\30
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\33
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\3a
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\3b
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\49
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\4a
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\4b
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/21/2026  12:20 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\51
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\52
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\60
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\63
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\6b
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+-ar---    6/23/2026   2:03 AM
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\6d
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\71
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\72
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\75
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\7c
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\87
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\88
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\93
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\9b
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\b4
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\c6
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\cf
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\d3
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\d8
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\dc
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\ef
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\f6
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\ob
+    jects\ff
+
+
+Mode            LastWriteTime
+----            -------------
+-ar---    6/23/2026   2:03 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.git\re
+    fs
+
+
+Mode            LastWriteTime
+----            -------------
+d-----    6/21/2026  12:20 AM
+d-----    6/21/2026  12:20 AM
+
+
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.github
+
+
+Mode            LastWriteTime
+----            -------------
+d-----    6/23/2026   1:55 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\.github
+    \workflows
+
+
+Mode            LastWriteTime
+----            -------------
+-a----    6/23/2026   1:55 AM
+
+
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\docs
+
+
+Mode            LastWriteTime
+----            -------------
+d-----    6/23/2026   1:55 AM
+
+
+    Directory: C:\Users\new\D
+    esktop\alyasheiee\docs\ba
+    ckend
+
+
+Mode            LastWriteTime
+----            -------------
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:44 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:45 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:46 AM
+-a----    6/23/2026   1:47 AM
+-a----    6/23/2026   1:47 AM
+-a----    6/23/2026   1:47 AM
+-a----    6/23/2026   1:55 AM
+
+

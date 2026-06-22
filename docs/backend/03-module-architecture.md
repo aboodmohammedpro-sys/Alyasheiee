@@ -1,34 +1,34 @@
-# 03. Module Architecture (Modular Monolith)
+# 03. معمارية الموديولات (Modular Monolith)
 
-## Architectural Pattern
-The system follows a **Modular Monolith** approach. While physically residing in one repository, each domain is logically isolated to allow future extraction into microservices if needed.
+## النمط المعماري
+يتبع النظام نهج **Modular Monolith**. بينما يوجد في مستودع برمجيات واحد (Repository)، يتم فصل كل نطاق منطقياً للسماح باستخراجه مستقبلاً إلى خدمات مصغرة (Microservices) إذا لزم الأمر.
 
-## Module Structure Template
-Every module in `app/Modules/{ModuleName}` will follow this structure:
+## هيكل الموديول النموذجي
+كل موديول في `app/Modules/{ModuleName}` سيتتبع هذا الهيكل:
 
 ```text
 app/Modules/{ModuleName}/
-├── Controllers/         # Thin controllers for API/Web
-├── Models/              # Eloquent models & Query Scopes
+├── Controllers/         # وحدات التحكم النحيفة لـ API
+├── Models/              # نماذج Eloquent و Query Scopes
 ├── Database/
-│   ├── Migrations/
-│   ├── Factories/
-│   └── Seeders/
-├── Services/            # Business Logic (The Brain)
-├── Repositories/        # Data Access Layer
-├── DTOs/                # Data Transfer Objects
-├── Enums/               # Domain-specific Constants
-├── Requests/            # Form Validation
-├── Resources/           # API Transformation
-├── Policies/            # Authorization
-├── Events/              # Domain Events
-├── Listeners/           # Task triggers
-├── Jobs/                # Background processing
-├── Exceptions/          # Domain exceptions
-└── Observers/           # Model lifecycle hooks
+│   ├── Migrations/      # تهجير قواعد البيانات
+│   ├── Factories/       # مصانع البيانات للاختبار
+│   └── Seeders/         # بذور البيانات الأولية
+├── Services/            # منطق العمل (العقل المدبر)
+├── Repositories/        # طبقة الوصول للبيانات
+├── DTOs/                # كائنات نقل البيانات
+├── Enums/               # الثوابت الخاصة بالنطاق
+├── Requests/            # التحقق من صحة البيانات
+├── Resources/           # تحويل بيانات API
+├── Policies/            # الصلاحيات
+├── Events/              # أحداث النطاق
+├── Listeners/           # مستمعي الأحداث
+├── Jobs/                # المعالجة في الخلفية
+├── Exceptions/          # الاستثناءات الخاصة بالنطاق
+└── Observers/           # مراقبي دورة حياة النماذج
 ```
 
-## Communication Between Modules
-1. **Direct Service Calls**: For synchronous, critical operations.
-2. **Domain Events**: For asynchronous, side-effect operations (e.g., notifying PM when a request is approved).
-3. **Internal APIs**: One module should not directly access another module's Repository/Model if it doesn't "own" that data (strictly enforced via architecture).
+## التواصل بين الموديولات
+1. **استدعاء الخدمات المباشر**: للعمليات الحرجة والمتزامنة.
+2. **أحداث النطاق (Domain Events)**: للعمليات الجانبية غير المتزامنة (مثل إخطار مدير المشروع عند الموافقة على طلب).
+3. **Internal APIs**: لا يجب لموديول الوصول مباشرة إلى مستودع أو نموذج موديول آخر إذا لم يكن "يملك" تلك البيانات (يتم فرض ذلك بصرامة عبر المعمارية).

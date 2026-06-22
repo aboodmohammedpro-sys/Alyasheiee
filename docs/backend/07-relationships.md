@@ -1,35 +1,35 @@
-# 07. Relationships
+# 07. العلاقات البرمجية (Relationships)
 
-## Mapping Laravel Eloquent Relations
+## رسم علاقات Laravel Eloquent
 
-### Project Module
-- **Project**:
-    - `phases()`: `HasMany(ProjectPhase)`
-    - `assignments()`: `HasMany(ProjectAssignment)`
-    - `attachments()`: `MorphMany(Media)`
-    - `stockMovements()`: `MorphMany(StockMovement, 'destination')`
+### موديول المشاريع
+- **المشروع (Project)**:
+    - `phases()`: `HasMany(ProjectPhase)` (لديه العديد من المراحل)
+    - `assignments()`: `HasMany(ProjectAssignment)` (لديه العديد من التعيينات)
+    - `attachments()`: `MorphMany(Media)` (لديه مرفقات متعددة)
+    - `stockMovements()`: `MorphMany(StockMovement, 'destination')` (حركات المخزون الصادرة له)
 
-### Resource Module
-- **Employee**:
+### موديول الموارد
+- **الموظف (Employee)**:
     - `assignments()`: `MorphMany(ProjectAssignment, 'assignable')`
-- **Equipment**:
+- **المعدة (Equipment)**:
     - `assignments()`: `MorphMany(ProjectAssignment, 'assignable')`
-    - `movements()`: `MorphMany(StockMovement, 'destination')`
+    - `movements()`: `MorphMany(StockMovement, 'destination')` (حركات المخزون المسجلة عليها كالديزل)
 
-### Procurement Module
-- **PurchaseRequest**:
+### موديول المشتريات
+- **طلب الشراء (PurchaseRequest)**:
     - `items()`: `HasMany(PurchaseRequestItem)`
     - `order()`: `HasOne(PurchaseOrder)`
     - `requester()`: `BelongsTo(User)`
-- **PurchaseOrder**:
+- **أمر الشراء (PurchaseOrder)**:
     - `supplier()`: `BelongsTo(Supplier)`
     - `request()`: `BelongsTo(PurchaseRequest)`
-    - `movements()`: `HasMany(StockMovement)` (Goods Receipt)
+    - `movements()`: `HasMany(StockMovement)` (إيصالات الاستلام)
 
-### Warehouse Module
-- **Warehouse**:
+### موديول المستودعات
+- **المستودع (Warehouse)**:
     - `movements()`: `HasMany(StockMovement)`
-- **StockMovement**:
+- **حركة المخزون (StockMovement)**:
     - `warehouse()`: `BelongsTo(Warehouse)`
-    - `destination()`: `MorphTo()` (Project, Equipment, maintenance, etc.)
-    - `source()`: `MorphTo()` (PurchaseOrder, Adjustment, etc.)
+    - `destination()`: `MorphTo()` (مشروع، معدة، صيانة، إلخ)
+    - `source()`: `MorphTo()` (أمر شراء، تعديل، إلخ)

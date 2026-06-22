@@ -1,24 +1,24 @@
-# 23. Transaction Management
+# 23. إدارة العمليات (Transaction Management)
 
-## Critical Atomic Operations
-The following operations MUST be wrapped in `DB::transaction()` to ensure atomicity.
+## العمليات الذرية الحرجة
+العمليات التالية يجب أن تُغلف في `DB::transaction()` لضمان سلامة البيانات.
 
-### 1. Procurement Finalization
-- Update `PurchaseOrder` status to `RECEIVED`.
-- Create `StockMovement` records for all items.
-- Update `Inventory` levels (if caching balance).
+### 1. إتمام عمليات المشتريات
+- تحديث حالة `PurchaseOrder` إلى `RECEIVED`.
+- إنشاء سجلات `StockMovement` لجميع الأصناف.
+- تحديث مستويات المخزون (في حال استخدام ذاكرة تخزين مؤقت للرصيد).
 
-### 2. Resource Reassignment
-- Mark current `ProjectAssignment` as `ended`.
-- Create new `ProjectAssignment` for Target Project.
-- Update `Equipment` or `Employee` metadata.
+### 2. إعادة تعيين الموارد
+- وضع علامة "منتهي" على `ProjectAssignment` الحالي.
+- إنشاء `ProjectAssignment` جديد للمشروع المستهدف.
+- تحديث البيانات الوصفية للمعدة أو الموظف.
 
-### 3. Stock Transfer
-- Create `Issue` movement from Source Warehouse.
-- Create `Receipt` movement in Target Warehouse.
-- Both must succeed or both fail.
+### 3. تحويل المخزون
+- إنشاء حركة "صرف" من المستودع المصدر.
+- إنشاء حركة "استلام" في المستودع الهدف.
+- يجب أن ينجح كلاهما أو يفشل كلاهما.
 
-## Usage in Laravel
+## الاستخدام في Laravel
 ```php
 DB::transaction(function () use ($dto) {
     $this->repo->updateOrder($dto);

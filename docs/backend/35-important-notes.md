@@ -1,13 +1,13 @@
-# 35. Important Architectural Notes
+# 35. ملاحظات معمارية هامة
 
-## Critical Warnings for Developers
-1. **Never Bypass Repositories**: Do not use `Project::where(...)` in a Controller.
-2. **Use Enums**: If you see a string like `'active'` in a service, refactor to `ProjectStatus::ACTIVE`.
-3. **Check Policies**: Every new action in a Controller MUST have a corresponding policy check.
-4. **Mind the N+1**: Always check Laravel Telescope or Debugbar for duplicated queries in index methods.
-5. **Polymorphism Power**: Remember that `StockMovement` can point to anything. If you add a "Maintenance" module, it can immediately start receiving stock without changing the Warehouse code.
+## تحذيرات حرجة للمطورين
+1. **لا تتجاوز الـ Repositories**: لا تستخدم `Project::where(...)` مباشرة في وحدة التحكم.
+2. **استخدم Enums**: إذا رأيت نصاً مثل `'active'` في خدمة، قم بتحويله فوراً إلى `ProjectStatus::ACTIVE`.
+3. **تحقق من السياسات**: كل إجراء جديد في وحدة التحكم يجب أن يحتوي على تحقق من السياسة المقابلة.
+4. **انتبه لمشكلة N+1**: تحقق دائماً من Laravel Telescope من وجود استعلامات مكررة في طرق العرض.
+5. **قوة تعدد الأشكال (Polymorphism)**: تذكر أن حركة المخزون يمكن أن تشير إلى أي شيء. إذا أضفت موديول صيانة، يمكنه البدء في استلام المخزون فوراً دون تغيير كود المستودعات.
 
-## Enterprise Mindset
-Build for the company that will use this for 10 years, not the developer who wants to finish in 10 minutes.
-- **Documentation**: Keep these files updated.
-- **Tests**: Write Feature tests for every business flow (Procurement Flow is priority #1).
+## عقلية المؤسسات
+ابنِ للشركة التي ستستخدم هذا النظام لـ 10 سنوات، وليس للمطور الذي يريد إنهاء العمل في 10 دقائق.
+- **التوثيق**: حافظ على تحديث هذه الملفات.
+- **الاختبارات**: اكتب اختبارات Feature لكل تدفق عمل (تدفق المشتريات هو الأولوية رقم 1).

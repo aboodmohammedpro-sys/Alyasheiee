@@ -1,18 +1,18 @@
-# 31. Indexing Strategy
+# 31. استراتيجية الفهرسة (Indexing Strategy)
 
-## Optimized PostgreSQL Indexes
+## فهارس PostgreSQL المحسنة
 
-### 1. Unique Constraints
-- `projects(code)`: Critical for business logic.
-- `suppliers(code)`: Business identifier.
-- `warehouses(name)`: Within a specific region/type.
+### 1. قيود الفرادة (Unique Constraints)
+- `projects(code)`: حيوي لمنطق العمل.
+- `suppliers(code)`: معرف المورد.
+- `warehouses(name)`: داخل منطقة/نوع معين.
 
-### 2. Foreign Key Indexes
-- Every `_id` field must be indexed. Laravel doesn't do this by default in migrations without explicit calls.
+### 2. فهارس المفاتيح الخارجية
+- يجب فهرسة كل حقل `_id`. لارافيل لا يفعل ذلك تلقائياً في التهجير دون طلب صريح.
 
-### 3. Date-Based Indexes
-- `stock_movements(created_at)`: Necessary for time-series reports.
-- `project_assignments(start_date, end_date)`: For checking overlaps.
+### 3. الفهارس القائمة على التاريخ
+- `stock_movements(created_at)`: ضرورية لتقارير السلاسل الزمنية.
+- `project_assignments(start_date, end_date)`: للتحقق من التداخلات.
 
-### 4. Search Indexes
-- Use PostgreSQL **GIN** indexes for searchable text fields like `project description` or `inventory names` to support partial matching without full-table scans.
+### 4. فهارس البحث
+- استخدام فهارس **GIN** في PostgreSQL للحقول النصية القابلة للبحث مثل وصف المشروع أو أسماء الأصناف لدعم البحث الجزئي السريع.
