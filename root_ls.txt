@@ -1,0 +1,21 @@
+﻿
+
+    Directory: C:\Users\new\Desktop\alyasheiee
+
+
+Mode                 LastWriteTime         Length Name                         
+----                 -------------         ------ ----                         
+d-----         6/23/2026   1:55 AM                .github                      
+d-----         6/23/2026   4:41 AM                app                          
+d-----         6/23/2026   4:41 AM                bootstrap                    
+d-----         6/23/2026   4:41 AM                database                     
+d-----         6/23/2026   1:44 AM                docs                         
+d-----         6/23/2026   4:41 AM                routes                       
+d-----         6/23/2026   4:42 AM                vendor                       
+-a----         6/23/2026   5:44 AM           1154 .env                         
+-a----         6/23/2026   5:46 AM             39 migrate_error.txt            
+-a----         6/23/2026   5:39 AM            252 pg_service.txt               
+-a----         6/23/2026   5:43 AM             49 psql_test.txt                
+-a----         6/23/2026   5:49 AM              0 root_ls.txt                  
+
+

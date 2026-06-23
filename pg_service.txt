@@ -1,0 +1,6 @@
+﻿
+Name              PathName                                                     
+----              --------                                                     
+postgresql-x64-18 "C:\Program Files\PostgreSQL\18\bin\pg_ctl.exe" runservice...
+
+

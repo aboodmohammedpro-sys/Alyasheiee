@@ -1,0 +1,5 @@
+﻿commit 8982e57cb10b3ccbc92e708605eabd6fdf7195a1
+Author: ERP Architect <architect@alyasheiee.com>
+Date:   Tue Jun 23 03:20:21 2026 +0300
+
+    infrastructure: initialize Laravel project and install core packages
