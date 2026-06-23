@@ -19,4 +19,11 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('requests', \App\Modules\Procurement\Controllers\PurchaseRequestController::class);
     });
 
+    // إدارة الوقود
+    Route::prefix('fuel')->group(function () {
+        Route::get('tanks', [\App\Modules\FuelManagement\Controllers\FuelController::class, 'getTanks']);
+        Route::post('tanks', [\App\Modules\FuelManagement\Controllers\FuelController::class, 'storeTank']);
+        Route::post('dispense', [\App\Modules\FuelManagement\Controllers\FuelController::class, 'dispense']);
+    });
+
 });
