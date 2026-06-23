@@ -1,0 +1,5 @@
+﻿Request Created: REQ-CWBODPIX by Recorder. Status: draft
+Request Confirmed by Senior Recorder. Status: confirmed
+Request Approved by PM and Warehouse Assigned. Status: approved
+
+DISBURSEMENT WORKFLOW TEST PASSED!

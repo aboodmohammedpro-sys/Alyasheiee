@@ -226,3 +226,87 @@
 #13 C:/Users/new/Desktop/alyasheiee/test_logic.php(64): App/Modules/DailyOperations/Services/DailyLogService->createDailyLog(Array)
 #14 {main}
 "} 
+[2026-06-23 17:03:29] local.ERROR: SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "password" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (a217dfb2-0f11-44d9-bf6d-a8234b87722f, Senior Recorder, senior@alyasheiee.com, null, null, null, 2026-06-23 17:03:29, 2026-06-23 17:03:29). (Connection: pgsql, SQL: insert into "users" ("email", "name", "id", "updated_at", "created_at") values (senior@alyasheiee.com, Senior Recorder, a217dfb2-0f11-44d9-bf6d-a8234b87722f, 2026-06-23 17:03:29, 2026-06-23 17:03:29)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23502): SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column \"password\" of relation \"users\" violates not-null constraint
+DETAIL:  Failing row contains (a217dfb2-0f11-44d9-bf6d-a8234b87722f, Senior Recorder, senior@alyasheiee.com, null, null, null, 2026-06-23 17:03:29, 2026-06-23 17:03:29). (Connection: pgsql, SQL: insert into \"users\" (\"email\", \"name\", \"id\", \"updated_at\", \"created_at\") values (senior@alyasheiee.com, Senior Recorder, a217dfb2-0f11-44d9-bf6d-a8234b87722f, 2026-06-23 17:03:29, 2026-06-23 17:03:29)) at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('insert into \"us...', Array, Object(Closure))
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(560): Illuminate/Database/Connection->run('insert into \"us...', Array, Object(Closure))
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(524): Illuminate/Database/Connection->statement('insert into \"us...', Array)
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3717): Illuminate/Database/Connection->insert('insert into \"us...', Array)
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2120): Illuminate/Database/Query/Builder->insert(Array)
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1335): Illuminate/Database/Eloquent/Builder->__call('insert', Array)
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1128): Illuminate/Database/Eloquent/Model->save()
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/helpers.php(399): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}(Object(App/Models/User))
+#9 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1127): tap(Object(App/Models/User), Object(Closure))
+#10 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->create(Array)
+#11 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1864): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}()
+#12 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#13 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(621): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#14 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(649): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#15 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->updateOrCreate(Array, Array)
+#16 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'updateOrCreate', Array)
+#17 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('updateOrCreate', Array)
+#18 C:/Users/new/Desktop/alyasheiee/test_disbursement.php(15): Illuminate/Database/Eloquent/Model::__callStatic('updateOrCreate', Array)
+#19 {main}
+
+[previous exception] [object] (PDOException(code: 23502): SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column \"password\" of relation \"users\" violates not-null constraint
+DETAIL:  Failing row contains (a217dfb2-0f11-44d9-bf6d-a8234b87722f, Senior Recorder, senior@alyasheiee.com, null, null, null, 2026-06-23 17:03:29, 2026-06-23 17:03:29). at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:571)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(571): PDOStatement->execute()
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(812): Illuminate/Database/Connection->Illuminate/Database/{closure}('insert into \"us...', Array)
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('insert into \"us...', Array, Object(Closure))
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(560): Illuminate/Database/Connection->run('insert into \"us...', Array, Object(Closure))
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(524): Illuminate/Database/Connection->statement('insert into \"us...', Array)
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3717): Illuminate/Database/Connection->insert('insert into \"us...', Array)
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2120): Illuminate/Database/Query/Builder->insert(Array)
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1335): Illuminate/Database/Eloquent/Builder->__call('insert', Array)
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#9 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1128): Illuminate/Database/Eloquent/Model->save()
+#10 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/helpers.php(399): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}(Object(App/Models/User))
+#11 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1127): tap(Object(App/Models/User), Object(Closure))
+#12 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->create(Array)
+#13 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1864): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}()
+#14 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#15 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(621): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#16 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(649): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#17 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->updateOrCreate(Array, Array)
+#18 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'updateOrCreate', Array)
+#19 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('updateOrCreate', Array)
+#20 C:/Users/new/Desktop/alyasheiee/test_disbursement.php(15): Illuminate/Database/Eloquent/Model::__callStatic('updateOrCreate', Array)
+#21 {main}
+"} 
+[2026-06-23 17:04:42] local.ERROR: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table "disbursement_requests" violates foreign key constraint "disbursement_requests_warehouse_id_foreign"
+DETAIL:  Key (warehouse_id)=(de608156-81db-41f5-907b-a021e7e775b1) is not present in table "fuel_tanks". (Connection: pgsql, SQL: update "disbursement_requests" set "status" = approved, "approved_by" = a217e021-c4e6-45d9-9da2-7f963cd0afdf, "approved_at" = 2026-06-23 17:04:42, "warehouse_id" = de608156-81db-41f5-907b-a021e7e775b1, "updated_at" = 2026-06-23 17:04:42 where "id" = a217e021-d4c8-4043-b3aa-16aea253f684) {"userId":"a217e021-c4e6-45d9-9da2-7f963cd0afdf","exception":"[object] (Illuminate\\Database\\QueryException(code: 23503): SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table \"disbursement_requests\" violates foreign key constraint \"disbursement_requests_warehouse_id_foreign\"
+DETAIL:  Key (warehouse_id)=(de608156-81db-41f5-907b-a021e7e775b1) is not present in table \"fuel_tanks\". (Connection: pgsql, SQL: update \"disbursement_requests\" set \"status\" = approved, \"approved_by\" = a217e021-c4e6-45d9-9da2-7f963cd0afdf, \"approved_at\" = 2026-06-23 17:04:42, \"warehouse_id\" = de608156-81db-41f5-907b-a021e7e775b1, \"updated_at\" = 2026-06-23 17:04:42 where \"id\" = a217e021-d4c8-4043-b3aa-16aea253f684) at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('update \"disburs...', Array, Object(Closure))
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(584): Illuminate/Database/Connection->run('update \"disburs...', Array, Object(Closure))
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(536): Illuminate/Database/Connection->affectingStatement('update \"disburs...', Array)
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3830): Illuminate/Database/Connection->update('update \"disburs...', Array)
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1175): Illuminate/Database/Query/Builder->update(Object(Illuminate/Support/Collection))
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1239): Illuminate/Database/Eloquent/Builder->update(Array)
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1156): Illuminate/Database/Eloquent/Model->performUpdate(Object(Illuminate/Database/Eloquent/Builder))
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1014): Illuminate/Database/Eloquent/Model->save(Array)
+#8 C:/Users/new/Desktop/alyasheiee/app/Modules/Warehouse/Services/DisbursementService.php(51): Illuminate/Database/Eloquent/Model->update(Array)
+#9 C:/Users/new/Desktop/alyasheiee/test_disbursement.php(42): App/Modules/Warehouse/Services/DisbursementService->approveRequest(Object(App/Modules/Warehouse/Models/DisbursementRequest), 'de608156-81db-4...')
+#10 {main}
+
+[previous exception] [object] (PDOException(code: 23503): SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table \"disbursement_requests\" violates foreign key constraint \"disbursement_requests_warehouse_id_foreign\"
+DETAIL:  Key (warehouse_id)=(de608156-81db-41f5-907b-a021e7e775b1) is not present in table \"fuel_tanks\". at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:596)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(596): PDOStatement->execute()
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(812): Illuminate/Database/Connection->Illuminate/Database/{closure}('update \"disburs...', Array)
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('update \"disburs...', Array, Object(Closure))
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(584): Illuminate/Database/Connection->run('update \"disburs...', Array, Object(Closure))
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(536): Illuminate/Database/Connection->affectingStatement('update \"disburs...', Array)
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3830): Illuminate/Database/Connection->update('update \"disburs...', Array)
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1175): Illuminate/Database/Query/Builder->update(Object(Illuminate/Support/Collection))
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1239): Illuminate/Database/Eloquent/Builder->update(Array)
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1156): Illuminate/Database/Eloquent/Model->performUpdate(Object(Illuminate/Database/Eloquent/Builder))
+#9 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1014): Illuminate/Database/Eloquent/Model->save(Array)
+#10 C:/Users/new/Desktop/alyasheiee/app/Modules/Warehouse/Services/DisbursementService.php(51): Illuminate/Database/Eloquent/Model->update(Array)
+#11 C:/Users/new/Desktop/alyasheiee/test_disbursement.php(42): App/Modules/Warehouse/Services/DisbursementService->approveRequest(Object(App/Modules/Warehouse/Models/DisbursementRequest), 'de608156-81db-4...')
+#12 {main}
+"} 

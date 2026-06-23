@@ -1,0 +1,26 @@
+﻿Request Created: REQ-LWHBO8DM by Recorder. Status: draft
+Request Confirmed by Senior Recorder. Status: confirmed
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table "disbursement_requests" violates foreign key constraint "disbursement_requests_warehouse_id_foreign"
+DETAIL:  Key (warehouse_id)=(de608156-81db-41f5-907b-a021e7e775b1) is not present in table "fuel_tanks". (Connection: pgsql, SQL: update "disbursement_requests" set "status" = approved, "approved_by" = a217e021-c4e6-45d9-9da2-7f963cd0afdf, "approved_at" = 2026-06-23 17:04:42, "warehouse_id" = de608156-81db-41f5-907b-a021e7e775b1, "updated_at" = 2026-06-23 17:04:42 where "id" = a217e021-d4c8-4043-b3aa-16aea253f684)
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:596
+      PDOException::("SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table "disbursement_requests" violates foreign key constraint "disbursement_requests_warehouse_id_foreign"
+DETAIL:  Key (warehouse_id)=(de608156-81db-41f5-907b-a021e7e775b1) is not present in table "fuel_tanks".")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:596
+      PDOStatement::execute()
+

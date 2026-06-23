@@ -1,0 +1,24 @@
+﻿
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "password" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (a217dfb2-0f11-44d9-bf6d-a8234b87722f, Senior Recorder, senior@alyasheiee.com, null, null, null, 2026-06-23 17:03:29, 2026-06-23 17:03:29). (Connection: pgsql, SQL: insert into "users" ("email", "name", "id", "updated_at", "created_at") values (senior@alyasheiee.com, Senior Recorder, a217dfb2-0f11-44d9-bf6d-a8234b87722f, 2026-06-23 17:03:29, 2026-06-23 17:03:29))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+      PDOException::("SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "password" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (a217dfb2-0f11-44d9-bf6d-a8234b87722f, Senior Recorder, senior@alyasheiee.com, null, null, null, 2026-06-23 17:03:29, 2026-06-23 17:03:29).")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+      PDOStatement::execute()
+
