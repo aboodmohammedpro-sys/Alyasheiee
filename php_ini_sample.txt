@@ -1,0 +1,51 @@
+﻿
+;   extension=modulename
+;   extension=mysqli
+;   extension=/path/to/extension/mysqli.so
+; Note : The syntax used in previous PHP versions 
+('extension=<ext>.so' and
+; 'extension='php_<ext>.dll') is supported for legacy 
+reasons and may be
+; move to the new ('extension=<ext>) syntax.
+extension=bz2
+;extension=ldap
+extension=curl
+;extension=ffi
+;extension=ftp
+extension=fileinfo
+extension=gd
+extension=gettext
+;extension=gmp
+;extension=intl
+;extension=imap
+extension=mbstring
+extension=exif      ; Must be after mbstring as it 
+depends on it
+extension=mysqli
+;extension=oci8_12c  ; Use with Oracle Database 12c 
+Instant Client
+;extension=oci8_19  ; Use with Oracle Database 19 
+Instant Client
+;extension=odbc
+;extension=openssl
+;extension=pdo_firebird
+extension=pdo_mysql
+;extension=pdo_oci
+;extension=pdo_odbc
+;extension=pdo_pgsql
+extension=pdo_sqlite
+;extension=pgsql
+;extension=shmop
+;extension=snmp
+;extension=soap
+;extension=sockets
+;extension=sodium
+;extension=sqlite3
+;extension=tidy
+;extension=xsl
+extension=zip
+;zend_extension=opcache
+extension=php_openssl.dll
+extension=php_ftp.dll
+
+

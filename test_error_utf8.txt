@@ -1,0 +1,10 @@
+﻿php : PHP Fatal error:  Trait "Laravel\Sanctum\HasApiTokens" not found in 
+C:\Users\new\Desktop\alyasheiee\app\Models\User.php on line 12
+At line:1 char:1
++ php test_logic.php 2> test_error_final.txt 1> test_output_final.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PHP Fatal error....php on line 12 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+

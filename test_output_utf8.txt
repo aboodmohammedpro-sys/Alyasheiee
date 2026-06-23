@@ -1,0 +1,39 @@
+﻿
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Trait "Laravel\Sanctum\HasApiTokens" not found
+
+  at app\Models\User.php:12
+      8▕ use Illuminate\Notifications\Notifiable;
+      9▕ use Laravel\Sanctum\HasApiTokens;
+     10▕ use Spatie\Permission\Traits\HasRoles;
+     11▕ 
+  ➜  12▕ class User extends Authenticatable
+     13▕ {
+     14▕     use HasFactory, Notifiable, HasUuids, HasApiTokens, HasRoles;
+     15▕ 
+     16▕     protected $fillable = [
+
+
+   Whoops\Exception\ErrorException 
+
+  Trait "Laravel\Sanctum\HasApiTokens" not found
+
+  at app\Models\User.php:12
+      8▕ use Illuminate\Notifications\Notifiable;
+      9▕ use Laravel\Sanctum\HasApiTokens;
+     10▕ use Spatie\Permission\Traits\HasRoles;
+     11▕ 
+  ➜  12▕ class User extends Authenticatable
+     13▕ {
+     14▕     use HasFactory, Notifiable, HasUuids, HasApiTokens, HasRoles;
+     15▕ 
+     16▕     protected $fillable = [
+
+  1   vendor\filp\whoops\src\Whoops\Run.php:520
+      Whoops\Run::handleError("Trait "Laravel\Sanctum\HasApiTokens" not found", "C:\Users\new\Desktop\alyasheiee\app\Models\User.php")
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+

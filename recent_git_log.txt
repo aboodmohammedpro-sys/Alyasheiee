@@ -1,0 +1,14 @@
+﻿3f072df chore: restore missing root files and finalize postgres connection
+5f8caee feat(procurement): implement suppliers, materials, and purchase requests with API
+9d2d0d8 feat(ops): implement DailyLog API with attendance and equipment usage tracking
+4b4dff5 chore: restore project management files and unify UUIDs for users
+7eb215c docs: update system architecture to include Daily Operations, Fuel Management, and New Roles
+7a89cf5 feat(resources): implement employee, equipment, and polymorphic project assignments
+32ea974 fix(projects): correct return type in StoreProjectRequest
+e456da9 feat(api): activate API routing and link project management module
+8558615 feat(projects): implement Service, Repository, and DTO layers for projects
+416e9a1 feat(projects): create project and project_phases models, migrations, and enums
+fa891d3 infrastructure: establish modular monolith structure and publish package configs
+8982e57 infrastructure: initialize Laravel project and install core packages
+e9d6837 docs: translate architectural documents to Arabic
+997bf97 docs: initial architecture and analysis docs

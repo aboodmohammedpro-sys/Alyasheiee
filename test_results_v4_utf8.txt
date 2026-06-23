@@ -1,0 +1,47 @@
+﻿php : PHP Fatal error:  Trait "Laravel\Sanctum\HasApiTokens" not found in 
+C:\Users\new\Desktop\alyasheiee\app\Models\User.php on line 12
+At line:1 char:1
++ php test_logic.php > test_results_v4.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PHP Fatal error....php on line 12 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Trait "Laravel\Sanctum\HasApiTokens" not found
+
+  at app\Models\User.php:12
+      8▕ use Illuminate\Notifications\Notifiable;
+      9▕ use Laravel\Sanctum\HasApiTokens;
+     10▕ use Spatie\Permission\Traits\HasRoles;
+     11▕ 
+  ➜  12▕ class User extends Authenticatable
+     13▕ {
+     14▕     use HasFactory, Notifiable, HasUuids, HasApiTokens, HasRoles;
+     15▕ 
+     16▕     protected $fillable = [
+
+
+   Whoops\Exception\ErrorException 
+
+  Trait "Laravel\Sanctum\HasApiTokens" not found
+
+  at app\Models\User.php:12
+      8▕ use Illuminate\Notifications\Notifiable;
+      9▕ use Laravel\Sanctum\HasApiTokens;
+     10▕ use Spatie\Permission\Traits\HasRoles;
+     11▕ 
+  ➜  12▕ class User extends Authenticatable
+     13▕ {
+     14▕     use HasFactory, Notifiable, HasUuids, HasApiTokens, HasRoles;
+     15▕ 
+     16▕     protected $fillable = [
+
+  1   vendor\filp\whoops\src\Whoops\Run.php:520
+      Whoops\Run::handleError("Trait "Laravel\Sanctum\HasApiTokens" not found", "C:\Users\new\Desktop\alyasheiee\app\Models\User.php")
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
