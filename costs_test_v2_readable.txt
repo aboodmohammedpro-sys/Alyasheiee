@@ -1,0 +1,26 @@
+﻿
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42703]: Undefined column: 7 ERROR:  column "email" does not exist
+LINE 1: select * from "employees" where ("email" = $1) and "employee...
+                                         ^ (Connection: pgsql, SQL: select * from "employees" where ("email" = worker1@alyasheiee.com) and "employees"."deleted_at" is null limit 1)
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:412
+      PDOException::("SQLSTATE[42703]: Undefined column: 7 ERROR:  column "email" does not exist
+LINE 1: select * from "employees" where ("email" = $1) and "employee...
+                                         ^")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:412
+      PDOStatement::execute()
+

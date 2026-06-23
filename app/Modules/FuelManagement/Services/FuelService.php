@@ -54,6 +54,9 @@ class FuelService
 
             $tank->decrement('current_balance', $data['quantity']);
 
+            // تسجيل تكلفة الوقود آلياً
+            app(\App\Modules\CostControl\Services\CostService::class)->logFuelCost($transaction);
+
             return $transaction;
         });
     }

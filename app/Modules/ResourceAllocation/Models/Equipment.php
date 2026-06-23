@@ -15,7 +15,7 @@ class Equipment extends Model
     protected $table = 'equipment';
 
     protected $fillable = [
-        'code', 'name', 'type', 'serial_number', 'brand', 'status', 'purchase_date'
+        'code', 'name', 'type', 'serial_number', 'brand', 'status', 'purchase_date', 'hourly_rate'
     ];
 
     public function assignments(): MorphMany

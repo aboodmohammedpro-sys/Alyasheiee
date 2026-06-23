@@ -42,10 +42,17 @@ class DisbursementController extends Controller
     public function approve(Request $request, DisbursementRequest $disbursementRequest): JsonResponse
     {
         $validated = $request->validate([
-            'warehouse_id' => 'required|uuid' // سيتم الربط بجدول المخازن لاحقاً
+            'warehouse_id' => 'required|uuid' 
         ]);
 
         $updated = $this->disbursementService->approveRequest($disbursementRequest, $validated['warehouse_id']);
+        return response()->json($updated);
+    }
+
+    public function issue(DisbursementRequest $disbursementRequest): JsonResponse
+    {
+        // صلاحية أمين المستودع
+        $updated = $this->disbursementService->issueRequest($disbursementRequest);
         return response()->json($updated);
     }
 }

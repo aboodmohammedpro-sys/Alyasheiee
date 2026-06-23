@@ -5,6 +5,7 @@ namespace App\Modules\DailyOperations\Services;
 use App\Modules\DailyOperations\Models\DailyLog;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Modules\CostControl\Services\CostService;
 
 class DailyLogService
 {
@@ -49,9 +50,16 @@ class DailyLogService
 
     public function approveLog(DailyLog $dailyLog, string $approverId): bool
     {
-        return $dailyLog->update([
+        $result = $dailyLog->update([
             'status' => 'approved',
             'approver_id' => $approverId
         ]);
+
+        if ($result) {
+            // تسجيل التكاليف آلياً عند الاعتماد
+            app(CostService::class)->logDailyOperationsCosts($dailyLog);
+        }
+
+        return $result;
     }
 }

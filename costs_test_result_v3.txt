@@ -1,0 +1,7 @@
+﻿Daily Log Created. Status: draft
+Daily Log Approved.
+Expected Labor Cost: 200, Actual: 0.00
+Expected Equipment Cost: 750, Actual: 750.00
+Actual Spent in Budget (Labor): 0.00
+
+COST CONTROL TEST FAILED: Discrepancy in calculations.

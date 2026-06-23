@@ -43,9 +43,6 @@ class DisbursementService
         return $request;
     }
 
-    /**
-     * الموافقة النهائية وتحديد المخزن (بواسطة مدير المشروع)
-     */
     public function approveRequest(DisbursementRequest $request, string $warehouseId): DisbursementRequest
     {
         $request->update([
@@ -55,8 +52,26 @@ class DisbursementService
             'warehouse_id' => $warehouseId,
         ]);
 
-        // ملاحظة: هنا يمكن إرسال إشعار فوري (Notification) إلى مسؤول المستودع المختار
-        
         return $request;
+    }
+
+    /**
+     * التنفيذ الفعلي للصرف (بواسطة أمين المستودع)
+     */
+    public function issueRequest(DisbursementRequest $request): DisbursementRequest
+    {
+        return \Illuminate\Support\Facades\DB::transaction(function () use ($request) {
+            $request->update([
+                'status' => 'issued',
+                'updated_at' => now(),
+            ]);
+
+            // هنا يتم تحديث المخازن (Inventory) بناءً على النوع
+            if ($request->type === 'fuel') {
+                // منطق إضافي إذا كان الوقود يصرف من خزان غير مسجل في FuelService
+            }
+
+            return $request;
+        });
     }
 }

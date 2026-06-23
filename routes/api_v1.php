@@ -29,6 +29,7 @@ Route::prefix('v1')->group(function () {
         Route::post('disbursement', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'store']);
         Route::post('disbursement/{disbursementRequest}/confirm', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'confirm']);
         Route::post('disbursement/{disbursementRequest}/approve', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'approve']);
+        Route::post('disbursement/{disbursementRequest}/issue', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'issue']);
     });
 
 });

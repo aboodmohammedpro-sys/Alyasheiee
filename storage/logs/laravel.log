@@ -310,3 +310,118 @@ DETAIL:  Key (warehouse_id)=(de608156-81db-41f5-907b-a021e7e775b1) is not presen
 #11 C:/Users/new/Desktop/alyasheiee/test_disbursement.php(42): App/Modules/Warehouse/Services/DisbursementService->approveRequest(Object(App/Modules/Warehouse/Models/DisbursementRequest), 'de608156-81db-4...')
 #12 {main}
 "} 
+[2026-06-23 17:36:58] local.ERROR: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "a217e021-c4e6-45d9-9da2-7f963cd0afdf"
+CONTEXT:  unnamed portal parameter $3 = '...' (Connection: pgsql, SQL: insert into "activity_log" ("log_name", "properties", "causer_id", "causer_type", "batch_uuid", "event", "subject_id", "subject_type", "description", "updated_at", "created_at") values (default, {"attributes":{"code":"COST-001","name":"Financial Project","status":"active","progress_percentage":0}}, a217e021-c4e6-45d9-9da2-7f963cd0afdf, App\Models\User, ?, created, a217ebab-1bc4-4956-8ec0-ef3abd61a197, App\Modules\ProjectManagement\Models\Project, created, 2026-06-23 17:36:58, 2026-06-23 17:36:58) returning "id") {"userId":"a217e021-c4e6-45d9-9da2-7f963cd0afdf","exception":"[object] (Illuminate\\Database\\QueryException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"a217e021-c4e6-45d9-9da2-7f963cd0afdf\"
+CONTEXT:  unnamed portal parameter $3 = '...' (Connection: pgsql, SQL: insert into \"activity_log\" (\"log_name\", \"properties\", \"causer_id\", \"causer_type\", \"batch_uuid\", \"event\", \"subject_id\", \"subject_type\", \"description\", \"updated_at\", \"created_at\") values (default, {\"attributes\":{\"code\":\"COST-001\",\"name\":\"Financial Project\",\"status\":\"active\",\"progress_percentage\":0}}, a217e021-c4e6-45d9-9da2-7f963cd0afdf, App\\Models\\User, ?, created, a217ebab-1bc4-4956-8ec0-ef3abd61a197, App\\Modules\\ProjectManagement\\Models\\Project, created, 2026-06-23 17:36:58, 2026-06-23 17:36:58) returning \"id\") at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('insert into \"ac...', Array, Object(Closure))
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(398): Illuminate/Database/Connection->run('insert into \"ac...', Array, Object(Closure))
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(385): Illuminate/Database/Connection->select('insert into \"ac...', Array, false)
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php(24): Illuminate/Database/Connection->selectFromWriteConnection('insert into \"ac...', Array)
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3766): Illuminate/Database/Query/Processors/PostgresProcessor->processInsertGetId(Object(Illuminate/Database/Query/Builder), 'insert into \"ac...', Array, 'id')
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2120): Illuminate/Database/Query/Builder->insertGetId(Array, 'id')
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1359): Illuminate/Database/Eloquent/Builder->__call('insertGetId', Array)
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1324): Illuminate/Database/Eloquent/Model->insertAndSetId(Object(Illuminate/Database/Eloquent/Builder), Array)
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#9 C:/Users/new/Desktop/alyasheiee/vendor/spatie/laravel-activitylog/src/ActivityLogger.php(176): Illuminate/Database/Eloquent/Model->save()
+#10 C:/Users/new/Desktop/alyasheiee/vendor/spatie/laravel-activitylog/src/Traits/LogsActivity.php(84): Spatie/Activitylog/ActivityLogger->log('created')
+#11 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(459): App/Modules/ProjectManagement/Models/Project::Spatie/Activitylog/Traits/{closure}(Object(App/Modules/ProjectManagement/Models/Project))
+#12 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(287): Illuminate/Events/Dispatcher->Illuminate/Events/{closure}('eloquent.create...', Array)
+#13 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(267): Illuminate/Events/Dispatcher->invokeListeners('eloquent.create...', Array, false)
+#14 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php(224): Illuminate/Events/Dispatcher->dispatch('eloquent.create...', Array)
+#15 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1345): Illuminate/Database/Eloquent/Model->fireModelEvent('created', false)
+#16 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#17 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1128): Illuminate/Database/Eloquent/Model->save()
+#18 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/helpers.php(399): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}(Object(App/Modules/ProjectManagement/Models/Project))
+#19 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1127): tap(Object(App/Modules/ProjectManagement/Models/Project), Object(Closure))
+#20 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->create(Array)
+#21 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1864): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}()
+#22 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#23 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(621): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#24 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#25 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'firstOrCreate', Array)
+#26 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('firstOrCreate', Array)
+#27 C:/Users/new/Desktop/alyasheiee/test_costs.php(21): Illuminate/Database/Eloquent/Model::__callStatic('firstOrCreate', Array)
+#28 {main}
+
+[previous exception] [object] (PDOException(code: 22P02): SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \"a217e021-c4e6-45d9-9da2-7f963cd0afdf\"
+CONTEXT:  unnamed portal parameter $3 = '...' at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:412)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): PDOStatement->execute()
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(812): Illuminate/Database/Connection->Illuminate/Database/{closure}('insert into \"ac...', Array)
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('insert into \"ac...', Array, Object(Closure))
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(398): Illuminate/Database/Connection->run('insert into \"ac...', Array, Object(Closure))
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(385): Illuminate/Database/Connection->select('insert into \"ac...', Array, false)
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php(24): Illuminate/Database/Connection->selectFromWriteConnection('insert into \"ac...', Array)
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3766): Illuminate/Database/Query/Processors/PostgresProcessor->processInsertGetId(Object(Illuminate/Database/Query/Builder), 'insert into \"ac...', Array, 'id')
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2120): Illuminate/Database/Query/Builder->insertGetId(Array, 'id')
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1359): Illuminate/Database/Eloquent/Builder->__call('insertGetId', Array)
+#9 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1324): Illuminate/Database/Eloquent/Model->insertAndSetId(Object(Illuminate/Database/Eloquent/Builder), Array)
+#10 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#11 C:/Users/new/Desktop/alyasheiee/vendor/spatie/laravel-activitylog/src/ActivityLogger.php(176): Illuminate/Database/Eloquent/Model->save()
+#12 C:/Users/new/Desktop/alyasheiee/vendor/spatie/laravel-activitylog/src/Traits/LogsActivity.php(84): Spatie/Activitylog/ActivityLogger->log('created')
+#13 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(459): App/Modules/ProjectManagement/Models/Project::Spatie/Activitylog/Traits/{closure}(Object(App/Modules/ProjectManagement/Models/Project))
+#14 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(287): Illuminate/Events/Dispatcher->Illuminate/Events/{closure}('eloquent.create...', Array)
+#15 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(267): Illuminate/Events/Dispatcher->invokeListeners('eloquent.create...', Array, false)
+#16 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php(224): Illuminate/Events/Dispatcher->dispatch('eloquent.create...', Array)
+#17 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1345): Illuminate/Database/Eloquent/Model->fireModelEvent('created', false)
+#18 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#19 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1128): Illuminate/Database/Eloquent/Model->save()
+#20 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/helpers.php(399): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}(Object(App/Modules/ProjectManagement/Models/Project))
+#21 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1127): tap(Object(App/Modules/ProjectManagement/Models/Project), Object(Closure))
+#22 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->create(Array)
+#23 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1864): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}()
+#24 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#25 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(621): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#26 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#27 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'firstOrCreate', Array)
+#28 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('firstOrCreate', Array)
+#29 C:/Users/new/Desktop/alyasheiee/test_costs.php(21): Illuminate/Database/Eloquent/Model::__callStatic('firstOrCreate', Array)
+#30 {main}
+"} 
+[2026-06-23 17:42:17] local.ERROR: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "email" does not exist
+LINE 1: select * from "employees" where ("email" = $1) and "employee...
+                                         ^ (Connection: pgsql, SQL: select * from "employees" where ("email" = worker1@alyasheiee.com) and "employees"."deleted_at" is null limit 1) {"userId":"a217e021-c4e6-45d9-9da2-7f963cd0afdf","exception":"[object] (Illuminate\\Database\\QueryException(code: 42703): SQLSTATE[42703]: Undefined column: 7 ERROR:  column \"email\" does not exist
+LINE 1: select * from \"employees\" where (\"email\" = $1) and \"employee...
+                                         ^ (Connection: pgsql, SQL: select * from \"employees\" where (\"email\" = worker1@alyasheiee.com) and \"employees\".\"deleted_at\" is null limit 1) at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('select * from \"...', Array, Object(Closure))
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(398): Illuminate/Database/Connection->run('select * from \"...', Array, Object(Closure))
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3106): Illuminate/Database/Connection->select('select * from \"...', Array, true)
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate/Database/Query/Builder->runSelect()
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3676): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3090): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(811): Illuminate/Database/Query/Builder->get(Array)
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(793): Illuminate/Database/Eloquent/Builder->getModels(Array)
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php(343): Illuminate/Database/Eloquent/Builder->get(Array)
+#9 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(617): Illuminate/Database/Eloquent/Builder->first()
+#10 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(649): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#11 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->updateOrCreate(Array, Array)
+#12 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'updateOrCreate', Array)
+#13 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('updateOrCreate', Array)
+#14 C:/Users/new/Desktop/alyasheiee/test_costs.php(28): Illuminate/Database/Eloquent/Model::__callStatic('updateOrCreate', Array)
+#15 {main}
+
+[previous exception] [object] (PDOException(code: 42703): SQLSTATE[42703]: Undefined column: 7 ERROR:  column \"email\" does not exist
+LINE 1: select * from \"employees\" where (\"email\" = $1) and \"employee...
+                                         ^ at C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php:412)
+[stacktrace]
+#0 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): PDOStatement->execute()
+#1 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(812): Illuminate/Database/Connection->Illuminate/Database/{closure}('select * from \"...', Array)
+#2 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('select * from \"...', Array, Object(Closure))
+#3 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Connection.php(398): Illuminate/Database/Connection->run('select * from \"...', Array, Object(Closure))
+#4 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3106): Illuminate/Database/Connection->select('select * from \"...', Array, true)
+#5 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3091): Illuminate/Database/Query/Builder->runSelect()
+#6 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3676): Illuminate/Database/Query/Builder->Illuminate/Database/Query/{closure}()
+#7 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3090): Illuminate/Database/Query/Builder->onceWithColumns(Array, Object(Closure))
+#8 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(811): Illuminate/Database/Query/Builder->get(Array)
+#9 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(793): Illuminate/Database/Eloquent/Builder->getModels(Array)
+#10 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php(343): Illuminate/Database/Eloquent/Builder->get(Array)
+#11 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(617): Illuminate/Database/Eloquent/Builder->first()
+#12 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(649): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#13 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->updateOrCreate(Array, Array)
+#14 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'updateOrCreate', Array)
+#15 C:/Users/new/Desktop/alyasheiee/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('updateOrCreate', Array)
+#16 C:/Users/new/Desktop/alyasheiee/test_costs.php(28): Illuminate/Database/Eloquent/Model::__callStatic('updateOrCreate', Array)
+#17 {main}
+"} 

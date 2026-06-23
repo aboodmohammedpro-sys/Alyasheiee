@@ -1,0 +1,54 @@
+﻿
+
+    Directory: C:\Users\new\Desktop\alyasheiee\databas
+    e\migrations
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   7:06 PM            936 2026
+                                                  _06_
+                                                  23_0
+                                                  0205
+                                                  6_cr
+                                                  eate
+                                                  _act
+                                                  ivit
+                                                  y_lo
+                                                  g_ta
+                                                  ble.
+                                                  php 
+-a----         6/23/2026   7:06 PM            714 2026
+                                                  _06_
+                                                  23_0
+                                                  0205
+                                                  7_ad
+                                                  d_ev
+                                                  ent_
+                                                  colu
+                                                  mn_t
+                                                  o_ac
+                                                  tivi
+                                                  ty_l
+                                                  og_t
+                                                  able
+                                                  .php
+-a----         6/23/2026   7:06 PM            724 2026
+                                                  _06_
+                                                  23_0
+                                                  0205
+                                                  8_ad
+                                                  d_ba
+                                                  tch_
+                                                  uuid
+                                                  _col
+                                                  umn_
+                                                  to_a
+                                                  ctiv
+                                                  ity_
+                                                  log_
+                                                  tabl
+                                                  e.ph
+                                                  p   
+
+

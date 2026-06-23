@@ -13,7 +13,7 @@ class Employee extends Model
     use HasFactory, HasUuids, SoftDeletes;
 
     protected $fillable = [
-        'code', 'name', 'position', 'department', 'phone', 'status', 'joining_date'
+        'code', 'name', 'position', 'department', 'phone', 'status', 'joining_date', 'hourly_rate', 'unit_price'
     ];
 
     public function assignments(): MorphMany

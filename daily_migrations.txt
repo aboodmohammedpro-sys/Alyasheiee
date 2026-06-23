@@ -1,0 +1,22 @@
+﻿
+database\migrations\2024_03_23_000003_create_daily_ope
+rations_table.php:12:        
+Schema::create('daily_logs', function (Blueprint 
+$table) {
+database\migrations\2024_03_23_000003_create_daily_ope
+rations_table.php:31:            $table->foreignUuid('
+daily_log_id')->constrained('daily_logs')->cascadeOnDe
+lete();
+database\migrations\2024_03_23_000003_create_daily_ope
+rations_table.php:45:            $table->foreignUuid('
+daily_log_id')->constrained('daily_logs')->cascadeOnDe
+lete();
+database\migrations\2024_03_23_000003_create_daily_ope
+rations_table.php:61:        
+Schema::dropIfExists('daily_logs');
+database\migrations\2024_03_23_000007_create_cost_cont
+rol_table.php:25:            
+$table->string('source_type'); // 
+disbursement_request, daily_log, fuel_transaction
+
+
