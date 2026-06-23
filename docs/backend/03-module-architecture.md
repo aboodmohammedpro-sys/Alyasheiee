@@ -3,6 +3,12 @@
 ## Architectural Pattern
 The system follows a **Modular Monolith** approach. While physically residing in one repository, each domain is logically isolated to allow future extraction into microservices if needed.
 
+### 5. موديول العمليات اليومية (DailyOperations)
+سيعتمد بشكل كبير على موديولات `Projects` و `Resources`.
+
+### 6. موديول إدارة الوقود (FuelManagement)
+سيتكامل مع `Resources` (المعدات) و `Projects`.
+
 ## Module Structure Template
 Every module in `app/Modules/{ModuleName}` will follow this structure:
 

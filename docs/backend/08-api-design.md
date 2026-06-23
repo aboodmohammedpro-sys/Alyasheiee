@@ -1,5 +1,9 @@
 # 08. API Design
 
+## مجموعات APIs الجديدة
+1. **العمليات اليومية (Daily Operations)**: `/api/v1/daily-logs`.
+2. **إدارة الوقود (Fuel)**: `/api/v1/fuel-dispense`.
+
 ## General Principles
 1. **RESTful Headers**:
     - `Accept: application/json`

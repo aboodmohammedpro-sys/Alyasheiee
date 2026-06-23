@@ -1,5 +1,13 @@
 # 02. Bounded Contexts
 
+### 4. سياق العمليات الميدانية (Daily Operations Context)
+- **المسؤولية**: تتبع الأداء اليومي في المواقع.
+- **الكيانات**: `DailyLog`, `LaborAttendance`, `EquipmentUsage`.
+
+### 5. سياق وقود المعدات (Fuel Context)
+- **المسؤولية**: السيطرة على استهلاك الديزل وتوزيعه.
+- **الكيانات**: `FuelInventory`, `FuelDispensing`.
+
 ## Context 1: Planning & Projects
 **Boundary**: Project lifecycle, site locations, scheduling, and progress tracking.
 **Exposed Interface**: Project status and site info for other modules.

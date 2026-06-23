@@ -1,12 +1,11 @@
 # 01. Domain Analysis
 
-## 1. Project Management Domain
-- **Aggregate Root**: `Project`
-- **Entities**: `ProjectPhase`, `ProjectAttachment`
-- **Business Rules**: 
-  - A project cannot be "Completed" if it has active phases.
-  - Progress percentage is a weighted average of phase progress.
-  - History of status changes must be preserved.
+## 1. النطاقات الجوهرية (Core Domains)
+- **إدارة المشاريع (Project Management)**: الهيكل العام، المراحل، والمخططات.
+- **إدارة الموارد (Resource Allocation)**: الموظفين والمعدات الثقيلة.
+- **العمليات اليومية (Daily Operations)**: تتبع الحضور، الساعات، الإنجاز الميداني، والنقلات. **(جديد)**
+- **الخدمات اللوجستية للوقود (Fuel Logistics)**: إدارة الديزل، التوزيع، ومراقبة الاستهلاك. **(جديد)**
+- **المشتريات والمخازن (Procurement & Warehouse)**: طلبات الشراء، المخزون، والموردين.
 
 ## 2. Resources Domain (Teams, Employees, Equipment)
 - **Aggregate Roots**: `Employee`, `Equipment`, `Team`

@@ -1,5 +1,11 @@
 # 07. Relationships
 
+### 3. علاقات العمليات الجديدة
+- **المشروع (Project) 1 : N السجل اليومي (DailyLog)**.
+- **السجل اليومي (DailyLog) 1 : N حضور العمال (LaborAttendance)**.
+- **المعدات (Equipment) 1 : N معاملات الوقود (FuelTransactions)**.
+- **الموزع (User/FuelDispatcher) 1 : N عمليات التعبئة (Dispensing)**.
+
 ## Mapping Laravel Eloquent Relations
 
 ### Project Module
