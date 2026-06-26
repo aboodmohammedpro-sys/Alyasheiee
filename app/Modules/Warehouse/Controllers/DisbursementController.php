@@ -2,13 +2,13 @@
 
 namespace App\Modules\Warehouse\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 use App\Modules\Warehouse\Models\DisbursementRequest;
 use App\Modules\Warehouse\Services\DisbursementService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class DisbursementController extends Controller
+class DisbursementController extends BaseController
 {
     protected $disbursementService;
 
@@ -17,6 +17,9 @@ class DisbursementController extends Controller
         $this->disbursementService = $disbursementService;
     }
 
+    /**
+     * Mobile/Web: إنشاء طلب صرف جديد (المراقب)
+     */
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -29,16 +32,21 @@ class DisbursementController extends Controller
         ]);
 
         $disbursementRequest = $this->disbursementService->createRequest($validated);
-        return response()->json($disbursementRequest->load('items'), 201);
+        return $this->successResponse($disbursementRequest->load('items'), 'Disbursement request created.', 201);
     }
 
+    /**
+     * Mobile: تأكيد الطلب (كبير المراقبين)
+     */
     public function confirm(DisbursementRequest $disbursementRequest): JsonResponse
     {
-        // التحقق من الصلاحيات (كبير مراقبين) يتم هنا أو عبر Middleware
         $updated = $this->disbursementService->confirmRequest($disbursementRequest);
-        return response()->json($updated);
+        return $this->successResponse($updated, 'Request confirmed.');
     }
 
+    /**
+     * Web Only: الموافقة وتحديد المخزن (مدير المشروع)
+     */
     public function approve(Request $request, DisbursementRequest $disbursementRequest): JsonResponse
     {
         $validated = $request->validate([
@@ -46,13 +54,15 @@ class DisbursementController extends Controller
         ]);
 
         $updated = $this->disbursementService->approveRequest($disbursementRequest, $validated['warehouse_id']);
-        return response()->json($updated);
+        return $this->successResponse($updated, 'Request approved by PM.');
     }
 
+    /**
+     * Mobile/Web: التنفيذ الفعلي (أمين المستودع)
+     */
     public function issue(DisbursementRequest $disbursementRequest): JsonResponse
     {
-        // صلاحية أمين المستودع
         $updated = $this->disbursementService->issueRequest($disbursementRequest);
-        return response()->json($updated);
+        return $this->successResponse($updated, 'Materials issued from warehouse.');
     }
 }

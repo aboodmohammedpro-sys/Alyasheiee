@@ -2,14 +2,16 @@
 
 namespace App\Modules\DailyOperations\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 use App\Modules\DailyOperations\Requests\StoreDailyLogRequest;
 use App\Modules\DailyOperations\Resources\DailyLogResource;
 use App\Modules\DailyOperations\Services\DailyLogService;
 use App\Modules\DailyOperations\Models\DailyLog;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class DailyLogController extends Controller
+class DailyLogController extends BaseController
 {
     protected $dailyLogService;
 
@@ -18,28 +20,48 @@ class DailyLogController extends Controller
         $this->dailyLogService = $dailyLogService;
     }
 
+    /**
+     * Mobile: تسجيل يومية جديدة (Recorder)
+     */
     public function store(StoreDailyLogRequest $request): JsonResponse
     {
         $dailyLog = $this->dailyLogService->createDailyLog($request->validated());
 
-        return response()->json([
-            'message' => 'Daily log created successfully.',
-            'data' => new DailyLogResource($dailyLog)
-        ], 210); // 201 Created
+        return $this->successResponse(
+            new DailyLogResource($dailyLog),
+            'Daily log created successfully.',
+            201
+        );
     }
 
-    public function show(DailyLog $dailyLog): DailyLogResource
+    /**
+     * Shared/Web: عرض تفاصيل اليومية
+     */
+    public function show(DailyLog $dailyLog): JsonResponse
     {
         $dailyLog->load(['project', 'recorder', 'laborAttendance.employee', 'equipmentUsage.equipment']);
-        return new DailyLogResource($dailyLog);
+        return $this->successResponse(new DailyLogResource($dailyLog));
     }
 
+    /**
+     * Mobile: إرسال للمراجعة (Recorder)
+     */
     public function submit(DailyLog $dailyLog): JsonResponse
     {
         $this->dailyLogService->submitForApproval($dailyLog);
+        return $this->successResponse(null, 'Daily log submitted for approval.');
+    }
 
-        return response()->json([
-            'message' => 'Daily log submitted for approval.'
-        ]);
+    /**
+     * Mobile/Web: اعتماد اليومية (Senior Recorder / Admin)
+     */
+    public function approve(DailyLog $dailyLog): JsonResponse
+    {
+        try {
+            $this->dailyLogService->approveLog($dailyLog, Auth::id());
+            return $this->successResponse(null, 'Daily log approved and costs recorded.');
+        } catch (\Exception $e) {
+            return $this->errorResponse($e->getMessage(), 422);
+        }
     }
 }
