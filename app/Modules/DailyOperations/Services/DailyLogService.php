@@ -35,7 +35,21 @@ class DailyLogService
                 }
             }
 
-            return $dailyLog->load(['laborAttendance', 'equipmentUsage']);
+            // 4. إضافة النقلات (Trips)
+            if (isset($data['trips'])) {
+                foreach ($data['trips'] as $trip) {
+                    $dailyLog->trips()->create($trip);
+                }
+            }
+
+            // 5. إضافة الإنجازات (Achievements)
+            if (isset($data['achievements'])) {
+                foreach ($data['achievements'] as $achievement) {
+                    $dailyLog->achievements()->create($achievement);
+                }
+            }
+
+            return $dailyLog->load(['laborAttendance', 'equipmentUsage', 'trips', 'achievements']);
         });
     }
 

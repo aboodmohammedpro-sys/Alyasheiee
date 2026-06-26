@@ -43,11 +43,21 @@ Route::prefix('v1')->group(function () {
         Route::post('disbursement/{disbursementRequest}/confirm', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'confirm']);
         Route::post('disbursement/{disbursementRequest}/approve', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'approve']); // Web Only
         Route::post('disbursement/{disbursementRequest}/issue', [\App\Modules\Warehouse\Controllers\DisbursementController::class, 'issue']); // Web/Mobile (Store Keeper)
+
+        // GRN (Goods Received Note)
+        Route::post('grn', [\App\Modules\Warehouse\Controllers\GrnController::class, 'store']); // Shared/Mobile (Store Keeper)
     });
 
-    // 6. Reports & Financials (Web Only)
+    // 6. Procurement (Web Only Management)
+    Route::prefix('procurement')->group(function () {
+        Route::get('purchase-orders', [\App\Modules\Procurement\Controllers\PurchaseOrderController::class, 'index']);
+        Route::post('purchase-orders/convert', [\App\Modules\Procurement\Controllers\PurchaseOrderController::class, 'convert']);
+        Route::get('purchase-orders/{purchaseOrder}', [\App\Modules\Procurement\Controllers\PurchaseOrderController::class, 'show']);
+    });
+
+    // 7. Reports & Financials (Web Only)
     Route::prefix('reports')->group(function () {
-        // Cost reports, budget vs actual
+        Route::get('project-dashboard/{project}', [\App\Modules\CostControl\Controllers\ReportController::class, 'projectDashboard']);
     });
 
 });

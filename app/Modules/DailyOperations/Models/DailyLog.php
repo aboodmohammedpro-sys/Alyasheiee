@@ -42,4 +42,14 @@ class DailyLog extends Model
     {
         return $this->hasMany(EquipmentUsage::class);
     }
+
+    public function trips(): HasMany
+    {
+        return $this->hasMany(DailyTrip::class);
+    }
+
+    public function achievements(): HasMany
+    {
+        return $this->hasMany(DailyAchievement::class);
+    }
 }

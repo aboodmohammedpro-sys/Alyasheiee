@@ -1,0 +1,24 @@
+﻿
+
+    Directory: 
+    C:\Users\new\Desktop\alyasheiee\database\migrations
+
+
+Mode                 LastWriteTime         Length Name 
+----                 -------------         ------ ---- 
+-a----         6/26/2026   4:07 AM            566 2026_
+                                                  06_26
+                                                  _0107
+                                                  28_ad
+                                                  d_tri
+                                                  ps_an
+                                                  d_ach
+                                                  ievem
+                                                  ents_
+                                                  to_da
+                                                  ily_o
+                                                  ps_ta
+                                                  ble.p
+                                                  hp   
+
+

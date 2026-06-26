@@ -1,0 +1,6 @@
+﻿1. Setup Finished.
+2. PO Issued (Number: PO-EF0U8LPA).
+3. GRN Issued (ID: a21c9241-5f2d-41fc-bb04-84095b8defc8, Received: 30 tons).
+4. Current Stock in Warehouse: 30 Tons.
+
+INVENTORY FLOW TEST PASSED!

@@ -1,0 +1,24 @@
+﻿
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "a21c885c-5e73-40f5-881f-b2fd9440951c"
+CONTEXT:  unnamed portal parameter $3 = '...' (Connection: pgsql, SQL: insert into "activity_log" ("log_name", "properties", "causer_id", "causer_type", "batch_uuid", "event", "subject_id", "subject_type", "description", "updated_at", "created_at") values (default, {"attributes":{"code":"PRO-TEST","name":"Procurement Test Project","status":"planning","progress_percentage":0}}, a21c885c-5e73-40f5-881f-b2fd9440951c, App\Models\User, ?, created, a21c885e-0dae-4810-a173-4edefee9fbd7, App\Modules\ProjectManagement\Models\Project, created, 2026-06-26 00:38:26, 2026-06-26 00:38:26) returning "id")
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:412
+      PDOException::("SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "a21c885c-5e73-40f5-881f-b2fd9440951c"
+CONTEXT:  unnamed portal parameter $3 = '...'")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:412
+      PDOStatement::execute()
+
