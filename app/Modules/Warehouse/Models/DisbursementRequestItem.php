@@ -11,10 +11,15 @@ class DisbursementRequestItem extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $fillable = ['request_id', 'item_name', 'quantity', 'unit'];
+    protected $fillable = ['request_id', 'material_id', 'item_name', 'quantity', 'unit'];
 
     public function request(): BelongsTo
     {
         return $this->belongsTo(DisbursementRequest::class, 'request_id');
+    }
+
+    public function material(): BelongsTo
+    {
+        return $this->belongsTo(\App\Modules\Procurement\Models\Material::class, 'material_id');
     }
 }

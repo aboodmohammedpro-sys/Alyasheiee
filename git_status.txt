@@ -1,0 +1,46 @@
+On branch feature/procurement-warehouse
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/Modules/CostControl/Services/CostService.php
+	modified:   app/Modules/FuelManagement/Models/FuelTransaction.php
+	modified:   app/Modules/FuelManagement/Services/FuelService.php
+	modified:   app/Modules/Procurement/Models/Material.php
+	modified:   app/Modules/ResourceAllocation/Models/Equipment.php
+	modified:   app/Modules/Warehouse/Controllers/DisbursementController.php
+	modified:   app/Modules/Warehouse/Models/DisbursementRequest.php
+	modified:   app/Modules/Warehouse/Models/DisbursementRequestItem.php
+	modified:   app/Modules/Warehouse/Services/DisbursementService.php
+	modified:   bootstrap/app.php
+	modified:   disbursement_test_result.txt
+	deleted:    disbursement_test_result_v2.txt
+	deleted:    disbursement_test_result_v3.txt
+	deleted:    fuel_test_readable.txt
+	deleted:    fuel_test_result.txt
+	deleted:    inventory_test_result.txt
+	deleted:    inventory_test_result_v2.txt
+	deleted:    migrate_error.txt
+	deleted:    procurement_test_result.txt
+	modified:   routes/api_v1.php
+	modified:   storage/logs/laravel.log
+	modified:   test_disbursement.php
+	modified:   test_inventory_flow.php
+	modified:   test_logic.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app/Modules/Auth/
+	config/permission.php
+	database/migrations/2026_06_26_014103_add_fuel_benchmarks_to_equipment_table.php
+	database/migrations/2026_06_26_014643_add_status_to_fuel_transactions_table.php
+	database/migrations/2026_06_28_151440_modify_warehouse_id_foreign_on_disbursement_requests_table.php
+	database/migrations/2026_06_28_151659_add_material_id_to_disbursement_request_items_table.php
+	database/seeders/
+	git_status.txt
+	migrate_output.txt
+	migrate_output_utf8.txt
+	migrate_status.txt
+	migrate_status_utf8.txt
+	test_fuel_efficiency.php
+
+no changes added to commit (use "git add" and/or "git commit -a")

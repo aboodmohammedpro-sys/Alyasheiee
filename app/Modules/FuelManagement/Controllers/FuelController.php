@@ -2,13 +2,13 @@
 
 namespace App\Modules\FuelManagement\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 use App\Modules\FuelManagement\Models\FuelTank;
 use App\Modules\FuelManagement\Services\FuelService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class FuelController extends Controller
+class FuelController extends BaseController
 {
     protected $fuelService;
 
@@ -17,11 +17,17 @@ class FuelController extends Controller
         $this->fuelService = $fuelService;
     }
 
+    /**
+     * Shared: قائمة خزانات الوقود وأرصدتها
+     */
     public function getTanks(): JsonResponse
     {
-        return response()->json(FuelTank::all());
+        return $this->successResponse(FuelTank::all());
     }
 
+    /**
+     * Web Only: إدارة الخزانات
+     */
     public function storeTank(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -32,9 +38,12 @@ class FuelController extends Controller
         ]);
 
         $tank = FuelTank::create($validated);
-        return response()->json($tank, 201);
+        return $this->successResponse($tank, 'Fuel tank created successfully.', 201);
     }
 
+    /**
+     * Mobile Only: عملية تعبئة معدة
+     */
     public function dispense(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -47,12 +56,9 @@ class FuelController extends Controller
 
         try {
             $transaction = $this->fuelService->dispenseFuel($validated);
-            return response()->json([
-                'message' => 'Fuel dispensed correctly.',
-                'transaction' => $transaction
-            ]);
+            return $this->successResponse($transaction, 'Fuel dispensed correctly.');
         } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 422);
+            return $this->errorResponse($e->getMessage(), 422);
         }
     }
 }

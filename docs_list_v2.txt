@@ -1,0 +1,240 @@
+﻿
+
+    Directory: C:\Users\new\Desktop\alyasheiee\docs
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   4:41 AM                back
+                                                  end 
+
+
+    Directory: 
+    C:\Users\new\Desktop\alyasheiee\docs\backend
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   2:40 AM           1728 00-s
+                                                  yste
+                                                  m-vi
+                                                  sion
+                                                  .md 
+-a----         6/23/2026   4:41 AM           2371 01-d
+                                                  omai
+                                                  n-an
+                                                  alys
+                                                  is.m
+                                                  d   
+-a----         6/23/2026   4:41 AM           1727 02-b
+                                                  ound
+                                                  ed-c
+                                                  onte
+                                                  xts.
+                                                  md  
+-a----         6/23/2026   4:41 AM           1947 03-m
+                                                  odul
+                                                  e-ar
+                                                  chit
+                                                  ectu
+                                                  re.m
+                                                  d   
+-a----         6/23/2026   2:40 AM           1482 04-f
+                                                  olde
+                                                  r-st
+                                                  ruct
+                                                  ure.
+                                                  md  
+-a----         6/23/2026   4:11 AM           1777 05-d
+                                                  atab
+                                                  ase-
+                                                  desi
+                                                  gn.m
+                                                  d   
+-a----         6/23/2026   2:40 AM           1220 06-e
+                                                  rd-d
+                                                  esig
+                                                  n.md
+-a----         6/23/2026   4:41 AM           1619 07-r
+                                                  elat
+                                                  ions
+                                                  hips
+                                                  .md 
+-a----         6/23/2026   4:41 AM           1184 08-a
+                                                  pi-d
+                                                  esig
+                                                  n.md
+-a----         6/23/2026   2:40 AM            811 09-m
+                                                  obil
+                                                  e-ap
+                                                  i.md
+-a----         6/23/2026   2:40 AM            713 10-w
+                                                  eb-a
+                                                  pi.m
+                                                  d   
+-a----         6/23/2026   2:40 AM            555 11-s
+                                                  hare
+                                                  d-ap
+                                                  i.md
+-a----         6/23/2026   2:40 AM           1308 12-r
+                                                  espo
+                                                  nse-
+                                                  form
+                                                  at.m
+                                                  d   
+-a----         6/23/2026   2:40 AM            793 13-a
+                                                  uthe
+                                                  ntic
+                                                  atio
+                                                  n.md
+-a----         6/23/2026   2:40 AM            829 14-a
+                                                  utho
+                                                  riza
+                                                  tion
+                                                  .md 
+-a----         6/23/2026   4:41 AM           2172 15-r
+                                                  oles
+                                                  -and
+                                                  -per
+                                                  miss
+                                                  ions
+                                                  .md 
+-a----         6/23/2026   2:40 AM            952 16-v
+                                                  alid
+                                                  atio
+                                                  n-st
+                                                  rate
+                                                  gy.m
+                                                  d   
+-a----         6/23/2026   2:40 AM            949 17-s
+                                                  ervi
+                                                  ce-l
+                                                  ayer
+                                                  .md 
+-a----         6/23/2026   2:40 AM            691 18-r
+                                                  epos
+                                                  itor
+                                                  y-la
+                                                  yer.
+                                                  md  
+-a----         6/23/2026   2:40 AM            836 19-d
+                                                  to-l
+                                                  ayer
+                                                  .md 
+-a----         6/23/2026   2:40 AM            657 20-e
+                                                  nums
+                                                  .md 
+-a----         6/23/2026   4:11 AM            967 21-b
+                                                  usin
+                                                  ess-
+                                                  rule
+                                                  s.md
+-a----         6/23/2026   2:40 AM            980 22-b
+                                                  usin
+                                                  ess-
+                                                  flow
+                                                  s.md
+-a----         6/23/2026   2:40 AM            847 23-t
+                                                  rans
+                                                  acti
+                                                  on-m
+                                                  anag
+                                                  emen
+                                                  t.md
+-a----         6/23/2026   2:40 AM            863 24-p
+                                                  erfo
+                                                  rman
+                                                  ce-s
+                                                  trat
+                                                  egy.
+                                                  md  
+-a----         6/23/2026   2:40 AM            724 25-c
+                                                  achi
+                                                  ng-s
+                                                  trat
+                                                  egy.
+                                                  md  
+-a----         6/23/2026   2:40 AM            800 26-s
+                                                  ecur
+                                                  ity-
+                                                  stra
+                                                  tegy
+                                                  .md 
+-a----         6/23/2026   2:40 AM            708 27-a
+                                                  udit
+                                                  -log
+                                                  -str
+                                                  ateg
+                                                  y.md
+-a----         6/23/2026   2:40 AM            756 28-e
+                                                  rror
+                                                  -han
+                                                  dlin
+                                                  g.md
+-a----         6/23/2026   2:40 AM            729 29-b
+                                                  ackg
+                                                  roun
+                                                  d-jo
+                                                  bs.m
+                                                  d   
+-a----         6/23/2026   2:40 AM            648 30-r
+                                                  epor
+                                                  ting
+                                                  -str
+                                                  ateg
+                                                  y.md
+-a----         6/23/2026   2:40 AM            734 31-i
+                                                  ndex
+                                                  ing-
+                                                  stra
+                                                  tegy
+                                                  .md 
+-a----         6/23/2026   2:40 AM            817 32-s
+                                                  oft-
+                                                  dele
+                                                  te-s
+                                                  trat
+                                                  egy.
+                                                  md  
+-a----         6/23/2026   2:40 AM            866 33-f
+                                                  utur
+                                                  e-sc
+                                                  alab
+                                                  ilit
+                                                  y.md
+-a----         6/23/2026   4:41 AM           1047 34-d
+                                                  evel
+                                                  opme
+                                                  nt-r
+                                                  oadm
+                                                  ap.m
+                                                  d   
+-a----         6/23/2026   2:40 AM            939 35-i
+                                                  mpor
+                                                  tant
+                                                  -not
+                                                  es.m
+                                                  d   
+-a----         6/23/2026   2:40 AM           1114 36-c
+                                                  icd-
+                                                  stra
+                                                  tegy
+                                                  .md 
+-a----         6/23/2026   4:41 AM           2306 37-d
+                                                  aily
+                                                  -ope
+                                                  rati
+                                                  ons-
+                                                  modu
+                                                  le.m
+                                                  d   
+-a----         6/23/2026   4:41 AM           1580 38-f
+                                                  uel-
+                                                  mana
+                                                  geme
+                                                  nt-a
+                                                  naly
+                                                  sis.
+                                                  md  
+
+

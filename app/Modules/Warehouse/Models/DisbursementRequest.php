@@ -19,7 +19,7 @@ class DisbursementRequest extends Model
     protected $fillable = [
         'request_number', 'project_id', 'requester_id', 'type', 
         'status', 'confirmed_by', 'confirmed_at', 
-        'approved_by', 'approved_at', 'warehouse_id', 'notes'
+        'approved_by', 'approved_at', 'warehouse_id', 'fuel_tank_id', 'notes'
     ];
 
     public function items(): HasMany
@@ -45,5 +45,15 @@ class DisbursementRequest extends Model
     public function approvedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'approved_by');
+    }
+
+    public function warehouse(): BelongsTo
+    {
+        return $this->belongsTo(Warehouse::class);
+    }
+
+    public function fuelTank(): BelongsTo
+    {
+        return $this->belongsTo(FuelTank::class, 'fuel_tank_id');
     }
 }

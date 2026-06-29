@@ -1,0 +1,12 @@
+  develop
+  feature/engineering-docs
+  feature/infrastructure-setup
+* feature/procurement-warehouse
+  feature/resource-allocation
+  main
+  remotes/origin/develop
+  remotes/origin/feature/engineering-docs
+  remotes/origin/feature/infrastructure-setup
+  remotes/origin/feature/procurement-warehouse
+  remotes/origin/feature/resource-allocation
+  remotes/origin/main

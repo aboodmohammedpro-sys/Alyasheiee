@@ -1,0 +1,597 @@
+﻿
+
+    Directory: 
+    C:\Users\new\Desktop\alyasheiee\app\Modules
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   8:34 PM                Cost
+                                                  Cont
+                                                  rol 
+d-----         6/23/2026   4:41 AM                Dail
+                                                  yOpe
+                                                  rati
+                                                  ons 
+d-----         6/23/2026   7:19 PM                Fuel
+                                                  Mana
+                                                  geme
+                                                  nt  
+d-----         6/23/2026   4:42 AM                Proc
+                                                  urem
+                                                  ent 
+d-----         6/23/2026   4:41 AM                Proj
+                                                  ectM
+                                                  anag
+                                                  emen
+                                                  t   
+d-----         6/23/2026   4:41 AM                Reso
+                                                  urce
+                                                  Allo
+                                                  cati
+                                                  on  
+d-----         6/23/2026   7:54 PM                Ware
+                                                  hous
+                                                  e   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\CostControl
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   8:34 PM                Mode
+                                                  ls  
+d-----         6/23/2026   8:34 PM                Serv
+                                                  ices
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\CostControl\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   8:34 PM            632 Cost
+                                                  Log.
+                                                  php 
+-a----         6/23/2026   8:34 PM            585 Proj
+                                                  ectB
+                                                  udge
+                                                  t.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\CostControl\Services
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   8:45 PM           2617 Cost
+                                                  Serv
+                                                  ice.
+                                                  php 
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\DailyOperations
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   4:41 AM                Cont
+                                                  roll
+                                                  ers 
+d-----         6/23/2026   7:13 PM                Mode
+                                                  ls  
+d-----         6/23/2026   4:41 AM                Requ
+                                                  ests
+d-----         6/23/2026   4:41 AM                Reso
+                                                  urce
+                                                  s   
+d-----         6/23/2026   4:41 AM                Serv
+                                                  ices
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\DailyOperations\Controllers
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/26/2026   3:23 AM           2169 Dail
+                                                  yLog
+                                                  Cont
+                                                  roll
+                                                  er.p
+                                                  hp  
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\DailyOperations\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   4:41 AM           1173 Dail
+                                                  yLog
+                                                  .php
+-a----         6/23/2026   7:13 PM            790 Equi
+                                                  pmen
+                                                  tUsa
+                                                  ge.p
+                                                  hp  
+-a----         6/23/2026   4:41 AM            776 Labo
+                                                  rAtt
+                                                  enda
+                                                  nce.
+                                                  php 
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\DailyOperations\Requests
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM           2050 Stor
+                                                  eDai
+                                                  lyLo
+                                                  gReq
+                                                  uest
+                                                  .php
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\DailyOperations\Resources
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM           1730 Dail
+                                                  yLog
+                                                  Reso
+                                                  urce
+                                                  .php
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\DailyOperations\Services
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   8:36 PM           2129 Dail
+                                                  yLog
+                                                  Serv
+                                                  ice.
+                                                  php 
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\FuelManagement
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   7:19 PM                Cont
+                                                  roll
+                                                  ers 
+d-----         6/23/2026   7:19 PM                Mode
+                                                  ls  
+d-----         6/23/2026   7:19 PM                Serv
+                                                  ices
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\FuelManagement\Controllers
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/26/2026   3:23 AM           2030 Fuel
+                                                  Cont
+                                                  roll
+                                                  er.p
+                                                  hp  
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\FuelManagement\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   7:19 PM            642 Fuel
+                                                  Tank
+                                                  .php
+-a----         6/23/2026   7:19 PM           1241 Fuel
+                                                  Tran
+                                                  sact
+                                                  ion.
+                                                  php 
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\FuelManagement\Services
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   8:35 PM           2195 Fuel
+                                                  Serv
+                                                  ice.
+                                                  php 
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Procurement
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   4:43 AM                Cont
+                                                  roll
+                                                  ers 
+d-----         6/23/2026   4:42 AM                Mode
+                                                  ls  
+d-----         6/23/2026   4:42 AM                Serv
+                                                  ices
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Procurement\Controllers
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:42 AM            785 Mate
+                                                  rial
+                                                  Cont
+                                                  roll
+                                                  er.p
+                                                  hp  
+-a----         6/23/2026   4:43 AM           1598 Purc
+                                                  hase
+                                                  Requ
+                                                  estC
+                                                  ontr
+                                                  olle
+                                                  r.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Procurement\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:42 AM            415 Mate
+                                                  rial
+                                                  .php
+-a----         6/23/2026   4:42 AM           1018 Purc
+                                                  hase
+                                                  Requ
+                                                  est.
+                                                  php 
+-a----         6/23/2026   4:42 AM            610 Purc
+                                                  hase
+                                                  Requ
+                                                  estI
+                                                  tem.
+                                                  php 
+-a----         6/23/2026   4:42 AM            429 Supp
+                                                  lier
+                                                  .php
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Procurement\Services
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:42 AM           1462 Purc
+                                                  hase
+                                                  Requ
+                                                  estS
+                                                  ervi
+                                                  ce.p
+                                                  hp  
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   4:41 AM                Cont
+                                                  roll
+                                                  ers 
+d-----         6/23/2026   4:41 AM                Data
+                                                  base
+d-----         6/23/2026   4:41 AM                DTOs
+d-----         6/23/2026   4:41 AM                Enum
+                                                  s   
+d-----         6/23/2026   4:41 AM                Mode
+                                                  ls  
+d-----         6/23/2026   4:41 AM                Poli
+                                                  cies
+d-----         6/23/2026   4:41 AM                Repo
+                                                  sito
+                                                  ries
+d-----         6/23/2026   4:41 AM                Requ
+                                                  ests
+d-----         6/23/2026   4:41 AM                Reso
+                                                  urce
+                                                  s   
+d-----         6/23/2026   4:41 AM                Serv
+                                                  ices
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Controllers
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/26/2026   3:25 AM           1610 Proj
+                                                  ectC
+                                                  ontr
+                                                  olle
+                                                  r.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Database
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   4:41 AM                Migr
+                                                  atio
+                                                  ns  
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Database\Migrations
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\DTOs
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   4:41 AM           1199 Proj
+                                                  ectD
+                                                  TO.p
+                                                  hp  
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Enums
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   4:41 AM            594 Proj
+                                                  ectS
+                                                  tatu
+                                                  s.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   4:41 AM           1646 Proj
+                                                  ect.
+                                                  php 
+-a----         6/23/2026   4:41 AM            825 Proj
+                                                  ectP
+                                                  hase
+                                                  .php
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Policies
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Repositories
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   4:41 AM            901 Proj
+                                                  ectR
+                                                  epos
+                                                  itor
+                                                  y.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Requests
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Resources
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ProjectManagement\Services
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   4:41 AM           1464 Proj
+                                                  ectS
+                                                  ervi
+                                                  ce.p
+                                                  hp  
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ResourceAllocation
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   4:41 AM                Mode
+                                                  ls  
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\ResourceAllocation\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   4:41 AM              0 .git
+                                                  keep
+-a----         6/23/2026   8:33 PM            684 Empl
+                                                  oyee
+                                                  .php
+-a----         6/23/2026   8:33 PM            710 Equi
+                                                  pmen
+                                                  t.ph
+                                                  p   
+-a----         6/23/2026   4:41 AM            851 Proj
+                                                  ectA
+                                                  ssig
+                                                  nmen
+                                                  t.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Warehouse
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/23/2026   7:54 PM                Cont
+                                                  roll
+                                                  ers 
+d-----         6/23/2026   7:54 PM                Mode
+                                                  ls  
+d-----         6/23/2026   7:54 PM                Serv
+                                                  ices
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Warehouse\Controllers
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/26/2026   3:24 AM           2524 Disb
+                                                  urse
+                                                  ment
+                                                  Cont
+                                                  roll
+                                                  er.p
+                                                  hp  
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Warehouse\Models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   7:54 PM           1403 Disb
+                                                  urse
+                                                  ment
+                                                  Requ
+                                                  est.
+                                                  php 
+-a----         6/23/2026   7:54 PM            553 Disb
+                                                  urse
+                                                  ment
+                                                  Requ
+                                                  estI
+                                                  tem.
+                                                  php 
+-a----         6/23/2026   4:42 AM            619 Ware
+                                                  hous
+                                                  e.ph
+                                                  p   
+
+
+    Directory: C:\Users\new\Desktop\alyasheiee\app\Mod
+    ules\Warehouse\Services
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/23/2026   8:32 PM           2351 Disb
+                                                  urse
+                                                  ment
+                                                  Serv
+                                                  ice.
+                                                  php 
+
+

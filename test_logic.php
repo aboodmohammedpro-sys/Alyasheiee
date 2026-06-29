@@ -47,6 +47,10 @@ try {
 
     // 5. Create Daily Log via Controller/Action simulation
     Auth::login($recorder);
+    
+    // تنظيف السجل اليومي القديم إن وجد لتجنب تعارض القيد الفريد (حذف نهائي Force Delete)
+    DailyLog::where('project_id', $project->id)->whereDate('date', now()->toDateString())->forceDelete();
+    
     $service = app(\App\Modules\DailyOperations\Services\DailyLogService::class);
     $logData = [
         'project_id' => $project->id,
