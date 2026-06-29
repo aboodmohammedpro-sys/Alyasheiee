@@ -11,5 +11,5 @@ class Material extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
-    protected $fillable = ['code', 'name', 'category', 'unit', 'description'];
+    protected $fillable = ['code', 'name', 'category', 'unit', 'description', 'unit_price'];
 }

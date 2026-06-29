@@ -25,7 +25,12 @@ $supplier = Supplier::firstOrCreate(['name' => 'Al-Futtaim'], ['status' => 'acti
 $warehouse = Warehouse::firstOrCreate(['name' => 'Central Warehouse'], ['type' => 'central', 'project_id' => $project->id]);
 $rebar = Material::firstOrCreate(['code' => 'RB-12'], ['name' => 'Steel Rebar 12mm', 'category' => 'Materials', 'unit' => 'ton']);
 
-echo "1. Setup Finished.\n";
+// تصفير المخزون الحالي للمستودع لهذه المادة للتأكد من نظافة التقييم عند تكرار الفحص
+\App\Modules\Warehouse\Models\InventoryStock::where('warehouse_id', $warehouse->id)
+    ->where('material_id', $rebar->id)
+    ->update(['quantity' => 0]);
+
+echo "1. Setup Finished. (Stock Reset to 0)\n";
 
 // 2. PR -> PO
 $pr = PurchaseRequest::create([

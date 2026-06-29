@@ -16,7 +16,7 @@ class FuelTransaction extends Model
 
     protected $fillable = [
         'type', 'from_tank_id', 'to_tank_id', 'equipment_id', 
-        'project_id', 'quantity', 'odometer_reading', 'dispatcher_id', 'notes'
+        'project_id', 'quantity', 'odometer_reading', 'dispatcher_id', 'status', 'notes'
     ];
 
     public function fromTank(): BelongsTo

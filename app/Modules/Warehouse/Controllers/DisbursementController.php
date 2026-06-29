@@ -26,9 +26,11 @@ class DisbursementController extends BaseController
             'project_id' => 'required|uuid|exists:projects,id',
             'type' => 'required|in:material,spare_part,fuel,oil',
             'items' => 'required|array|min:1',
+            'items.*.material_id' => 'nullable|uuid|exists:materials,id',
             'items.*.item_name' => 'required|string',
             'items.*.quantity' => 'required|numeric|min:0',
             'items.*.unit' => 'nullable|string',
+            'notes' => 'nullable|string',
         ]);
 
         $disbursementRequest = $this->disbursementService->createRequest($validated);
@@ -50,10 +52,15 @@ class DisbursementController extends BaseController
     public function approve(Request $request, DisbursementRequest $disbursementRequest): JsonResponse
     {
         $validated = $request->validate([
-            'warehouse_id' => 'required|uuid' 
+            'warehouse_id' => 'nullable|uuid|exists:warehouses,id',
+            'fuel_tank_id' => 'nullable|uuid|exists:fuel_tanks,id',
         ]);
 
-        $updated = $this->disbursementService->approveRequest($disbursementRequest, $validated['warehouse_id']);
+        $updated = $this->disbursementService->approveRequest(
+            $disbursementRequest, 
+            $validated['warehouse_id'] ?? null, 
+            $validated['fuel_tank_id'] ?? null
+        );
         return $this->successResponse($updated, 'Request approved by PM.');
     }
 

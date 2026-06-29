@@ -43,32 +43,55 @@ class DisbursementService
         return $request;
     }
 
-    public function approveRequest(DisbursementRequest $request, string $warehouseId): DisbursementRequest
+    public function approveRequest(DisbursementRequest $request, ?string $warehouseId = null, ?string $fuelTankId = null): DisbursementRequest
     {
         $request->update([
             'status' => 'approved',
             'approved_by' => Auth::id(),
             'approved_at' => now(),
             'warehouse_id' => $warehouseId,
+            'fuel_tank_id' => $fuelTankId,
         ]);
 
         return $request;
     }
 
-    /**
-     * التنفيذ الفعلي للصرف (بواسطة أمين المستودع)
-     */
     public function issueRequest(DisbursementRequest $request): DisbursementRequest
     {
+        if ($request->status !== 'approved') {
+            throw new \Exception("Only approved requests can be issued.");
+        }
+
         return \Illuminate\Support\Facades\DB::transaction(function () use ($request) {
             $request->update([
                 'status' => 'issued',
                 'updated_at' => now(),
             ]);
 
-            // هنا يتم تحديث المخازن (Inventory) بناءً على النوع
-            if ($request->type === 'fuel') {
-                // منطق إضافي إذا كان الوقود يصرف من خزان غير مسجل في FuelService
+            $inventoryService = app(\App\Modules\Warehouse\Services\InventoryService::class);
+
+            foreach ($request->items as $item) {
+                if ($item->material_id && $request->warehouse_id) {
+                    // خصم الكمية من رصيد المستودع
+                    $inventoryService->updateStock(
+                        $request->warehouse_id,
+                        $item->material_id,
+                        -$item->quantity
+                    );
+
+                    // تسجيل الصرف المالي للمواد إذا تواجد السعر
+                    $material = \App\Modules\Procurement\Models\Material::find($item->material_id);
+                    if ($material && $material->unit_price > 0) {
+                        $costAmount = $item->quantity * $material->unit_price;
+                        app(\App\Modules\CostControl\Services\CostService::class)->logMaterialDisbursementCost(
+                            $request->project_id,
+                            $request->id,
+                            $material->category, // استخدام فئة المادة الدقيقة
+                            $costAmount,
+                            "Issued: {$item->quantity} {$material->unit} of {$material->name} from Warehouse"
+                        );
+                    }
+                }
             }
 
             return $request;

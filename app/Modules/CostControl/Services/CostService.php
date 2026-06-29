@@ -47,6 +47,14 @@ class CostService
         $this->createCostLog($tx->project_id, 'fuel_transaction', $tx->id, 'fuel', $amount, "Fuel for: " . ($tx->equipment->name ?? 'N/A'));
     }
 
+    /**
+     * تسجيل تكلفة المواد والزيوت وقطع الغيار عند الصرف الفعلي
+     */
+    public function logMaterialDisbursementCost($projectId, $disbursementRequestId, $category, $amount, $description)
+    {
+        $this->createCostLog($projectId, 'disbursement_request', $disbursementRequestId, $category, $amount, $description);
+    }
+
     private function createCostLog($projectId, $sourceType, $sourceId, $category, $amount, $description)
     {
         CostLog::create([

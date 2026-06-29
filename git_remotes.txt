@@ -1,0 +1,2 @@
+origin	https://github.com/aboodmohammedpro-sys/Alyasheiee.git (fetch)
+origin	https://github.com/aboodmohammedpro-sys/Alyasheiee.git (push)
