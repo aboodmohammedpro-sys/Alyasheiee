@@ -33,6 +33,11 @@ class DailyLog extends Model
         return $this->belongsTo(User::class, 'recorder_id');
     }
 
+    public function approver(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'approver_id');
+    }
+
     public function laborAttendance(): HasMany
     {
         return $this->hasMany(LaborAttendance::class);

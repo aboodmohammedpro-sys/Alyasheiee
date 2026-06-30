@@ -21,6 +21,34 @@ class DailyLogController extends BaseController
     }
 
     /**
+     * قائمة السجلات اليومية (مع التصفية بالطلب)
+     */
+    public function index(Request $request): JsonResponse
+    {
+        $query = DailyLog::with(['project', 'recorder', 'approver']);
+
+        // تصفية حسب المشروع
+        if ($request->has('project_id')) {
+            $query->where('project_id', $request->query('project_id'));
+        }
+
+        // تصفية حسب التاريخ
+        if ($request->has('date')) {
+            $query->whereDate('date', $request->query('date'));
+        }
+
+        // تصفية حسب الحالة (draft, submitted, approved)
+        if ($request->has('status')) {
+            $query->where('status', $request->query('status'));
+        }
+
+        // إرجاع النتيجة مع الترقيم
+        $logs = $query->latest('date')->paginate($request->query('per_page', 15));
+
+        return $this->paginatedResponse($logs);
+    }
+
+    /**
      * Mobile: تسجيل يومية جديدة (Recorder)
      */
     public function store(StoreDailyLogRequest $request): JsonResponse
