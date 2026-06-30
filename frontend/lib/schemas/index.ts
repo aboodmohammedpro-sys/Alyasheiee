@@ -4,13 +4,13 @@ import { z } from 'zod';
 // Project
 // ============================================================
 export const projectSchema = z.object({
-    name: z.string().min(1, 'Project name is required'),
-    code: z.string().min(1, 'Project code is required'),
+    name: z.string().min(1, 'اسم المشروع مطلوب'),
+    code: z.string().min(1, 'رمز المشروع مطلوب'),
     client_name: z.string().optional(),
     location: z.string().optional(),
     start_date: z.string().optional(),
     expected_end_date: z.string().optional(),
-    estimated_budget: z.coerce.number().min(0).default(0),
+    estimated_budget: z.coerce.number().min(0, 'يجب أن تكون الميزانية 0 أو أكثر').default(0),
     status: z.enum(['planning', 'active', 'on_hold', 'completed', 'cancelled']).default('planning'),
     description: z.string().optional(),
 });
