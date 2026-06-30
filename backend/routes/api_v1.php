@@ -47,6 +47,11 @@ Route::prefix('v1')->group(function () {
 
             // GRN (Goods Received Note)
             Route::post('grn', [\App\Modules\Warehouse\Controllers\GrnController::class, 'store']); // Store Keeper
+
+            // Inventory Transfers (Multi-Warehouse)
+            Route::post('transfers', [\App\Modules\Warehouse\Controllers\TransferController::class, 'store']);
+            Route::post('transfers/{inventoryTransfer}/ship', [\App\Modules\Warehouse\Controllers\TransferController::class, 'ship']);
+            Route::post('transfers/{inventoryTransfer}/receive', [\App\Modules\Warehouse\Controllers\TransferController::class, 'receive']);
         });
 
         // 6. Procurement (Web Management)

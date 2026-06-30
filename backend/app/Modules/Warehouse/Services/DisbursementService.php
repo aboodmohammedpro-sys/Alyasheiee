@@ -15,11 +15,11 @@ class DisbursementService
     {
         $request = DisbursementRequest::create([
             'request_number' => 'REQ-' . strtoupper(Str::random(8)),
-            'project_id' => $data['project_id'],
-            'requester_id' => Auth::id(),
-            'type' => $data['type'],
-            'status' => 'draft',
-            'notes' => $data['notes'] ?? null,
+            'project_id'     => $data['project_id'],
+            'requester_id'   => Auth::id(),
+            'type'           => $data['type'],
+            'status'         => 'draft',
+            'notes'          => $data['notes'] ?? null,
         ]);
 
         foreach ($data['items'] as $item) {
@@ -35,7 +35,7 @@ class DisbursementService
     public function confirmRequest(DisbursementRequest $request): DisbursementRequest
     {
         $request->update([
-            'status' => 'confirmed',
+            'status'       => 'confirmed',
             'confirmed_by' => Auth::id(),
             'confirmed_at' => now(),
         ]);
@@ -43,12 +43,15 @@ class DisbursementService
         return $request;
     }
 
+    /**
+     * الموافقة وتحديد المستودع أو خزان الوقود (مدير المشروع)
+     */
     public function approveRequest(DisbursementRequest $request, ?string $warehouseId = null, ?string $fuelTankId = null): DisbursementRequest
     {
         $request->update([
-            'status' => 'approved',
-            'approved_by' => Auth::id(),
-            'approved_at' => now(),
+            'status'       => 'approved',
+            'approved_by'  => Auth::id(),
+            'approved_at'  => now(),
             'warehouse_id' => $warehouseId,
             'fuel_tank_id' => $fuelTankId,
         ]);
@@ -56,6 +59,9 @@ class DisbursementService
         return $request;
     }
 
+    /**
+     * إصدار الطلب (أمين المستودع): خصم المواد من الرصيد وتسجيل الحركات
+     */
     public function issueRequest(DisbursementRequest $request): DisbursementRequest
     {
         if ($request->status !== 'approved') {
@@ -64,7 +70,7 @@ class DisbursementService
 
         return \Illuminate\Support\Facades\DB::transaction(function () use ($request) {
             $request->update([
-                'status' => 'issued',
+                'status'     => 'issued',
                 'updated_at' => now(),
             ]);
 
@@ -79,6 +85,18 @@ class DisbursementService
                         -$item->quantity
                     );
 
+                    // تسجيل الحركة في دفتر الأستاذ
+                    $inventoryService->logMovement(
+                        warehouseId:   $request->warehouse_id,
+                        materialId:    $item->material_id,
+                        type:          'issue',
+                        quantity:      -$item->quantity,
+                        referenceType: DisbursementRequest::class,
+                        referenceId:   $request->id,
+                        referenceNo:   $request->request_number,
+                        notes:         "Issued to project ID: {$request->project_id}",
+                    );
+
                     // تسجيل الصرف المالي للمواد إذا تواجد السعر
                     $material = \App\Modules\Procurement\Models\Material::find($item->material_id);
                     if ($material && $material->unit_price > 0) {
@@ -86,7 +104,7 @@ class DisbursementService
                         app(\App\Modules\CostControl\Services\CostService::class)->logMaterialDisbursementCost(
                             $request->project_id,
                             $request->id,
-                            $material->category, // استخدام فئة المادة الدقيقة
+                            $material->category,
                             $costAmount,
                             "Issued: {$item->quantity} {$material->unit} of {$material->name} from Warehouse"
                         );
