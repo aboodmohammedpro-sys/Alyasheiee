@@ -1,0 +1,23 @@
+1. Warehouses created (no project_id binding):
+   Central: Central Depot - HQ (ID: a2248c42-0a9b-41b8-9e1f-176ba75d63d7)
+   Site:    Site Warehouse - Project Alpha (ID: a2248c42-0bff-468a-b1b9-93831b03a4cb)
+
+2. Initial stock loaded into Central Depot: 500 bags (expected 500)
+
+3. Transfer created: TRF-9PWNWPHY, Status: pending
+
+4. Transfer shipped:
+   Central stock after shipping: 300 bags (expected: 300)
+   Transfer status: shipped
+
+5. Transfer received:
+   Central stock final: 300 bags (expected: 300)
+   Site stock final:    200 bags (expected: 200)
+   Transfer status: completed
+
+6. Stock Movements Ledger (3 records):
+   [Central] Type: receipt, Qty: +500.0000, Ref: MANUAL-INIT
+   [Central] Type: transfer_out, Qty: -200.0000, Ref: TRF-9PWNWPHY
+   [Site] Type: transfer_in, Qty: +200.0000, Ref: TRF-9PWNWPHY
+
+MULTI-WAREHOUSE TRANSFER TEST PASSED SUCCESSFULLY!

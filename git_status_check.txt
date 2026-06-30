@@ -1,0 +1,53 @@
+﻿On branch feature/multi-warehouse-support
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    test_costs.php -> backend/test_costs.php
+	renamed:    test_disbursement.php -> backend/test_disbursement.php
+	renamed:    test_fuel.php -> backend/test_fuel.php
+	renamed:    test_fuel_efficiency.php -> backend/test_fuel_efficiency.php
+	renamed:    test_inventory_flow.php -> backend/test_inventory_flow.php
+	renamed:    test_logic.php -> backend/test_logic.php
+	renamed:    test_procurement.php -> backend/test_procurement.php
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   backend/app/Modules/Warehouse/Models/Warehouse.php
+	modified:   backend/app/Modules/Warehouse/Services/DisbursementService.php
+	modified:   backend/app/Modules/Warehouse/Services/InventoryService.php
+	modified:   backend/routes/api_v1.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	backend/app/Modules/Warehouse/Controllers/TransferController.php
+	backend/app/Modules/Warehouse/Models/InventoryTransfer.php
+	backend/app/Modules/Warehouse/Models/InventoryTransferItem.php
+	backend/app/Modules/Warehouse/Models/StockMovement.php
+	backend/database/migrations/2026_06_30_000001_multi_warehouse_support.php
+	backend/migrate_multi_wh.txt
+	backend/test_costs_out.txt
+	backend/test_disb_out.txt
+	backend/test_fuel_eff_out.txt
+	backend/test_fuel_out.txt
+	backend/test_inv_out.txt
+	backend/test_logic_out.txt
+	backend/test_multi_warehouse.php
+	backend/test_mw_out.txt
+	backend/test_proc_out.txt
+	backend/test_result.txt
+	git_log_now.txt
+	git_ops_utf8.txt
+	git_push_output.txt
+	git_status_2.txt
+	git_status_2_utf8.txt
+	git_status_after_push.txt
+	git_status_check.txt
+	git_status_latest.txt
+	git_status_new_changes.txt
+	git_status_now.txt
+	git_status_pre.txt
+	git_top_level.txt
+	git_tracked_files.txt
+	last_logs.txt
+	test_out.txt
+

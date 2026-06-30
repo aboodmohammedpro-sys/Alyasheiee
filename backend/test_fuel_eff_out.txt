@@ -1,0 +1,9 @@
+1. Setup Finished. Excavator @ 1000 hours. Std Rate: 20L/hr.
+
+Testing Normal Case: 5 hours, 95 Liters...
+Transaction 1 Status: normal (Expected: normal)
+
+Testing Anomaly Case: 2 hours, 100 Liters...
+Transaction 2 Status: anomaly (Expected: anomaly)
+
+FUEL EFFICIENCY TEST PASSED!

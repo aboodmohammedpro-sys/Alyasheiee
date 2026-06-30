@@ -1,0 +1,6 @@
+1. Setup Finished. (Stock Reset to 0)
+2. PO Issued (Number: PO-NBHXXS1W).
+3. GRN Issued (ID: a224856c-74c5-4051-be57-f3e77888a30f, Received: 30 tons).
+4. Current Stock in Warehouse: 30 Tons.
+
+INVENTORY FLOW TEST PASSED!

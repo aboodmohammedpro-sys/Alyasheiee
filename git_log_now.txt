@@ -1,0 +1,30 @@
+﻿commit f26a9a6397a49ca4c800e4f622d31175595abbab
+Author: ERP Architect <architect@alyasheiee.com>
+Date:   Tue Jun 30 02:29:20 2026 +0300
+
+    chore: restructure workspace by moving Laravel backend to backend directory
+
+commit 124ca77755f4948b5498b93451290c910184f46d
+Merge: 9478df0 2f3b459
+Author: Ali Alfakir <150716506+alfakir1@users.noreply.github.com>
+Date:   Tue Jun 30 02:12:35 2026 +0300
+
+    Merge remote-tracking branch 'origin/feature/procurement-warehouse' into frontend
+
+commit 2f3b4592b001301f6b1232c51cca0dc0bbc9b153
+Author: ERP Architect <architect@alyasheiee.com>
+Date:   Tue Jun 30 01:18:52 2026 +0300
+
+    Fix composer no-interaction flag in CI github workflow
+
+commit 9478df0de5a3a70aae5630a4acd97ad349bf4b8c
+Author: Ali Alfakir <150716506+alfakir1@users.noreply.github.com>
+Date:   Tue Jun 30 01:06:19 2026 +0300
+
+    feat(frontend): initial frontend implementation and compliance audit updates
+
+commit ddb2333c807bf1ff88a272bf59a18941718eec08
+Author: ERP Architect <architect@alyasheiee.com>
+Date:   Tue Jun 30 01:05:08 2026 +0300
+
+     Update procurement warehouse features tests and DB migrations

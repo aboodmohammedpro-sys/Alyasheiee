@@ -1,0 +1,6 @@
+1. Data Setup Finished.
+2. Purchase Request Created & Approved (ID: a2248588-bf61-402a-9659-776bcaab6607).
+3. Purchase Order Issued (ID: a2248588-c58b-49d4-bc06-34e5ba4bb63f, Number: PO-ZMYFCIVD).
+   PO Total Amount: 1850 (Expected: 1850)
+
+PROCUREMENT PO TEST PASSED!

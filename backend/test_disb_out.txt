@@ -1,0 +1,19 @@
+1. Baseline Setup Completed. Stock: Oil = 100L, Filter = 10pcs.
+2. Request Created: REQ-VDT5GNI6 by Recorder. Status: draft
+3. Request Confirmed by Senior. Status: confirmed
+4. Request Approved by PM. Assigned Warehouse: Site Store Alpha. Status: approved
+5. Request Issued by Warehouse Keeper. Status: issued
+
+Verification of Remaining Stock:
+Hydraulic Oil: 80 L (Expected: 80 L)
+Oil Filter: 8 pcs (Expected: 8 pcs)
+
+Verification of Cost Logs:
+Hydraulic Oil Cost: 300.00 (Expected: 300)
+Oil Filter Cost: 90.00 (Expected: 90)
+
+Verification of Budget Spent update:
+Oil Budget Spent: 300.00 (Expected: 300.00)
+Filter Budget Spent: 90.00 (Expected: 90.00)
+
+DISBURSEMENT INTEGRATION TEST PASSED SUCCESSFULLY!

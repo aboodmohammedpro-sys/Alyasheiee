@@ -1,0 +1,5 @@
+Tank Created: Site Tank A (Balance: 0)
+Fuel Received: 1000L. New Balance: 1000.00L
+Fuel Dispensed to Equipment: 150L. Remaining Balance: 850.00L
+
+FUEL TEST PASSED SUCCESSFULLY!
