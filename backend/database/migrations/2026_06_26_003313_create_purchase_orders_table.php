@@ -15,7 +15,7 @@ return new class extends Migration
             $table->foreignUuid('purchase_request_id')->nullable()->constrained('purchase_requests');
             $table->foreignUuid('supplier_id')->constrained('suppliers');
             $table->foreignUuid('project_id')->constrained('projects');
-            $table->foreignUuid('created_by')->constrained('users');
+            $table->foreignId('created_by')->constrained('users');
             
             $table->date('order_date');
             $table->date('delivery_date')->nullable();

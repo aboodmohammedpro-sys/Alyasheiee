@@ -12,8 +12,8 @@ return new class extends Migration
         Schema::create('daily_logs', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('project_id')->constrained('projects')->cascadeOnDelete();
-            $table->foreignUuid('recorder_id')->constrained('users');
-            $table->foreignUuid('approver_id')->nullable()->constrained('users');
+            $table->foreignId('recorder_id')->constrained('users');
+            $table->foreignId('approver_id')->nullable()->constrained('users');
             
             $table->date('date');
             $table->string('status')->default('draft'); // draft, submitted, approved

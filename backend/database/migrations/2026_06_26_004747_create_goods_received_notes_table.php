@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('grn_number')->unique();
             $table->foreignUuid('purchase_order_id')->constrained('purchase_orders');
             $table->foreignUuid('warehouse_id')->constrained('warehouses');
-            $table->foreignUuid('received_by')->constrained('users');
+            $table->foreignId('received_by')->constrained('users');
             
             $table->date('received_date');
             $table->string('delivery_note_number')->nullable();

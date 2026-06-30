@@ -35,7 +35,7 @@ return new class extends Migration
             
             $table->decimal('quantity', 12, 2);
             $table->decimal('odometer_reading', 12, 2)->nullable(); // قراءة عداد المعدة عند التعبئة
-            $table->foreignUuid('dispatcher_id')->constrained('users'); // الموزع المسؤول
+            $table->foreignId('dispatcher_id')->constrained('users'); // الموزع المسؤول
             
             $table->text('notes')->nullable();
             $table->timestamps();

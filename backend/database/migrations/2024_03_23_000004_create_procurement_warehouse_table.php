@@ -48,7 +48,7 @@ return new class extends Migration
         Schema::create('purchase_requests', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('project_id')->constrained('projects');
-            $table->foreignUuid('requester_id')->constrained('users');
+            $table->foreignId('requester_id')->constrained('users');
             $table->string('status')->default('draft'); // draft, submitted, approved, rejected, ordered
             $table->date('required_date')->nullable();
             $table->text('notes')->nullable();

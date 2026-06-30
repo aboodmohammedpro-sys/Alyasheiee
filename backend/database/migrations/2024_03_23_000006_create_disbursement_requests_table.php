@@ -13,15 +13,15 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('request_number')->unique();
             $table->foreignUuid('project_id')->constrained('projects');
-            $table->foreignUuid('requester_id')->constrained('users'); // المراقب
+            $table->foreignId('requester_id')->constrained('users'); // المراقب
             
             $table->string('type'); // material (مواد), spare_part (قطع غيار), fuel (ديزل), oil (زيت)
             $table->string('status')->default('draft'); // draft, confirmed, approved, issued, rejected
             
-            $table->foreignUuid('confirmed_by')->nullable()->constrained('users'); // كبير المراقبين
+            $table->foreignId('confirmed_by')->nullable()->constrained('users'); // كبير المراقبين
             $table->timestamp('confirmed_at')->nullable();
             
-            $table->foreignUuid('approved_by')->nullable()->constrained('users'); // مدير المشروع
+            $table->foreignId('approved_by')->nullable()->constrained('users'); // مدير المشروع
             $table->timestamp('approved_at')->nullable();
             
             $table->foreignUuid('warehouse_id')->nullable()->constrained('fuel_tanks'); // أو مستودع مواد عام (سنستخدم fuel_tanks للديزل حالياً وسنعممها لاحقاً)

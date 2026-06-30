@@ -43,7 +43,7 @@ return new class extends Migration
             $table->uuid('reference_id')->nullable();
             $table->string('reference_no')->nullable(); // رقم مقروء مثل GRN-XXXX
             $table->text('notes')->nullable();
-            $table->foreignUuid('performed_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('performed_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
 
             // indexes للأداء في الاستعلامات الشائعة
@@ -60,9 +60,9 @@ return new class extends Migration
             $table->foreignUuid('target_warehouse_id')->constrained('warehouses');
             $table->string('status')->default('pending'); // pending, shipped, completed, cancelled
             $table->text('notes')->nullable();
-            $table->foreignUuid('requested_by')->nullable()->constrained('users')->nullOnDelete();
-            $table->foreignUuid('shipped_by')->nullable()->constrained('users')->nullOnDelete();
-            $table->foreignUuid('received_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('requested_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('shipped_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('received_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamp('shipped_at')->nullable();
             $table->timestamp('received_at')->nullable();
             $table->timestamps();
