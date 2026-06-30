@@ -28,7 +28,7 @@ export default function NewProjectPage() {
     handleSubmit,
     formState: { errors },
   } = useForm<ProjectFormData>({
-    resolver: zodResolver(projectSchema),
+    resolver: zodResolver(projectSchema) as any,
     defaultValues: {
       status: "planning",
       estimated_budget: 0,

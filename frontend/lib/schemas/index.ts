@@ -20,10 +20,10 @@ export type ProjectFormData = z.infer<typeof projectSchema>;
 // Material
 // ============================================================
 export const materialSchema = z.object({
-    code: z.string().min(1, 'Material code is required'),
-    name: z.string().min(1, 'Material name is required'),
-    category: z.string().min(1, 'Category is required'),
-    unit: z.string().min(1, 'Unit is required'),
+    code: z.string().min(1, 'كود المادة مطلوب'),
+    name: z.string().min(1, 'اسم المادة مطلوب'),
+    category: z.string().min(1, 'الفئة مطلوبة'),
+    unit: z.string().min(1, 'الوحدة مطلوبة'),
     description: z.string().optional(),
 });
 export type MaterialFormData = z.infer<typeof materialSchema>;
@@ -32,7 +32,7 @@ export type MaterialFormData = z.infer<typeof materialSchema>;
 // Supplier
 // ============================================================
 export const supplierSchema = z.object({
-    name: z.string().min(1, 'Supplier name is required'),
+    name: z.string().min(1, 'اسم المورد مطلوب'),
     contact_person: z.string().optional(),
     phone: z.string().optional(),
     email: z.string().email().optional().or(z.literal('')),
@@ -44,9 +44,9 @@ export type SupplierFormData = z.infer<typeof supplierSchema>;
 // Fuel Tank
 // ============================================================
 export const fuelTankSchema = z.object({
-    name: z.string().min(1, 'Tank name is required'),
+    name: z.string().min(1, 'اسم الخزان مطلوب'),
     type: z.enum(['static', 'mobile']),
-    capacity: z.coerce.number().min(1, 'Capacity must be greater than 0'),
+    capacity: z.coerce.number().min(1, 'يجب أن تكون السعة أكبر من 0'),
     project_id: z.string().uuid().optional(),
 });
 export type FuelTankFormData = z.infer<typeof fuelTankSchema>;
@@ -55,10 +55,10 @@ export type FuelTankFormData = z.infer<typeof fuelTankSchema>;
 // Fuel Dispense
 // ============================================================
 export const fuelDispenseSchema = z.object({
-    from_tank_id: z.string().uuid('Please select a fuel tank'),
-    equipment_id: z.string().uuid('Please select equipment'),
-    project_id: z.string().uuid('Please select a project'),
-    quantity: z.coerce.number().min(0.5, 'Minimum quantity is 0.5L'),
+    from_tank_id: z.string().uuid('الرجاء اختيار خزان الوقود'),
+    equipment_id: z.string().uuid('الرجاء اختيار المعدة'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
+    quantity: z.coerce.number().min(0.5, 'الحد الأدنى للكمية هو 0.5 لتر'),
     odometer_reading: z.coerce.number().optional(),
     notes: z.string().optional(),
     // Frontend-only: driver selection stored but sent as notes if field not supported
@@ -70,16 +70,16 @@ export type FuelDispenseFormData = z.infer<typeof fuelDispenseSchema>;
 // Purchase Request
 // ============================================================
 export const purchaseRequestItemSchema = z.object({
-    material_id: z.string().uuid('Please select a material'),
-    quantity: z.coerce.number().min(0.01, 'Quantity must be greater than 0'),
+    material_id: z.string().uuid('الرجاء اختيار المادة'),
+    quantity: z.coerce.number().min(0.01, 'يجب أن تكون الكمية أكبر من 0'),
     estimated_unit_price: z.coerce.number().min(0).optional(),
 });
 
 export const purchaseRequestSchema = z.object({
-    project_id: z.string().uuid('Please select a project'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
     required_date: z.string().optional(),
     notes: z.string().optional(),
-    items: z.array(purchaseRequestItemSchema).min(1, 'At least one item is required'),
+    items: z.array(purchaseRequestItemSchema).min(1, 'يجب إضافة بند واحد على الأقل'),
 });
 export type PurchaseRequestFormData = z.infer<typeof purchaseRequestSchema>;
 
@@ -87,16 +87,16 @@ export type PurchaseRequestFormData = z.infer<typeof purchaseRequestSchema>;
 // GRN (Goods Received Note)
 // ============================================================
 export const grnItemSchema = z.object({
-    material_id: z.string().uuid('Please select a material'),
-    quantity_received: z.coerce.number().min(0, 'Quantity must be >= 0'),
+    material_id: z.string().uuid('الرجاء اختيار المادة'),
+    quantity_received: z.coerce.number().min(0, 'يجب أن تكون الكمية أكبر من أو تساوي 0'),
 });
 
 export const grnSchema = z.object({
-    purchase_order_id: z.string().uuid('Please select a purchase order'),
-    warehouse_id: z.string().uuid('Please select a warehouse'),
+    purchase_order_id: z.string().uuid('الرجاء اختيار أمر الشراء'),
+    warehouse_id: z.string().uuid('الرجاء اختيار المستودع'),
     delivery_note_number: z.string().optional(),
     notes: z.string().optional(),
-    items: z.array(grnItemSchema).min(1, 'At least one item is required'),
+    items: z.array(grnItemSchema).min(1, 'يجب إضافة بند واحد على الأقل'),
 });
 export type GrnFormData = z.infer<typeof grnSchema>;
 
@@ -104,17 +104,17 @@ export type GrnFormData = z.infer<typeof grnSchema>;
 // Disbursement Request
 // ============================================================
 export const disbursementItemSchema = z.object({
-    item_name: z.string().min(1, 'Item name is required'),
-    quantity: z.coerce.number().min(0, 'Quantity must be >= 0'),
+    item_name: z.string().min(1, 'اسم البند مطلوب'),
+    quantity: z.coerce.number().min(0, 'يجب أن تكون الكمية أكبر من أو تساوي 0'),
     unit: z.string().optional(),
     material_id: z.string().uuid().optional(),
 });
 
 export const disbursementSchema = z.object({
-    project_id: z.string().uuid('Please select a project'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
     type: z.enum(['material', 'spare_part', 'fuel', 'oil']),
     notes: z.string().optional(),
-    items: z.array(disbursementItemSchema).min(1, 'At least one item is required'),
+    items: z.array(disbursementItemSchema).min(1, 'يجب إضافة بند واحد على الأقل'),
 });
 export type DisbursementFormData = z.infer<typeof disbursementSchema>;
 
@@ -122,7 +122,7 @@ export type DisbursementFormData = z.infer<typeof disbursementSchema>;
 // Daily Log Equipment Hours
 // ============================================================
 export const equipmentUsageSchema = z.object({
-    equipment_id: z.string().uuid('Please select equipment'),
+    equipment_id: z.string().uuid('الرجاء اختيار المعدة'),
     operator_id: z.string().uuid().optional(),
     start_meter: z.coerce.number().min(0),
     end_meter: z.coerce.number().min(0),
@@ -134,11 +134,11 @@ export const equipmentUsageSchema = z.object({
 });
 
 export const dailyLogEquipmentSchema = z.object({
-    project_id: z.string().uuid('Please select a project'),
-    date: z.string().min(1, 'Date is required'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
+    date: z.string().min(1, 'التاريخ مطلوب'),
     shift: z.enum(['morning', 'night_1', 'night_2']),
     general_notes: z.string().optional(),
-    equipment: z.array(equipmentUsageSchema).min(1, 'At least one equipment entry is required'),
+    equipment: z.array(equipmentUsageSchema).min(1, 'يجب إضافة معدة واحدة على الأقل'),
 });
 export type DailyLogEquipmentFormData = z.infer<typeof dailyLogEquipmentSchema>;
 
@@ -146,20 +146,20 @@ export type DailyLogEquipmentFormData = z.infer<typeof dailyLogEquipmentSchema>;
 // Daily Log Truck Trips  
 // ============================================================
 export const dailyTripSchema = z.object({
-    equipment_id: z.string().uuid('Please select a truck'),
+    equipment_id: z.string().uuid('الرجاء اختيار الشاحنة'),
     driver_id: z.string().uuid().optional(),
-    material_type: z.string().min(1, 'Material type is required'),
-    from_location: z.string().min(1, 'From location is required'),
-    to_location: z.string().min(1, 'To location is required'),
+    material_type: z.string().min(1, 'نوع المادة مطلوب'),
+    from_location: z.string().min(1, 'موقع البداية مطلوب'),
+    to_location: z.string().min(1, 'موقع النهاية مطلوب'),
     trip_count: z.coerce.number().min(1).default(1),
     quantity: z.coerce.number().min(0),
 });
 
 export const dailyLogTripsSchema = z.object({
-    project_id: z.string().uuid('Please select a project'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
     date: z.string().min(1),
     shift: z.enum(['morning', 'night_1', 'night_2']),
-    trips: z.array(dailyTripSchema).min(1, 'At least one trip is required'),
+    trips: z.array(dailyTripSchema).min(1, 'يجب إضافة نقلة واحدة على الأقل'),
 });
 export type DailyLogTripsFormData = z.infer<typeof dailyLogTripsSchema>;
 
@@ -167,7 +167,7 @@ export type DailyLogTripsFormData = z.infer<typeof dailyLogTripsSchema>;
 // Daily Attendance
 // ============================================================
 export const laborAttendanceSchema = z.object({
-    employee_id: z.string().uuid('Please select an employee'),
+    employee_id: z.string().uuid('الرجاء اختيار الموظف'),
     hours_worked: z.coerce.number().min(0).max(24),
     overtime_hours: z.coerce.number().min(0).default(0),
     status: z.enum(['present', 'absent', 'leave']).default('present'),
@@ -175,10 +175,10 @@ export const laborAttendanceSchema = z.object({
 });
 
 export const dailyAttendanceSchema = z.object({
-    project_id: z.string().uuid('Please select a project'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
     date: z.string().min(1),
     shift: z.enum(['morning', 'night_1', 'night_2']),
-    attendance: z.array(laborAttendanceSchema).min(1, 'At least one attendance record is required'),
+    attendance: z.array(laborAttendanceSchema).min(1, 'يجب تسجيل حضور موظف واحد على الأقل'),
 });
 export type DailyAttendanceFormData = z.infer<typeof dailyAttendanceSchema>;
 
@@ -186,16 +186,16 @@ export type DailyAttendanceFormData = z.infer<typeof dailyAttendanceSchema>;
 // Daily Achievements
 // ============================================================
 export const dailyAchievementSchema = z.object({
-    activity_name: z.string().min(1, 'Activity name is required'),
+    activity_name: z.string().min(1, 'اسم النشاط مطلوب'),
     quantity: z.coerce.number().min(0),
-    unit: z.string().min(1, 'Unit is required'),
+    unit: z.string().min(1, 'الوحدة مطلوبة'),
     notes: z.string().optional(),
 });
 
 export const dailyAchievementsSchema = z.object({
-    project_id: z.string().uuid('Please select a project'),
+    project_id: z.string().uuid('الرجاء اختيار المشروع'),
     date: z.string().min(1),
     shift: z.enum(['morning', 'night_1', 'night_2']),
-    achievements: z.array(dailyAchievementSchema).min(1, 'At least one achievement is required'),
+    achievements: z.array(dailyAchievementSchema).min(1, 'يجب إضافة إنجاز واحد على الأقل'),
 });
 export type DailyAchievementsFormData = z.infer<typeof dailyAchievementsSchema>;

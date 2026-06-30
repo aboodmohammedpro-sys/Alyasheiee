@@ -63,7 +63,7 @@ export const dailyOpsApi = {
     submit: (id: string) =>
         api.post<ApiResponse<DailyLog>>(`/daily-operations/logs/${id}/submit`),
     approve: (id: string) =>
-        api.patch<ApiResponse<DailyLog>>(`/daily-operations/logs/${id}/approve`),
+        api.post<ApiResponse<DailyLog>>(`/daily-operations/logs/${id}/approve`),
 };
 
 // ============================================================

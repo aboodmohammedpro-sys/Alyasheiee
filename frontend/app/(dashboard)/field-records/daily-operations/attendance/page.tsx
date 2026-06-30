@@ -26,7 +26,7 @@ export default function DailyAttendancePage() {
         watch,
         formState: { errors },
     } = useForm<DailyAttendanceFormData>({
-        resolver: zodResolver(dailyAttendanceSchema),
+        resolver: zodResolver(dailyAttendanceSchema) as any,
         defaultValues: {
             project_id: searchParams.get("project") || "",
             date: searchParams.get("date") || new Date().toISOString().split("T")[0],

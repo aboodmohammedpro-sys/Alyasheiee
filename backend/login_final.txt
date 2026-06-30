@@ -1,0 +1,8 @@
+{
+    "message": "Trait \"Laravel\\Sanctum\\HasApiTokens\" not found",
+    "exception": "Symfony\\Component\\ErrorHandler\\Error\\FatalError",
+    "file": "C:\\Users\\new\\Desktop\\alyasheiee\\backend\\app\\Models\\User.php",
+    "line": 12,
+    "trace": []
+}
+---HTTP_CODE: 500---

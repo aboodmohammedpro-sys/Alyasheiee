@@ -32,7 +32,7 @@ export default function NewDisbursementPage() {
         watch,
         formState: { errors },
     } = useForm<DisbursementFormData>({
-        resolver: zodResolver(disbursementSchema),
+        resolver: zodResolver(disbursementSchema) as any,
         defaultValues: {
             type: "material",
             items: [{ item_name: "", quantity: 1, unit: "", material_id: undefined }],

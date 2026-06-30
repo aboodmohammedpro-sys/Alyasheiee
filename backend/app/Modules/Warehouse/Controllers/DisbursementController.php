@@ -18,14 +18,51 @@ class DisbursementController extends BaseController
     }
 
     /**
+     * قائمة طلبات الصرف المصفاة
+     */
+    public function index(Request $request): JsonResponse
+    {
+        $query = DisbursementRequest::with([
+            'project',
+            'warehouse',
+            'fuelTank',
+            'items.material'
+        ]);
+
+        if ($request->has('project_id')) {
+            $query->where('project_id', $request->query('project_id'));
+        }
+
+        if ($request->has('status')) {
+            $query->where('status', $request->query('status'));
+        }
+
+        if ($request->has('type')) {
+            $query->where('type', $request->query('type'));
+        }
+
+        return $this->successResponse($query->latest()->get());
+    }
+
+    /**
+     * عرض تفاصيل طلب الصرف
+     */
+    public function show(DisbursementRequest $disbursementRequest): JsonResponse
+    {
+        return $this->successResponse(
+            $disbursementRequest->load(['project', 'warehouse', 'fuelTank', 'items.material'])
+        );
+    }
+
+    /**
      * Mobile/Web: إنشاء طلب صرف جديد (المراقب)
      */
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'project_id' => 'required|uuid|exists:projects,id',
-            'type' => 'required|in:material,spare_part,fuel,oil',
-            'items' => 'required|array|min:1',
+            'project_id'          => 'required|uuid|exists:projects,id',
+            'type'                => 'required|in:material,spare_part,fuel,oil',
+            'items'               => 'required|array|min:1',
             'items.*.material_id' => 'nullable|uuid|exists:materials,id',
             'items.*.item_name' => 'required|string',
             'items.*.quantity' => 'required|numeric|min:0',

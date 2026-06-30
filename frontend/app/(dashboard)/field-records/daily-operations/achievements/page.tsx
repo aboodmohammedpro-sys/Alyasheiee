@@ -24,7 +24,7 @@ export default function DailyAchievementsPage() {
         handleSubmit,
         formState: { errors },
     } = useForm<DailyAchievementsFormData>({
-        resolver: zodResolver(dailyAchievementsSchema),
+        resolver: zodResolver(dailyAchievementsSchema) as any,
         defaultValues: {
             project_id: searchParams.get("project") || "",
             date: searchParams.get("date") || new Date().toISOString().split("T")[0],

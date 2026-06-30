@@ -1,0 +1,31 @@
+﻿
+   INFO  Seeding database.  
+
+  Database\Seeders\RolesSeeder ................ RUNNING  
+  Database\Seeders\RolesSeeder ............ 241 ms DONE  
+
+  Database\Seeders\UserSeeder ................. RUNNING  
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "a2262093-112b-4332-a4a7-a8a2fbed7e86"
+CONTEXT:  unnamed portal parameter $1 = '...' (Connection: pgsql, SQL: delete from "model_has_roles" where "model_has_roles"."model_id" = a2262093-112b-4332-a4a7-a8a2fbed7e86 and "model_type" = App\Models\User)
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:825
+    821▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    822▕                 );
+    823▕             }
+    824▕ 
+  ➜ 825▕             throw new QueryException(
+    826▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    827▕             );
+    828▕         }
+    829▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:596
+      PDOException::("SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: "a2262093-112b-4332-a4a7-a8a2fbed7e86"
+CONTEXT:  unnamed portal parameter $1 = '...'")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:596
+      PDOStatement::execute()
+

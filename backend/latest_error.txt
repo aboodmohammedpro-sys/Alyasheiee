@@ -1,0 +1,52 @@
+﻿
+[2026-06-30 01:45:30] local.ERROR: 
+SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  
+foreign key constraint 
+"daily_logs_recorder_id_foreign" cannot be 
+implemented
+[2026-06-30 19:06:32] local.ERROR: 
+SQLSTATE[22P02]: Invalid text representation: 7 
+ERROR:  invalid input syntax for type bigint: 
+"a2262093-112b-4332-a4a7-a8a2fbed7e86"
+[2026-06-30 19:25:32] local.ERROR: Call to 
+undefined method App\Models\User::createToken() 
+{"exception":"[object] 
+(BadMethodCallException(code: 0): Call to 
+undefined method App\\Models\\User::createToken() 
+at C:/Users/new/Desktop/alyasheiee/backend/vendor/
+laravel/framework/src/Illuminate/Support/Traits/Fo
+rwardsCalls.php:67)
+[2026-06-30 19:26:13] local.ERROR: Trait 
+"Laravel\Sanctum\HasApiTokens" not found 
+{"exception":"[object] (Symfony\\Component\\ErrorH
+andler\\Error\\FatalError(code: 0): Trait 
+\"Laravel\\Sanctum\\HasApiTokens\" not found at C:
+/Users/new/Desktop/alyasheiee/backend/app/Models/U
+ser.php:12)
+[2026-06-30 19:29:34] local.ERROR: Trait 
+"Laravel\Sanctum\HasApiTokens" not found 
+{"exception":"[object] (Symfony\\Component\\ErrorH
+andler\\Error\\FatalError(code: 0): Trait 
+\"Laravel\\Sanctum\\HasApiTokens\" not found at C:
+/Users/new/Desktop/alyasheiee/backend/app/Models/U
+ser.php:12)
+[2026-06-30 19:31:58] local.ERROR: 
+SQLSTATE[22P02]: Invalid text representation: 7 
+ERROR:  invalid input syntax for type bigint: 
+"a2262093-112b-4332-a4a7-a8a2fbed7e86"
+[2026-06-30 19:58:00] local.ERROR: 
+SQLSTATE[22P02]: Invalid text representation: 7 
+ERROR:  invalid input syntax for type bigint: 
+"a2262093-112b-4332-a4a7-a8a2fbed7e86"
+[2026-06-30 19:58:04] local.ERROR: 
+SQLSTATE[22P02]: Invalid text representation: 7 
+ERROR:  invalid input syntax for type bigint: 
+"a2262093-112b-4332-a4a7-a8a2fbed7e86"
+[2026-06-30 20:06:19] local.ERROR: 
+SQLSTATE[42P01]: Undefined table: 7 ERROR:  
+relation "personal_access_tokens" does not exist
+[2026-06-30 20:07:54] local.ERROR: 
+SQLSTATE[42P01]: Undefined table: 7 ERROR:  
+relation "personal_access_tokens" does not exist
+
+

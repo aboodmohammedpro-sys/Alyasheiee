@@ -25,13 +25,13 @@ export default function TruckTripsPage() {
         control,
         handleSubmit,
         formState: { errors },
-    } = useForm({
+    } = useForm<DailyLogTripsFormData>({
         resolver: zodResolver(dailyLogTripsSchema) as any,
         defaultValues: {
             project_id: searchParams.get("project") || "",
             date: searchParams.get("date") || new Date().toISOString().split("T")[0],
             shift: (searchParams.get("shift") as any) || "morning",
-            trips: [],
+            trips: [] as any[],
         },
     });
 

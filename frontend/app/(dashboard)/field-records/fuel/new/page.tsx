@@ -27,7 +27,7 @@ export default function DispatchFuelPage() {
     watch,
     formState: { errors },
   } = useForm<FuelDispenseFormData>({
-    resolver: zodResolver(fuelDispenseSchema),
+    resolver: zodResolver(fuelDispenseSchema) as any,
   });
 
   const onSubmit = (data: FuelDispenseFormData) => {

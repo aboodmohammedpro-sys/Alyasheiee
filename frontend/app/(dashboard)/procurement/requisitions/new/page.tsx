@@ -25,7 +25,7 @@ export default function NewRequisitionPage() {
     watch,
     formState: { errors },
   } = useForm<PurchaseRequestFormData>({
-    resolver: zodResolver(purchaseRequestSchema),
+    resolver: zodResolver(purchaseRequestSchema) as any,
     defaultValues: {
       items: [{ material_id: "", quantity: 1, estimated_unit_price: 0 }],
     },

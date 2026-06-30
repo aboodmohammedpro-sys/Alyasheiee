@@ -1,0 +1,42 @@
+﻿
+  Dropping all tables ................... 375.34ms DONE
+
+   INFO  Preparing database.  
+
+  Creating migration table ............... 83.49ms DONE
+
+   INFO  Running migrations.  
+
+  0001_01_01_000000_create_users_table ... 28.70ms DONE
+  0001_01_01_000001_create_cache_table .... 9.15ms DONE
+  0001_01_01_000002_create_jobs_table .... 48.20ms DONE
+  2024_03_23_000001_create_projects_table  34.84ms DONE
+  2024_03_23_000002_create_resources_table  23.60ms DONE
+  2024_03_23_000003_create_daily_operations_table  39.45ms DONE
+  2024_03_23_000004_create_procurement_warehouse_table  46.18ms DONE
+  2024_03_23_000005_create_fuel_management_table  19.43ms DONE
+  2024_03_23_000006_create_disbursement_requests_table  18.32ms DONE
+  2024_03_23_000007_create_cost_control_table  11.74ms DONE
+  2024_03_23_000008_add_pricing_to_resources  2.32ms DONE
+  2026_06_23_002049_create_permission_tables  34.98ms DONE
+  2026_06_23_002056_create_activity_log_table  10.86ms DONE
+  2026_06_23_002057_add_event_column_to_activity_log_table  0.86ms DONE
+  2026_06_23_002058_add_batch_uuid_column_to_activity_log_table  0.74ms DONE
+  2026_06_26_003313_create_purchase_orders_table  18.44ms DONE
+  2026_06_26_004747_create_goods_received_notes_table  21.06ms DONE
+  2026_06_26_010728_add_trips_and_achievements_to_daily_ops_table  16.91ms DONE
+  2026_06_26_014103_add_fuel_benchmarks_to_equipment_table  3.22ms DONE
+  2026_06_26_014643_add_status_to_fuel_transactions_table  1.26ms DONE
+  2026_06_28_151440_modify_warehouse_id_foreign_on_disbursement_requests_table  6.68ms DONE
+  2026_06_28_151659_add_material_id_to_disbursement_request_items_table  3.47ms DONE
+  2026_06_30_000001_multi_warehouse_support  39.73ms DONE
+
+
+   INFO  Seeding database.  
+
+  Database\Seeders\RolesSeeder ................ RUNNING  
+  Database\Seeders\RolesSeeder ............. 88 ms DONE  
+
+  Database\Seeders\UserSeeder ................. RUNNING  
+  Database\Seeders\UserSeeder ........... 1,618 ms DONE  
+
