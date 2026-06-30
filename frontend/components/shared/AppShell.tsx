@@ -5,46 +5,57 @@ import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import {
   Search, LayoutDashboard, HardHat, Package, ShoppingCart, Users, Settings, Bell,
-  FileText, Truck, BarChart3, Menu
+  FileText, Truck, BarChart3, Menu, LogOut
 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { type ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { useLayoutStore } from "@/store/use-layout-store";
+import { useAuthStore, type Permission } from "@/store/use-auth-store";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const t = useTranslations("nav");
   const locale = useLocale();
   const isRTL = locale === "ar";
-  const { sidebarOpen, toggleSidebar, setCommandPaletteOpen } = useLayoutStore();
 
-  const navigation = [
+  const { sidebarOpen, toggleSidebar, setCommandPaletteOpen } = useLayoutStore();
+  const { user, can, isSuperAdmin, clearAuth } = useAuthStore();
+
+  const handleLogout = () => {
+    clearAuth();
+    router.push("/auth/login");
+  };
+
+  // Define navigation with required permissions
+  type NavItem = { href: string; label: string; icon: any; permission?: Permission };
+  type NavGroup = { group: string; items: NavItem[] };
+
+  const navigation: NavGroup[] = [
     {
       group: t("operations"),
       items: [
         { href: "/dashboard", label: t("dashboard"), icon: LayoutDashboard },
-        { href: "/projects", label: t("projects"), icon: HardHat },
+        { href: "/projects", label: t("projects"), icon: HardHat, permission: "manage_projects" },
       ],
     },
     {
       group: t("fieldRecords"),
       items: [
-        { href: "/field-records/progress", label: t("progressLogs"), icon: FileText },
-        { href: "/field-records/attendance", label: t("attendance"), icon: Users },
-        { href: "/field-records/fuel", label: t("fuelDispatch"), icon: Truck },
-        { href: "/field-records/daily-operations", label: t("dailyOperations"), icon: FileText },
+        { href: "/field-records/attendance", label: t("attendance"), icon: Users, permission: "create_daily_log" },
+        { href: "/field-records/fuel", label: t("fuelDispatch"), icon: Truck, permission: "manage_fuel" },
+        { href: "/field-records/daily-operations", label: t("dailyOperations"), icon: FileText, permission: "create_daily_log" },
       ],
     },
     {
       group: t("resources"),
       items: [
-        { href: "/resources/employees", label: t("employees"), icon: Users },
-        { href: "/resources/equipment", label: t("equipment"), icon: Settings },
-        { href: "/resources/teams", label: t("teams"), icon: Users },
+        { href: "/resources/employees", label: t("employees"), icon: Users, permission: "manage_projects" },
+        { href: "/resources/equipment", label: t("equipment"), icon: Settings, permission: "manage_projects" },
       ],
     },
     {
@@ -53,19 +64,38 @@ export function AppShell({ children }: { children: ReactNode }) {
         { href: "/procurement/requisitions", label: t("requisitions"), icon: ShoppingCart },
         { href: "/procurement/suppliers", label: t("suppliers"), icon: Users },
         { href: "/inventory/warehouses", label: t("warehouses"), icon: LayoutDashboard },
+        { href: "/inventory/disbursements", label: "طلبات الصرف", icon: Package },
         { href: "/inventory/items", label: t("itemCatalog"), icon: Package },
       ],
     },
     {
       group: t("analytics"),
       items: [
-        { href: "/reports", label: t("reports"), icon: BarChart3 },
+        { href: "/reports/cost-control", label: "مراقبة التكاليف", icon: BarChart3, permission: "view_financial_reports" },
       ],
     },
   ];
 
+  // Logic to filter menu items based on exact permissions
+  const filteredNav = navigation.map(section => ({
+    ...section,
+    items: section.items.filter(item => {
+      if (!item.permission) return true; // public items
+      if (isSuperAdmin()) return true; // super admin sees everything
+      return can(item.permission);
+    }),
+  })).filter(section => section.items.length > 0);
+
   const appT = useTranslations("app");
   const topbarT = useTranslations("topbar");
+
+  // Format initials
+  const initials = user?.name
+    ? user.name.split(" ").map(n => n.charAt(0)).slice(0, 2).join("").toUpperCase()
+    : "U";
+
+  // Use the primary role for display
+  const primaryRole = user?.roles[0]?.replace("_", " ") || "User";
 
   return (
     <div className="min-h-screen bg-background text-foreground flex">
@@ -96,7 +126,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </Link>
 
         <nav className="mt-8 space-y-6">
-          {navigation.map((section) => (
+          {filteredNav.map((section) => (
             <div key={section.group}>
               <p className="px-2 text-[10px] font-bold uppercase tracking-widest text-sidebar-foreground/40">
                 {section.group}
@@ -148,15 +178,6 @@ export function AppShell({ children }: { children: ReactNode }) {
             <button className="text-muted-foreground lg:hidden" onClick={toggleSidebar}>
               <Menu className="h-6 w-6" />
             </button>
-
-            <div className="hidden items-center gap-2 md:flex">
-              <HardHat className="h-4 w-4 text-accent" />
-              <select className="h-9 rounded-md border-none bg-transparent px-1 text-sm font-semibold focus:ring-0 cursor-pointer">
-                <option>{t("allProjects")}</option>
-                <option>{isRTL ? "طريق الوصول الشمالي" : "North Access Road"}</option>
-                <option>{isRTL ? "توسعة الساحة المركزية" : "Central Yard Expansion"}</option>
-              </select>
-            </div>
           </div>
 
           <div className={cn("flex items-center gap-3", isRTL ? "flex-row-reverse" : "")}>
@@ -174,17 +195,21 @@ export function AppShell({ children }: { children: ReactNode }) {
             <LanguageSwitcher />
             <ThemeToggle />
 
-            <button className="relative flex h-9 w-9 items-center justify-center rounded-md border border-border hover:bg-muted transition-colors">
-              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <Bell className="h-4 w-4 text-muted-foreground" />
-            </button>
-
             <div className={cn("flex items-center gap-3 border-border", isRTL ? "pr-2 border-r mr-2" : "pl-2 border-l ml-2")}>
-              <div className="h-8 w-8 rounded-full bg-primary text-[10px] font-bold text-primary-foreground grid place-items-center shadow-inner">AD</div>
-              <div className="hidden flex-col md:flex">
-                <span className="text-xs font-bold leading-none">{isRTL ? "المسؤول" : "Admin User"}</span>
-                <span className="text-[10px] text-muted-foreground">{isRTL ? "مدير المشروع" : "Project Manager"}</span>
+              <div className="h-8 w-8 rounded-full bg-primary text-[10px] font-bold text-primary-foreground grid place-items-center shadow-inner">
+                {initials}
               </div>
+              <div className="hidden flex-col md:flex">
+                <span className="text-xs font-bold leading-none">{user?.name || "Guest User"}</span>
+                <span className="text-[10px] text-muted-foreground capitalize">{primaryRole}</span>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="p-1.5 text-muted-foreground hover:text-danger-text hover:bg-danger/10 rounded-md transition-colors"
+                title="تسجيل الخروج"
+              >
+                <LogOut className="h-4 w-4" />
+              </button>
             </div>
           </div>
         </header>
